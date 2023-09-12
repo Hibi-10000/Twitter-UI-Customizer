@@ -2,10 +2,7 @@ name: Lint
 
 on:
     push:
-        branches: ["main"]
     pull_request:
-        # The branches below must be a subset of the branches above
-        branches: ["main"]
     workflow_dispatch:
 
 jobs:
@@ -41,6 +38,10 @@ jobs:
             #  with:
             #      sarif_file: eslint-results.sarif
             #      wait-for-processing: true
+
+            - name: Add problem matcher
+              run: |
+                  echo "::add-matcher::.github/eslint-stylish.json"
 
             - name: Run ESLint & Prettier & Stylelint
               run: |
