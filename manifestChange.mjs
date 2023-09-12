@@ -3,7 +3,7 @@ import fsSync from "fs";
 
 (async () => {
     // CLI引数または_langList.jsonファイルからロケールを取得
-    const config = JSON.parse(await fs.readFile("./manifestConfigs.json", "utf8"));
+    let config = JSON.parse(await fs.readFile("./manifestConfigs.json", "utf8"));
 
     const targets = Object.keys(config).filter((k) => k !== "common");
     const target = process.argv[2];

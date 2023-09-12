@@ -4,7 +4,7 @@ let updateID = "";
 let loadedI18n = false;
 let i18nObject = {};
 
-const updateNotification = () => {
+let updateNotification = () => {
     browser.tabs.create({
         url: "https://github.com/kaonasi-biwa/Twitter-UI-Customizer/releases",
     });
