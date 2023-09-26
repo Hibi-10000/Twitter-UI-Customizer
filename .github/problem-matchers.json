@@ -10,7 +10,7 @@
                 },
                 {
                     // Matches the 2nd and 3rd line in the output
-                    "regexp": "^\\s+(\\d+):(\\d+)\\s+(✖|error|warning|info)\\s+(.*)\\s\\s+(.*)$",
+                    "regexp": "^\\s+(\\d+):(\\d+)\\s+(error|warning|info)\\s+(.*)\\s\\s+(.*)$",
                     // File is carried through from above, so we define the rest of the groups
                     "line": 1,
                     "column": 2,
@@ -29,7 +29,7 @@
                     "file": 1
                 },
                 {
-                    "regexp": "^\\s+((\\d+):(\\d+))?\\s+(✖)\\s+(.*)\\s{3,}(.*)$",
+                    "regexp": "^\\s+((\\d+):(\\d+))?\\s+(✖|x)\\s+(.*)\\s{3,}(.*)$",
                     "line": 2,
                     "column": 3,
                     "message": 5,
