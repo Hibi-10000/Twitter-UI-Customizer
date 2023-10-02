@@ -1,0 +1,21 @@
+name: Upload AMO
+
+on: workflow_dispatch
+
+jobs:
+    build-firefox-amo:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Archive
+              run: |
+                  yarn
+                  yarn build:firefox
+              env:
+                  TUIC_GECKO_ID: "{e9c237f9-8c89-4f60-aa0d-e17e305398dc}"
+            - name: Sign
+              run: |
+                  yarn web-ext sign --use-submission-api --source-dir ./dist --channel listed
+              env:
+                  WEB_EXT_API_KEY: ${{ secrets.AMO_API_KEY }}
+                  WEB_EXT_API_SECRET: ${{ secrets.AMO_API_SECRET }}

@@ -17,6 +17,9 @@ import fsSync from "fs";
     switch (target) {
         case "firefox":
             output = Object.assign(config.common, config.firefox);
+            if (process.env.TUIC_GECKO_ID !== undefined) {
+                output.browser_specific_settings.gecko.id = process.env.TUIC_GECKO_ID;
+            }
             break;
         case "chrome":
             output = Object.assign(config.common, config.chrome);
