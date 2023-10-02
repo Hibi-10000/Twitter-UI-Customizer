@@ -78,6 +78,6 @@
         "host_permissions": ["https://api.github.com/*", "https://abs.twimg.com/*"]
     },
     "chromeCRX": {
-        "update_url": "https://github.com/${github.repository}/releases/latest/download/crxupdate.xml"
+        "update_url": "https://github.com/kaonasi_biwa/Twitter_UI_Customizer/releases/latest/download/crxupdate.xml"
     }
 }

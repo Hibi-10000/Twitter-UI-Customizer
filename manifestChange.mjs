@@ -14,10 +14,19 @@ import fsSync from "fs";
     }
 
     let output = {};
-    if (target == "chromeCRX") {
-        output = Object.assign(config.common, config.chrome, config.chromeCRX);
-    } else {
-        output = Object.assign(config.common, config[target]);
+    switch (target) {
+        case "firefox":
+            output = Object.assign(config.common, config.firefox);
+            break;
+        case "chrome":
+            output = Object.assign(config.common, config.chrome);
+            break;
+        case "chromeCRX":
+            output = Object.assign(config.common, config.chrome, config.chromeCRX);
+            if (process.env.TUIC_CRX_UPDATE_URL !== undefined) {
+                output.update_url = process.env.TUIC_CRX_UPDATE_URL;
+            }
+            break;
     }
 
     if (!fsSync.existsSync("./dist")) {

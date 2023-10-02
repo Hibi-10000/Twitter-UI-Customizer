@@ -43,10 +43,11 @@ jobs:
               run: |
                   yarn
                   yarn build:gen_manifest chromeCRX
-                  sed -i 's/${github.repository}/${{ github.repository_owner }}\/${{ github.event.repository.name }}/' ./dist/manifest.json
                   yarn build:copy_assets
                   yarn vite build --mode chromium
                   cp ./dist/twitter_ui_customizer-*.zip ./Twitter_UI_Customizer_Chromium.zip
+              env:
+                  TUIC_CRX_UPDATE_URL: https://github.com/${{ github.repository }}/releases/latest/download/crxupdate.xml
             - name: CRX
               uses: cardinalby/webext-buildtools-chrome-crx-action@v2
               with:
