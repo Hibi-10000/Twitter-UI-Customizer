@@ -24,7 +24,7 @@ const _data = {
             <div
                 dir="ltr"
                 class={`css-901oao r-1tl8opc text-[15px] font-normal leading-[20px] min-w-[0px] wrap-break-word ${
-                    fontSizeClass("py-[14px]", "py-[15px]", "py-[16px]", "py-[18px]", "py-[19px]")
+                    fontSizeClass("r-1ml3abn", "r-1d7mnkm", "r-w7s2jr", "r-1la3zjv", "r-lgtrmy")
                 }`}
                 style={{ cursor: "pointer", "margin-right": "1em" }}
                 onClick={async () => {
