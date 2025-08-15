@@ -254,7 +254,7 @@ function createSidebarButton(id: string, svg: () => JSX.Element): () => JSX.Elem
             )}
             role="link"
             tabindex="0"
-            class="twcss-flex items-start cursor-pointer flex flex-col grow outline-none w-full py-[4px] TUICOriginalContent TUICSidebarButton"
+            class="css-175oi2r items-start cursor-pointer flex flex-col grow outline-none w-full py-[4px] TUICOriginalContent TUICSidebarButton"
             data-tuic-hide="false"
             onClick={_data[id].onclick}
             onKeyDown={(e: KeyboardEvent) => {
@@ -265,11 +265,11 @@ function createSidebarButton(id: string, svg: () => JSX.Element): () => JSX.Elem
             }}
         >
             <div
-                class={`twcss-flex items-center rounded-full flex-row justify-center max-w-full duration-200 transition-bgcolor-shadow ${
+                class={`css-175oi2r items-center rounded-full flex-row justify-center max-w-full duration-200 transition-bgcolor-shadow ${
                     fontSizeClass("p-[11px]", "p-[11px]", "p-[12px]", "p-[13px]", "p-[14px]")
                 }`}
             >
-                <div class="twcss-flex">
+                <div class="css-175oi2r">
                     <svg
                         viewBox="0 0 24 24"
                         aria-hidden="true"
