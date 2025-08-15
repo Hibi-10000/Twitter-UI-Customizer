@@ -43,7 +43,7 @@ export const IconElement = (): JSX.Element => {
                                                         aria-label={document.querySelector<HTMLSpanElement>(`#detail-header div > span:nth-child(1) > span > span:nth-child(1)`).textContent}
                                                     >
                                                         <div
-                                                            class="css-175oi2r bg-transparent bg-center bg-no-repeat r-1p0dtai r-1pi2tsx r-1d2f490 absolute r-zchlnj r-ipm5af r-13qz1uu r-1wyyakw bg-cover TUICDMIconDisplay"
+                                                            class="css-175oi2r r-1niwhzg r-vvn4in r-u6sd8q r-1p0dtai r-1pi2tsx r-1d2f490 absolute r-zchlnj r-ipm5af r-13qz1uu r-1wyyakw r-4gszlv TUICDMIconDisplay"
                                                             style={{
                                                                 "background-image": document.querySelector<HTMLElement>(
                                                                     `:is([data-testid="DM_Conversation_Avatar"]:not([data-testid="conversation"] *) [data-testid="UserAvatar-Container-unknown"] [role="presentation"] > div+div+div > div > div > div > div,[data-testid="DmScrollerContainer"] [data-testid="UserAvatar-Container-unknown"]:not([href$="/followers_you_follow"] *) [style*="background-image:"])`,
