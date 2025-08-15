@@ -49,7 +49,6 @@ export default defineConfig({
             "z-index": 0,
         }, { layer: "base" }],
         ["font-tw", { "font-family": '"Segoe UI",Meiryo,system-ui,-apple-system,BlinkMacSystemFont,sans-serif' }],
-        ["transition-bgcolor-shadow", { "transition-property": "background-color, box-shadow" }],
     ],
     theme: {
         colors: {
