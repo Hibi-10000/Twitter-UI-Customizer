@@ -50,20 +50,4 @@ export default defineConfig({
         }, { layer: "base" }],
         ["font-tw", { "font-family": '"Segoe UI",Meiryo,system-ui,-apple-system,BlinkMacSystemFont,sans-serif' }],
     ],
-    theme: {
-        colors: {
-            tw: {
-                light: {
-                    text: "rgba(15,20,25,1.00)",
-                    text2: "rgba(83,100,113,1.00)",
-                },
-                darkblue: {
-                    text: "rgba(247,249,249,1.00)",
-                },
-                dark: {
-                    text: "rgba(231,233,234,1.00)",
-                },
-            },
-        },
-    },
 });
