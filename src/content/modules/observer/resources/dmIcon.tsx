@@ -3,7 +3,7 @@ import { JSX } from "solid-js";
 
 export const IconElement = (): JSX.Element => {
     return (
-        <div class="css-175oi2r r-obd0qt flex-row TUICOriginalContent TUICDMIconBox">
+        <div class="css-175oi2r r-obd0qt r-18u37iz TUICOriginalContent TUICDMIconBox">
             <div class="css-175oi2r" style={{ width: `${fontSizeClass("47", "49", "52", "57", "62")}px` }}></div>
             <div class="css-175oi2r r-u8s1d r-1d2f490">
                 <div
@@ -38,7 +38,7 @@ export const IconElement = (): JSX.Element => {
                                                 <div class="r-1adg3ll r-13qz1uu" style={{ "padding-bottom": "100%" }}></div>
                                                 <div class="r-1p0dtai r-1pi2tsx r-u8s1d r-1d2f490 r-ipm5af r-13qz1uu">
                                                     <div
-                                                        class="css-175oi2r basis-auto r-1udh08x r-417010"
+                                                        class="css-175oi2r r-1mlwlqe r-1udh08x r-417010"
                                                         style={{ position: "absolute", inset: "0px" }}
                                                         aria-label={document.querySelector<HTMLSpanElement>(`#detail-header div > span:nth-child(1) > span > span:nth-child(1)`).textContent}
                                                     >
