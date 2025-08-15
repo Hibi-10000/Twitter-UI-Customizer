@@ -38,12 +38,12 @@ export const IconElement = (): JSX.Element => {
                                                 <div class="block w-full" style={{ "padding-bottom": "100%" }}></div>
                                                 <div class="bottom-[0px] h-full absolute left-[0px] top-[0px] w-full">
                                                     <div
-                                                        class="css-175oi2r basis-auto r-1udh08x z-0"
+                                                        class="css-175oi2r basis-auto r-1udh08x r-417010"
                                                         style={{ position: "absolute", inset: "0px" }}
                                                         aria-label={document.querySelector<HTMLSpanElement>(`#detail-header div > span:nth-child(1) > span > span:nth-child(1)`).textContent}
                                                     >
                                                         <div
-                                                            class="css-175oi2r bg-transparent bg-center bg-no-repeat bottom-[0px] h-full left-[0px] absolute right-[0px] top-[0px] w-full -z-1 bg-cover TUICDMIconDisplay"
+                                                            class="css-175oi2r bg-transparent bg-center bg-no-repeat bottom-[0px] h-full left-[0px] absolute right-[0px] top-[0px] w-full r-1wyyakw bg-cover TUICDMIconDisplay"
                                                             style={{
                                                                 "background-image": document.querySelector<HTMLElement>(
                                                                     `:is([data-testid="DM_Conversation_Avatar"]:not([data-testid="conversation"] *) [data-testid="UserAvatar-Container-unknown"] [role="presentation"] > div+div+div > div > div > div > div,[data-testid="DmScrollerContainer"] [data-testid="UserAvatar-Container-unknown"]:not([href$="/followers_you_follow"] *) [style*="background-image:"])`,
