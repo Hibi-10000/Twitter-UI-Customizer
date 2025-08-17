@@ -76,11 +76,12 @@
     display: flex;
 }
 
-.TUICEngagementsBox > div > a > span > span:is(:hover, :focus-visible) {
-    text-decoration-line: underline;
-    text-decoration-thickness: 1px;
-    cursor: pointer;
-    outline-style: none;
+.TUICEngagementsBox > div > span {
+    transition: border-bottom 0.2s;
+}
+
+.TUICEngagementsBox > div > span:is(:hover, :focus-visible) {
+    border-bottom: solid 0.05px;
 }
 
 [tabindex="0"] > .TUIC_ButtonHover2:is(:hover, :focus-visible) > .TUIC_ButtonHover > div {
