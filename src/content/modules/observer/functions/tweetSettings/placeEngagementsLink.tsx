@@ -26,62 +26,70 @@ const _data = {
     links: (id: string, article: Element, isShort: boolean): JSX.Element => {
         return (
             <div class="twcss-flex mr-[20px]">
-                <div class="twcss-flex">
-                    <a
-                        href={id === "quotes" ? "/retweets/with_comments" : `/${id}`}
-                        dir="auto"
-                        role="link"
-                        class={`twcss-text-explicit cursor-pointer font-tw2  ${
-                            fontSizeClass("text-[14px]", "text-[14px]", "text-[15px]", "text-[17px]", "text-[18px]")
-                        } font-normal ${
-                            fontSizeClass("leading-[18px]", "leading-[19px]", "leading-[20px]", "leading-[22px]", "leading-[24px]")
-                        } min-w-[0px] wrap-break-word ${
-                            backgroundColorClass("text-tw-dark-text", "text-tw-darkblue-text", "text-tw-light-text")
-                        }`}
-                        onClick={async (e) => {
-                            e.preventDefault();
-                            article.querySelector<HTMLInputElement>(`[data-testid="caret"]`).click();
-                            await waitForElement(`[data-testid="tweetEngagements"]`);
-                            document.querySelector<HTMLButtonElement>(`[data-testid="tweetEngagements"]`).click();
-                            await waitForElement(`[role="tab"][href$="/${id}"]`);
-                            document.querySelector<HTMLAnchorElement>(`[role="tab"][href$="/${id}"]`).click();
-                        }}
-                    >
+                <a
+                    href={id === "quotes" ? "/retweets/with_comments" : `/${id}`}
+                    dir="ltr"
+                    role="link"
+                    class={`twcss-text-explicit min-w-[0px] text-align-inherit wrap-break-word font-tw ${fontSizeClass(
+                        "text-[14px] leading-[18px]",
+                        "text-[14px] leading-[19px]",
+                        "text-[15px] leading-[20px]",
+                        "text-[17px] leading-[22px]",
+                        "text-[18px] leading-[24px]",
+                    )} font-normal ${
+                        backgroundColorClass("text-tw-dark-text", "text-tw-darkblue-text", "text-tw-light-text")
+                    }`}
+                    onClick={async (e) => {
+                        e.preventDefault();
+                        article.querySelector<HTMLInputElement>(`[data-testid="caret"]`).click();
+                        await waitForElement(`[data-testid="tweetEngagements"]`);
+                        document.querySelector<HTMLButtonElement>(`[data-testid="tweetEngagements"]`).click();
+                        await waitForElement(`[role="tab"][href$="/${id}"]`);
+                        document.querySelector<HTMLAnchorElement>(`[role="tab"][href$="/${id}"]`).click();
+                    }}
+                >
+                    <span class="twcss-text-inherit min-w-[0px] text-align-inherit wrap-break-word font-tw">
                         <div class="twcss-flex inline-flex overflow-hidden">
                             <span
                                 data-testid="app-text-transition-container"
                                 style={{
                                     "transition-property": "transform",
                                     "transition-duration": "0.3s",
-                                    transform: "translate3d(0, 0, 0)",
+                                    transform: "translate3d(0px, 0px, 0px)",
                                 }}
                             >
                                 <span
-                                    class={`twcss-text-inherit font-inherit ${
-                                        fontSizeClass("text-[13px]", "text-[13px]", "text-[14px]", "text-[15px]", "text-[17px]")
-                                    } font-bold ${
-                                        fontSizeClass("leading-[14px]", "leading-[15px]", "leading-[16px]", "leading-[18px]", "leading-[19px]")
-                                    } min-w-[0px] wrap-break-word`}
+                                    class={`twcss-text-inherit min-w-[0px] text-align-inherit wrap-break-word font-tw ${fontSizeClass(
+                                        "text-[13px] leading-[14px]",
+                                        "text-[13px] leading-[15px]",
+                                        "text-[14px] leading-[16px]",
+                                        "text-[15px] leading-[18px]",
+                                        "text-[17px] leading-[19px]",
+                                    )} font-bold`}
                                 >
-                                    <span class="twcss-text-inherit font-inherit min-w-[0px] wrap-break-word">
+                                    <span class="twcss-text-inherit min-w-[0px] text-align-inherit wrap-break-word font-tw">
                                         {}
                                     </span>
                                 </span>
                             </span>
                         </div>
                         <span
-                            class={`twcss-text-inherit ${
+                            class={`twcss-text-inherit min-w-[0px] text-align-inherit wrap-break-word font-tw ${fontSizeClass(
+                                "text-[13px] leading-[14px]",
+                                "text-[13px] leading-[15px]",
+                                "text-[14px] leading-[16px]",
+                                "text-[15px] leading-[18px]",
+                                "text-[17px] leading-[19px]",
+                            )} ${
                                 backgroundColorClass("text-tw-dark-text2", "text-tw-darkblue-text2", "text-tw-light-text2")
-                            } font-inherit ${
-                                fontSizeClass("text-[14px]", "text-[14px]", "text-[15px]", "text-[17px]", "text-[18px]")
-                            } leading-[16px] min-w-[0px] wrap-break-word`}
+                            }`}
                         >
-                            <span class="twcss-text-inherit font-inherit min-w-[0px] wrap-break-word">
+                            <span class="twcss-text-inherit min-w-[0px] text-align-inherit wrap-break-word font-tw">
                                 {TUICI18N.get("bottomTweetButtons-setting-placeEngagementsLink-" + id + (isShort ? "-short" : ""))}
                             </span>
                         </span>
-                    </a>
-                </div>
+                    </span>
+                </a>
             </div>
         );
     },
