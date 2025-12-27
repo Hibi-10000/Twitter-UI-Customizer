@@ -77,7 +77,7 @@ const manifest: {
         browser_specific_settings: {
             gecko: {
                 id: "{e9c237f9-8c89-4f60-aa0d-e17e305398dc}",
-                strict_min_version: "121.0",
+                strict_min_version: "121.0", //:has()
             },
         },
         developer: {
@@ -105,7 +105,7 @@ const manifest: {
             service_worker: "background.js",
             type: "module",
         },
-        minimum_chrome_version: "105",
+        minimum_chrome_version: "111", //color-mix()
     },
     // chromiumCRX設定
     chromiumCRX: {
