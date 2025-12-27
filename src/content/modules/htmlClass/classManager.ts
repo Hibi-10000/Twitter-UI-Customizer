@@ -27,7 +27,6 @@ const AttrList = {
     tuicHideChildScrollSnap: "tuic-hide-child-scroll-snap",
 
     tuicZoomingTweet: "tuic-zooming-tweet",
-    tuicTabsPinned: "data-tuic-tabs-pinned",
 };
 
 export const updateClasses = (isInit = false) => {

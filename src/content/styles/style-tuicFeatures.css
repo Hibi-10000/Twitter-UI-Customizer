@@ -1,5 +1,6 @@
 @import url("./features/style-discoverMore.css");
 @import url("./features/style-iconSettings.css");
+@import url("./features/style-hideElements.css");
 
 .TUICTweetButtomBarBase > div > .r-13awgt0 {
     flex: inherit !important;
@@ -154,19 +155,6 @@
     padding-bottom: 0 !important;
 }
 
-:is(
-    :root[data-tuic-settings*="|invisibleItems.subscribe-profile|"] [data-testid="userActions"] + [style*="border-color"][style*="rgb(201, 54, 204)"],
-    :root[data-tuic-settings*="|invisibleItems.hideBelowDM|"] :is([data-testid="DMDrawer"], [data-testid="chat-drawer-root"]),
-    :root[data-tuic-settings*="|tweetDisplaySetting.option.noNumberBottomTweetButtons|"] [data-tuic-zooming-tweet] [data-testid="app-text-transition-container"],
-    :root[data-tuic-settings*="|accountSwitcher.icon|"] [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child,
-    :root[data-tuic-settings*="|accountSwitcher.nameID|"] [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child + div,
-    :root[data-tuic-settings*="|accountSwitcher.moreMenu|"] [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child + div + div,
-    :root[data-tuic-settings*="|composetweet.hideDraft|"] [data-testid="unsentButton"],
-
-) {
-    display: none !important;
-}
-
 :root[data-tuic-settings*="|tweetDisplaySetting.invisible.bottomSpace|"] .TUIC_NONE_SPACE_BOTTOM_TWEET {
     margin-top: 0 !important;
 }
@@ -175,8 +163,7 @@
     overflow: clip;
 }
 
-/* :root[data-tuic-settings*="|profileSetting.tabs.pinnedTab|"] [data-testid="primaryColumn"] > div > div > div > div > nav[role="navigation"] { */
-[data-tuic-tabs-pinned] {
+:root[data-tuic-settings*="|profileSetting.tabs.pinnedTab|"] [data-testid="primaryColumn"] > div > div > div > div > div:has(> nav[role="navigation"]) {
     position: sticky;
     top: var(--TUIC-pinnedTab-top);
     z-index: 1;
@@ -215,28 +202,4 @@
 
 :root[data-tuic-settings*="|tweetDisplaySetting.option.likeToFavo|"] [data-testid="like"] > div:is(:hover, :focus-visible) path {
     fill: rgb(255 212 0) !important;
-}
-
-:root[data-tuic-settings*="|sidebarButtons.style.verifiedChoose|"] [role="banner"] > div > div > div > div > div > nav [href="/i/premium_sign_up"] {
-    display: none !important;
-}
-
-:root[data-tuic-settings*="|sidebarSetting.hideBadge.homeBadge|"] [data-testid="AppTabBar_Home_Link"] svg + div {
-    display: none !important;
-}
-
-:root[data-tuic-settings*="|sidebarSetting.hideBadge.notificationsBadge|"] [data-testid="AppTabBar_Notifications_Link"] svg + div {
-    display: none !important;
-}
-
-:root[data-tuic-settings*="|sidebarSetting.hideBadge.dmBadge|"] [data-testid="AppTabBar_DirectMessage_Link"] svg + div {
-    display: none !important;
-}
-
-:root[data-tuic-settings*="|invisibleItems.hideBelowGrok|"] [data-testid="GrokDrawer"] {
-    display: none !important;
-}
-
-:root[data-tuic-settings*="|tweetdisplaysetting.invisible.editimage|"] article [href^="/i/imagine?postId="] {
-    display: none !important;
 }

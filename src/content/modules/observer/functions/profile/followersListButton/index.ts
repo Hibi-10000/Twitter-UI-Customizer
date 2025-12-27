@@ -1,4 +1,4 @@
-import { hideElement, hasClosest, showElement, processElement } from "@modules/utils/controlElements";
+import { hideElement, showElement, processElement } from "@modules/utils/controlElements";
 import { getPref } from "@modules/pref";
 import { ProcessedClass } from "@shared/sharedData";
 import { render } from "solid-js/web";
@@ -10,9 +10,8 @@ export function followersList() {
         for (const elem of document.querySelectorAll(`[data-testid="primaryColumn"] [data-testid="UserCell"]:not(.${ProcessedClass})`)) {
             if (document.querySelector(`[data-testid="UserCell"] ${data.moremenuButton.selector}`)) {
                 processElement(elem);
-                const followButton = elem.querySelector(data.followButton.selector);
-                if (followButton) {
-                    const baseElement = hasClosest<HTMLElement>(followButton, data.moremenuButton.selector);
+                const baseElement = elem.querySelector<HTMLElement>(`div:has(> * > ${data.moremenuButton.selector}):has(${data.followButton.selector})`);
+                if (baseElement) {
                     baseElement.classList.add("TUICFollowerListButtons");
                     let elementCounter = 0;
                     for (const id of getPref("profileSetting.followersListButtons")) {

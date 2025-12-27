@@ -8,9 +8,10 @@ const manifest: {
 } = {
     // 共通設定
     common: {
+        version: "5.6.3",
+        manifest_version: 3,
         name: "__MSG_extensionName__",
         description: "__MSG_extensionDescription__",
-        version: "5.6.2",
         default_locale: "ja",
         content_scripts: [
             {
@@ -27,61 +28,6 @@ const manifest: {
         ],
         options_ui: {
             page: "options/options.html",
-            browser_style: true,
-        },
-    },
-    // Firefox設定
-    firefox: {
-        manifest_version: 2,
-        icons: {
-            16: "icon/newIcon_TUIC_C_Blue.svg",
-            48: "icon/newIcon_TUIC_C_Blue.svg",
-            128: "icon/newIcon_TUIC_C_Blue.svg",
-        },
-        web_accessible_resources: [
-            "*",
-        ],
-        permissions: [
-            "declarativeNetRequest",
-            "notifications",
-            "storage",
-            "https://api.github.com/*",
-            "https://abs.twimg.com/*",
-            "*://*.twitter.com/*",
-            "*://*.x.com/*",
-        ],
-        browser_action: {
-            default_icon: {
-                16: "icon/newIcon_TUIC_C_Blue.svg",
-                48: "icon/newIcon_TUIC_C_Blue.svg",
-                128: "icon/newIcon_TUIC_C_Blue.svg",
-            },
-            default_title: "Twitter UI Customizer",
-            default_popup: "popup/popup.html",
-        },
-        background: {
-            scripts: [
-                "background.js",
-            ],
-            type: "module",
-        },
-        browser_specific_settings: {
-            gecko: {
-                id: "{e9c237f9-8c89-4f60-aa0d-e17e305398dc}",
-            },
-        },
-        developer: {
-            name: "kaonasi_biwa",
-            url: "https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer",
-        },
-    },
-    // Chromium設定
-    chromium: {
-        manifest_version: 3,
-        icons: {
-            16: "icon/newIcon_TUIC_C_Blue.png",
-            48: "icon/newIcon_TUIC_C_Blue.png",
-            128: "icon/newIcon_TUIC_C_Blue.png",
         },
         web_accessible_resources: [
             {
@@ -99,6 +45,53 @@ const manifest: {
             "notifications",
             "storage",
         ],
+        host_permissions: [
+            "https://api.github.com/*",
+            "https://abs.twimg.com/*",
+            "*://*.twitter.com/*",
+            "*://*.x.com/*",
+        ],
+    },
+    // Firefox設定
+    firefox: {
+        icons: {
+            16: "icon/newIcon_TUIC_C_Blue.svg",
+            48: "icon/newIcon_TUIC_C_Blue.svg",
+            128: "icon/newIcon_TUIC_C_Blue.svg",
+        },
+        action: {
+            default_icon: {
+                16: "icon/newIcon_TUIC_C_Blue.svg",
+                48: "icon/newIcon_TUIC_C_Blue.svg",
+                128: "icon/newIcon_TUIC_C_Blue.svg",
+            },
+            default_title: "Twitter UI Customizer",
+            default_popup: "popup/popup.html",
+        },
+        background: {
+            scripts: [
+                "background.js",
+            ],
+            type: "module",
+        },
+        browser_specific_settings: {
+            gecko: {
+                id: "{e9c237f9-8c89-4f60-aa0d-e17e305398dc}",
+                strict_min_version: "121.0",
+            },
+        },
+        developer: {
+            name: "kaonasi_biwa",
+            url: "https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer",
+        },
+    },
+    // Chromium設定
+    chromium: {
+        icons: {
+            16: "icon/newIcon_TUIC_C_Blue.png",
+            48: "icon/newIcon_TUIC_C_Blue.png",
+            128: "icon/newIcon_TUIC_C_Blue.png",
+        },
         action: {
             default_icon: {
                 16: "icon/newIcon_TUIC_C_Blue.png",
@@ -112,12 +105,7 @@ const manifest: {
             service_worker: "background.js",
             type: "module",
         },
-        host_permissions: [
-            "https://api.github.com/*",
-            "https://abs.twimg.com/*",
-            "*://*.twitter.com/*",
-            "*://*.x.com/*",
-        ],
+        minimum_chrome_version: "105",
     },
     // chromiumCRX設定
     chromiumCRX: {
