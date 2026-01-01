@@ -79,6 +79,9 @@ const manifest: {
                 id: "{e9c237f9-8c89-4f60-aa0d-e17e305398dc}",
                 strict_min_version: "121.0", //:has()
             },
+            gecko_android: {
+                strict_min_version: "121.0", //:has()
+            },
         },
         developer: {
             name: "kaonasi_biwa",
