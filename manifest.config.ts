@@ -78,6 +78,9 @@ const manifest: {
             gecko: {
                 id: "{e9c237f9-8c89-4f60-aa0d-e17e305398dc}",
                 strict_min_version: "121.0", //:has()
+                data_collection_permissions: {
+                    required: ["none"],
+                },
             },
             gecko_android: {
                 strict_min_version: "121.0", //:has()
