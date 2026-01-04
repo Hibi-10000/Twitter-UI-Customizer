@@ -118,7 +118,7 @@ export default defineConfig(({ command, mode }) => {
                     // }
                     // console.log(options.watch);
                 },
-                async buildStart(options) {
+                async renderStart(options) {
                     await Promise.all([
                         changeManifest(mode),
                         //fs.copyFile(rl("src/inject.js"), rl("dist/inject.js")),
