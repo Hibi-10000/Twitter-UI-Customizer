@@ -20,10 +20,19 @@ export default async (root: string, sourceDir: string, artifactsDir: string, mod
     if (!firefox_profile) {
         firefox_profile = "development";
     }
-    console.log("firefox_executable");
-    console.log(firefox_executable);
-    console.log(chromium_profile);
-    //let chromium_executable = process.env["TUIC_WEBEXT_CHROMIUM_EXECUTABLE"];
+    switch (mode) {
+        case "firefox":
+            console.log("firefox_executable          ", firefox_executable);
+            console.log("firefox_profile             ", firefox_profile);
+            console.log("firefox_keep_profile_changes", firefox_keep_profile_changes);
+            break;
+        case "chromium":
+            console.log("chromium_executable          ", chromium_executable);
+            console.log("chromium_profile             ", chromium_profile);
+            console.log("chromium_keep_profile_changes", chromium_keep_profile_changes);
+            break;
+    }
+
     return {
         name: "web-ext",
         enforce: "post",
