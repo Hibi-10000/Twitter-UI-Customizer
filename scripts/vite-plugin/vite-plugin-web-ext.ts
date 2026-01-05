@@ -7,7 +7,7 @@ process.loadEnvFile(".env.local");
 export default async (root: string, sourceDir: string, artifactsDir: string, mode: string): Promise<Plugin> => {
     let watch = false;
     const firefox_executable = process.env["TUIC_WEBEXT_FIREFOX_EXECUTABLE"];
-    let firefox_profile = process.env["TUIC_WEBEXT_FIREFOX_PROFILE"];
+    const firefox_profile = process.env["TUIC_WEBEXT_FIREFOX_PROFILE"] ?? "development";
     const chromium_executable = process.env["TUIC_WEBEXT_CHROMIUM_EXECUTABLE"];
     const chromium_profile = process.env["TUIC_WEBEXT_CHROMIUM_PROFILE"];
 
@@ -17,9 +17,6 @@ export default async (root: string, sourceDir: string, artifactsDir: string, mod
     // let worker;
     let webExtRunner: WebExtRun;
 
-    if (!firefox_profile) {
-        firefox_profile = "development";
-    }
     switch (mode) {
         case "firefox":
             console.log("firefox_executable          ", firefox_executable);
@@ -37,8 +34,8 @@ export default async (root: string, sourceDir: string, artifactsDir: string, mod
         name: "web-ext",
         enforce: "post",
         apply: "build",
-        buildStart(options) {
-            // console.log(options.watch);
+        options(options) {
+            watch = options.watch !== undefined && options.watch !== false;
 
             switch (mode) {
                 case "firefox":
@@ -49,14 +46,11 @@ export default async (root: string, sourceDir: string, artifactsDir: string, mod
                     this.error("mode should be 'firefox', 'chromium', or 'disable-web-ext'");
             }
         },
-        options(options) {
-            watch = options.watch !== undefined && options.watch !== false;
-        },
         async closeBundle() {
             if (mode === "disable-web-ext") {
                 return;
             }
-            console.log("Running web-ext in " + (isMainThread ? "main thread" : "worker") + " at " + sourceDir);
+            console.log(`Running web-ext in ${isMainThread ? "main thread" : "worker"} at ${sourceDir}`);
 
             const args: WebExtRunArgs = {
                 mode,
