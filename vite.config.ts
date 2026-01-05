@@ -1,4 +1,4 @@
-import { type UserConfig, defineConfig } from "vite";
+import { type UserConfig, defineConfig, normalizePath } from "vite";
 
 import path from "node:path";
 import * as fs from "node:fs/promises";
@@ -108,14 +108,11 @@ export default defineConfig(({ command, mode }) => {
             {
                 name: "copyResources",
                 enforce: "post",
-                options(options) {
-                    // this.addWatch;
-                    // console.log("watch");
-                    // console.log(options.watch);
-                    // if (options.watch) {
-                    //     options.watch.include = r("_locales/**");
-                    // }
-                    // console.log(options.watch);
+                buildStart() {
+                    this.addWatchFile(normalizePath(r("_locales")));
+                    this.addWatchFile(normalizePath(r("i18n")));
+                    this.addWatchFile(normalizePath(r("public")));
+                    this.addWatchFile(normalizePath(r("third-party")));
                 },
                 async renderStart(options) {
                     await Promise.all([
