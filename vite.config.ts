@@ -53,8 +53,8 @@ export default defineConfig(({ command, mode }) => {
                     dynamicImportInCjs: true,
                     format: "es",
                     entryFileNames: "[name].js",
-                    manualChunks(id) {
-                        if (id.includes("node_modules")) {
+                    manualChunks(id, meta) {
+                        if (id.includes("node_modules") && meta.getModuleInfo(id).isIncluded !== false) {
                             const arr_module_name = id.toString().split("node_modules/")[1].split("/");
                             if (arr_module_name[0] === ".pnpm") {
                                 return arr_module_name[1].toString();
