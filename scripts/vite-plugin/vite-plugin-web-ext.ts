@@ -1,5 +1,4 @@
 import type { Plugin } from "vite";
-import type { ChildProcessWithoutNullStreams } from "node:child_process";
 import { isMainThread } from "node:worker_threads";
 import { type WebExtRunArgs, WebExtRun } from "./web-ext.ts";
 
@@ -14,10 +13,8 @@ export default async (root: string, sourceDir: string, artifactsDir: string, mod
 
     const firefox_keep_profile_changes = process.env["TUIC_WEBEXT_FIREFOX_KEEP_PROFILE_CHANGES"] === "true";
     const chromium_keep_profile_changes = process.env["TUIC_WEBEXT_CHROMIUM_KEEP_PROFILE_CHANGES"] === "true";
-    // let webExtRunner: MultiExtensionRunner | null = null;
 
     // let worker;
-    let child: ChildProcessWithoutNullStreams;
     let webExtRunner: WebExtRun;
 
     if (!firefox_profile) {

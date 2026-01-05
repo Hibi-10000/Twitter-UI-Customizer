@@ -36,7 +36,6 @@ export default defineConfig(({ command, mode }) => {
             outDir,
             emptyOutDir: false,
             sourcemap: true,
-            // outDir,
             target: "es2023",
             assetsInlineLimit: 0,
             reportCompressedSize: false,
@@ -60,7 +59,7 @@ export default defineConfig(({ command, mode }) => {
                                 return arr_module_name[1].toString();
                             }
                             return arr_module_name[0].toString();
-                        };
+                        }
                         if (id.includes("i18n")) {
                             return "i18n";
                         }
@@ -123,9 +122,7 @@ export default defineConfig(({ command, mode }) => {
                         changeManifest(mode),
                         //fs.copyFile(rl("src/inject.js"), rl("dist/inject.js")),
                         //fs.copyFile(rl("src/safemode.html"), rl("dist/safemode.html")),
-                        //fs.cp(rl("src/content/styles"), rl("dist/styles"), { recursive: true }),
                         fs.cp(rl("_locales"), rl("dist/_locales"), { recursive: true }),
-                        //fs.cp(rl("icon"), rl("dist/icon"), { recursive: true }),
                     ]);
                     console.log("\x1b[32m✓\x1b[0m Copied injection scripts.");
                 },
