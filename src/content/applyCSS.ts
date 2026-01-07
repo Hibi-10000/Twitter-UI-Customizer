@@ -32,28 +32,25 @@ export function addCssElement() {
     document.querySelector("#twitter_ui_customizer_css")?.remove();
     document.querySelector("#twitter_ui_customizer")?.remove();
 
-    const twitterHead = document.querySelector("head");
-
     const elemSYSCSS = document.createElement("style");
     elemSYSCSS.id = "twitter_ui_customizer";
-    twitterHead.appendChild(elemSYSCSS);
+    document.head.appendChild(elemSYSCSS);
     applySystemCss();
 
     if (!isSafemode) {
         const customCssElement = document.createElement("style");
         customCssElement.id = "twitter_ui_customizer_css";
-        twitterHead.appendChild(customCssElement);
+        document.head.appendChild(customCssElement);
         applyCustomCss();
     }
 }
 
 export function applyDataCss() {
     document.querySelector("#twitter_ui_customizer_cssData")?.remove();
-    const twitterHead = document.querySelector("head");
 
     const elemDataCSS = document.createElement("style");
     elemDataCSS.id = "twitter_ui_customizer_cssData";
-    twitterHead.appendChild(elemDataCSS);
+    document.head.appendChild(elemDataCSS);
     elemDataCSS.textContent = `
     [data-tuic-icon-type="dog"] {
         background-image: url('${chrome.runtime.getURL(DOG)}');
@@ -71,11 +68,10 @@ export function applyDataCss() {
 
 export function applyCustomIcon() {
     document.querySelector("#twitter_ui_customizer_cssCustomIcon")?.remove();
-    const twitterHead = document.querySelector("head");
 
     const dataCssElement = document.createElement("style");
     dataCssElement.id = "twitter_ui_customizer_cssCustomIcon";
-    twitterHead.appendChild(dataCssElement);
+    document.head.appendChild(dataCssElement);
     dataCssElement.textContent = `
     [data-tuic-icon-type="custom"],
     #TUICIcon_IconImg {
@@ -132,7 +128,7 @@ export function applySystemCss() {
     }
     document.documentElement.dataset.tuicSettings = settingsOutput;
 
-    const r = document.querySelector(":root");
+    const r = document.documentElement;
     if (r instanceof HTMLElement) {
         const rs = r.style;
 

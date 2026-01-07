@@ -3,7 +3,7 @@ import { displaySetting } from "@modules/settings/display";
 
 let DisplaySettingObserver: MutationObserver = null;
 
-let target = document.querySelector("body") ?? undefined;
+let target = document.body ?? undefined;
 const config = {
     childList: true,
     subtree: true,
@@ -15,7 +15,7 @@ export function placeSettingObserver() {
 
     placeSettingPage();
 
-    if (!target) target = document.querySelector("body");
+    if (!target) target = document.body;
 
     DisplaySettingObserver.observe(target, config);
 }

@@ -56,7 +56,7 @@ import { waitForElement } from "@modules/utils/controlElements";
         if (getPref("XToTwitter.PwaManifest")) {
             chrome.runtime.sendMessage({
                 type: "enableReplaceTwitterManifest",
-                lang: document.querySelector("html").getAttribute("lang"),
+                lang: document.documentElement.getAttribute("lang"),
             });
         } else {
             chrome.runtime.sendMessage({
@@ -94,13 +94,13 @@ import { waitForElement } from "@modules/utils/controlElements";
         startTluiObserver();
 
         // メインのObserver
-        TUICObserver.target = document.querySelector("body");
+        TUICObserver.target = document.body;
         TUICObserver.bind();
         TUICObserver.callback();
         placeSettingObserver();
 
         // フォントサイズ変更の検出のためのObserver
-        new MutationObserver(applySystemCss).observe(document.querySelector("body"), {
+        new MutationObserver(applySystemCss).observe(document.body, {
             childList: false,
             subtree: false,
             attributes: true,
