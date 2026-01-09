@@ -53,12 +53,12 @@ export default defineConfig(({ command, mode }) => {
                     format: "es",
                     entryFileNames: "[name].js",
                     manualChunks(id, meta) {
-                        if (id.includes("node_modules") && meta.getModuleInfo(id).isIncluded !== false) {
-                            const arr_module_name = id.toString().split("node_modules/")[1].split("/");
+                        if (id.includes("node_modules") && meta.getModuleInfo(id)?.isIncluded !== false) {
+                            const arr_module_name = id.split("node_modules/")[1].split("/");
                             if (arr_module_name[0] === ".pnpm") {
-                                return arr_module_name[1].toString();
+                                return arr_module_name[1];
                             }
-                            return arr_module_name[0].toString();
+                            return arr_module_name[0];
                         }
                         if (id.includes("i18n")) {
                             return "i18n";
