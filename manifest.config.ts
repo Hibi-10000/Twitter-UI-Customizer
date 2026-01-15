@@ -1,7 +1,7 @@
 import type { Manifest } from "webextension-polyfill";
 
 const manifest: {
-    common: Partial<Manifest.WebExtensionManifest>;
+    common: Manifest.WebExtensionManifest;
     firefox: Partial<Manifest.WebExtensionManifest>;
     chromium: Partial<Manifest.WebExtensionManifest>;
     chromiumCRX: Partial<Manifest.WebExtensionManifest> & { update_url: string };
