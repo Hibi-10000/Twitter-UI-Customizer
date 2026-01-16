@@ -12,11 +12,11 @@
         "lint:tsc": "vue-tsc --noEmit",
         "lint:eslint": "eslint .",
         "lint:stylelint": "stylelint **/*.{css,vue}",
-        "lint:prettier": "prettier --check **/*.css",
+        "lint:prettier": "prettier --check **/*.css --experimental-cli",
         "format": "pnpm run format:eslint & pnpm run format:stylelint & pnpm run format:prettier",
         "format:eslint": "eslint --fix .",
         "format:stylelint": "stylelint --fix **/*.{css,vue}",
-        "format:prettier": "prettier --write **/*.css"
+        "format:prettier": "prettier --write **/*.css --experimental-cli"
     },
     "dependencies": {
         "bootstrap-icons": "^1.13.1",
