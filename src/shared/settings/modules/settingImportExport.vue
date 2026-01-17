@@ -91,7 +91,7 @@ import SettingSubTitle from "@shared/options/components/textParts/settingSubTitl
 import { ref } from "vue";
 import { titleObserverFunction } from "@content/modules/observer/titleObserver";
 import { updateClasses } from "@content/modules/htmlClass/classManager";
-import { isSafemode } from "@content/modules/settings/safemode/isSafemode";
+import { isSafemode } from "@content/modules/settings/safemode";
 import CheckBoxList from "@shared/options/components/CheckBoxList.vue";
 
 // EXPORT LOGIC

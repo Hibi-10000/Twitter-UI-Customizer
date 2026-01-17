@@ -1,5 +1,6 @@
 import { waitForElement } from "@modules/utils/controlElements";
 import { displaySetting } from "@modules/settings/display";
+import { isSafemode } from "./safemode";
 
 let DisplaySettingObserver: MutationObserver = null;
 
@@ -21,13 +22,13 @@ export function placeSettingObserver() {
 }
 
 export function placeSettingPage() {
+    if (isSafemode) return;
+
     if (document.querySelector("#TUICOriginalDisplaySetting")) {
         displaySetting(document.querySelector("#TUICOriginalDisplaySetting"));
         return;
     }
     switch (window.location.pathname) {
-        case "/tuic/safemode":
-            break;
         case "/settings/display": {
             waitForElement(`main div[role="slider"]`).then((elems) => {
                 const _large = elems[0].closest<HTMLElement>(`section[aria-labelledby="detail-header"] > div.r-qocrb3`);

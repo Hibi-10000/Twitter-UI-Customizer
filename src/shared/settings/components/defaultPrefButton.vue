@@ -6,7 +6,7 @@
 import { TUICI18N } from "@modules/i18n";
 import { waitForElement } from "@modules/utils/controlElements";
 import { getPref, setPref, mergeDefaultPref, savePref } from "@modules/pref";
-import { isSafemode } from "@modules/settings/safemode/isSafemode";
+import { isSafemode } from "@content/modules/settings/safemode";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 import { titleObserverFunction } from "@modules/observer/titleObserver";
