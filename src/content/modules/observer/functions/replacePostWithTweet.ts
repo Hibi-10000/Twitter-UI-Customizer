@@ -139,7 +139,7 @@ export function replacePost() {
         }
         tweetCount = writingTweetCount;
         // ツイートボタン
-        for (const elem of getNotReplacedElements(':is([data-testid="tweetButton"], [data-testid="tweetButtonInline"]) > div > span > span')) {
+        for (const elem of getNotReplacedElements(':is([data-testid="tweetButton"], [data-testid="tweetButtonInline"]) :not(:has(*))')) {
             if (isDialog && isMultipleTweet) {
                 // ダイアログで複数ツイートする場合
                 elem.textContent = TUICI18N.get("XtoTwitter-PostToTweet-tweetAllButton");
