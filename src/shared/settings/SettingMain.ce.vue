@@ -1,6 +1,6 @@
 <template>
     <link rel="stylesheet" :href="BootstrapIconsURL" />
-    <div id="TUIC_setting" class="twcss-flex justify-between TUICOriginalContent">
+    <div id="TUICSettings" class="twcss-flex justify-between TUICOriginalContent">
         <div class="twcss-text-explicit text-white font-tw text-[20px] font-extrabold leading-[24px] min-w-[0px] wrap-break-word">
             <hr v-if="!isSafemode" class="TUIC_setting_divider TUIC_setting_divider_m35" />
             <div class="TUIC_setting_toplogo_container">
@@ -113,7 +113,7 @@ import IconButton from "./components/IconButton.vue";
 import TUICLogo from "@content/icons/branding/tuic_unilogo.svg?component";
 import TUICUNILOGO_GRAY from "@content/icons/branding/tuic_unilogo_gray.svg?component";
 import BootstrapIcons from "bootstrap-icons/font/bootstrap-icons.css?url";
-import { isSafemode } from "@content/modules/settings/safemode/isSafemode";
+import { isSafemode } from "@content/modules/settings/safemode";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 import { TUICI18N } from "@content/modules/i18n";

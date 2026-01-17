@@ -35,7 +35,7 @@
 
 <script setup lang="ts">
 import { TUICI18N } from "@modules/i18n";
-import { isSafemode } from "@modules/settings/safemode/isSafemode";
+import { isSafemode } from "@content/modules/settings/safemode";
 
 import ColorsList from "../components/ColorsList.vue";
 

@@ -1,4 +1,4 @@
-import { isSafemode } from "@modules/settings/safemode/isSafemode";
+import { isSafemode } from "@content/modules/settings/safemode";
 
 import { DOG, TWITTER, X, XDaruma } from "./icons/index";
 import { ColorData } from "@shared/sharedData";

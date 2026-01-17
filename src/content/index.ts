@@ -6,13 +6,12 @@
 import { TUICObserver } from "@modules/observer/index";
 import { TUICI18N } from "@modules/i18n";
 import { applySystemCss, addCssElement, applyDataCss, applyCustomIcon, applyDefaultStyle } from "@content/applyCSS";
-import { runSafemode } from "@modules/settings/safemode/safemode";
-import { isSafemode } from "@modules/settings/safemode/isSafemode";
+import { isSafemode, runSafemode } from "@content/modules/settings/safemode";
 import { startTluiObserver } from "@shared/tlui/observer";
 import { initIconObserverFunction } from "@modules/observer/functions/changeIcon";
 import { titleObserverFunction } from "@modules/observer/titleObserver";
 import { updateClasses } from "./modules/htmlClass/classManager";
-import { placeSettingObserver } from "./modules/settings";
+import { runSettingComponentObserver } from "./modules/settings";
 import { placePrintPrefButton } from "./printPref";
 import { getPref, mergeDefaultPref, setPref, updatePref } from "@modules/pref";
 import { waitForElement } from "@modules/utils/controlElements";
@@ -97,7 +96,7 @@ import { waitForElement } from "@modules/utils/controlElements";
         TUICObserver.target = document.body;
         TUICObserver.bind();
         TUICObserver.callback();
-        placeSettingObserver();
+        runSettingComponentObserver();
 
         // フォントサイズ変更の検出のためのObserver
         new MutationObserver(applySystemCss).observe(document.body, {

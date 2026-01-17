@@ -39,7 +39,7 @@
 <script setup lang="ts">
 import { TUICI18N } from "@modules/i18n";
 
-import OptionMain from "../settings/SettingMain.ce.vue";
+import OptionMain from "@shared/settings/SettingMain.ce.vue";
 </script>
 
 <style scoped>
