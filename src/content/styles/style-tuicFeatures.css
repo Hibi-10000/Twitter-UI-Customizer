@@ -57,7 +57,7 @@
 }
 
 .TUICSidebarButton {
-    align-items: center;
+    width: fit-content;
     padding-top: 4px;
     padding-bottom: 4px;
     text-decoration: none;
