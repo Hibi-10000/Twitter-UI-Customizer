@@ -2,7 +2,11 @@ import type { Plugin } from "vite";
 import { isMainThread } from "node:worker_threads";
 import { type WebExtRunArgs, WebExtRun } from "./web-ext.ts";
 
-process.loadEnvFile(".env.local");
+try {
+    process.loadEnvFile(".env.local");
+} catch {
+    // do nothing
+}
 
 export default async (root: string, sourceDir: string, artifactsDir: string, mode: string): Promise<Plugin> => {
     let watch = false;
