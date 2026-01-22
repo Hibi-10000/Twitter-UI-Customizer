@@ -91,7 +91,7 @@ const clickEv = (index) => {
     buttonList[index]?.changeFunc?.();
     savePref();
     if (!isSafemode) {
-        document.querySelector("#TUIC_setting").remove();
+        document.querySelector("#TUICSettings").remove();
     }
     updateClasses();
     titleObserverFunction();

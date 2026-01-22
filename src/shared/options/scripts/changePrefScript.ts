@@ -18,7 +18,7 @@ export const XToTwitterRestoreIcon = () => {
     updateClasses();
     titleObserverFunction();
     if (!isSafemode) {
-        document.querySelector("#TUIC_setting").remove();
+        document.querySelector("#TUICSettings").remove();
     }
     if (!getPref("XToTwitter.XToTwitter") && document.title.endsWith(" / Twitter")) {
         document.title = document.title.replace(" / Twitter", " / X");

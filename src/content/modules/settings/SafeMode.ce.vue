@@ -93,7 +93,7 @@ nav {
         display: none;
     }
 }
-#TUIC_setting > div:first-of-type {
+#TUICSettings > div:first-of-type {
     display: none;
 }
 </style>

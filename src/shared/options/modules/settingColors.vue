@@ -55,7 +55,7 @@ const setDefaultTwitterColor = () => {
     setPref("", mergePref(getPref(""), importPref));
     savePref();
     if (!isSafemode) {
-        document.querySelector("#TUIC_setting").remove();
+        document.querySelector("#TUICSettings").remove();
     }
     updateClasses();
 };

@@ -131,7 +131,7 @@ const importFunc = async (type: number) => {
         if (isSafemode) {
             location.href = `${location.protocol}//${location.hostname}`;
         } else {
-            document.querySelector("#TUIC_setting").remove();
+            document.querySelector("#TUICSettings").remove();
             updateClasses();
             applySystemCss();
 
