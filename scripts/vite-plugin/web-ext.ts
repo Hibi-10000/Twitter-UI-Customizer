@@ -63,9 +63,6 @@ export class WebExtRun {
                         },
                         {},
                     );
-                    this.webExtRunner.registerCleanup(() => {
-                        process.exit(0);
-                    });
                 } else if (this.args.mode === "chromium") {
                     if (!this.args.chromium.keep_profile_changes) {
                         console.warn("Chromiumで実行の場合、.env.localや環境変数にkeepProfileChangesを指定することをおすすめします。");
@@ -90,10 +87,10 @@ export class WebExtRun {
                         },
                         {},
                     );
-                    this.webExtRunner.registerCleanup(() => {
-                        process.exit(0);
-                    });
                 }
+                this.webExtRunner?.registerCleanup(() => {
+                    process.exit(0);
+                });
             } else {
                 await this.webExt.cmd.build(
                     {
