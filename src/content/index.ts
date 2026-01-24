@@ -94,6 +94,7 @@ import { waitForElement } from "@content/utils/element";
         // メインのObserver
         const observer = new TUICObserver(document.body);
         observer.bind();
+        observer.callback();
         runSettingComponentObserver();
 
         // フォントサイズ変更の検出のためのObserver

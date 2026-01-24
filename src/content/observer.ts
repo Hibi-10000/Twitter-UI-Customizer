@@ -23,8 +23,6 @@ export class TUICObserver {
             childList: true,
             subtree: true,
         });
-
-        this.callback();
     }
 
     /** オブザーバーを停止します。 */
@@ -60,6 +58,8 @@ export class TUICObserver {
 
             if (mutatedElements.every((e) => e.nodeType === Node.TEXT_NODE || e.nodeName === "SCRIPT")) return;
         }
+
+        this.unbind();
 
         try {
             // Twitterのアイコンに関する設定
@@ -118,6 +118,8 @@ export class TUICObserver {
 
             // ツイート画面関係の変更
             modifyPostingDialog();
+
+            this.bind();
         } catch (e) {
             console.error(e);
             causedErrorCount++;
