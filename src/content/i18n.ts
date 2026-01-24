@@ -7,8 +7,8 @@ const i18nCache = {};
 export async function loadI18n(): Promise<void> {
     for (const language of langList) {
         i18nCache[language] = Object.assign(
-            (await langRes[`../i18n/${language}.json`]() as { default: any }).default,
-            (await langRes[`../i18n/ti18n/${language}.json`]() as { default: any }).default,
+            (await langRes[`../i18n/${language}.json`]() as { default: object }).default,
+            (await langRes[`../i18n/ti18n/${language}.json`]() as { default: object }).default,
         );
     }
 }
