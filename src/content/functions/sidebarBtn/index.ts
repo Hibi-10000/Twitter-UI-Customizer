@@ -90,7 +90,7 @@ function placeSidebarButtons(rootElement: HTMLElement) {
             if (i === "moremenu") {
                 element.onclick = processDropdown;
                 element.addEventListener("keydown", (e: KeyboardEvent) => {
-                    if (e.key === "Enter") {
+                    if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
                         processDropdown();
                     }
