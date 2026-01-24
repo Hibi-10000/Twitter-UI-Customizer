@@ -1,7 +1,9 @@
+import { render } from "solid-js/web";
+import { getPref } from "@content/settings";
 import { fontSizeClass } from "@content/utils/fontSize";
-import { JSX } from "solid-js";
+import type { JSX } from "solid-js";
 
-export const IconElement = (): JSX.Element => {
+const IconElement = (): JSX.Element => {
     return (
         <div class="css-175oi2r r-obd0qt r-18u37iz TUICOriginalContent TUICDMIconBox">
             <div class="css-175oi2r" style={{ width: `${fontSizeClass("47", "49", "52", "57", "62")}px` }}></div>
@@ -64,3 +66,29 @@ export const IconElement = (): JSX.Element => {
         </div>
     );
 };
+
+export function dmPage() {
+    if (getPref("dmPage.showIcon")) {
+        if (
+            document.querySelector(
+                `:is([data-testid="DM_Conversation_Avatar"]:not([data-testid="conversation"] *) [data-testid="UserAvatar-Container-unknown"] [role="presentation"] > div+div+div > div > div > div > div,[data-testid="DmScrollerContainer"] [data-testid="UserAvatar-Container-unknown"]:not([href$="/followers_you_follow"] *) [style*="background-image:"])`,
+            )
+        ) {
+            for (const elem of document.querySelectorAll(`[data-testid="messageEntry"]:not([role="button"]):not(.TUICDMIcon)`)) {
+                elem.classList.add("TUICDMIcon");
+                if (elem.parentElement.querySelector(`[data-testid="messageEntry"] > div > div+div+div:not(.TUICDMIconBox)`)) {
+                    continue;
+                }
+                //old Element
+                elem.querySelector("div > div+div+div.TUICDMIconBox")?.remove();
+
+                const elemParent = elem.parentElement.querySelector(`[data-testid="messageEntry"] > div`);
+                render(IconElement, elemParent);
+            }
+        }
+    } else {
+        document.querySelectorAll(".TUICDMIconBox").forEach((elem) => {
+            elem.remove();
+        });
+    }
+}
