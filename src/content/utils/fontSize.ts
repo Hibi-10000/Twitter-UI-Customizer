@@ -7,9 +7,9 @@
  * @param {T} x3 フォントサイズが三番目に小さいときの返り値
  * @param {T} x4 フォントサイズが四番目に小さいときの返り値
  * @param {T} x5 フォントサイズが五番目に小さいときの返り値
- * @return {T} 返り値もしくはそのままの値
+ * @return 返り値もしくはそのままの値
  */
-export function fontSizeClass<T extends number | string>(x1: T, x2: T, x3: T, x4: T, x5: T) {
+export function fontSizeClass<T extends number | string>(x1: T, x2: T, x3: T, x4: T, x5: T): T {
     const fontSize = document.documentElement.style.fontSize;
     switch (fontSize) {
         case "14px":

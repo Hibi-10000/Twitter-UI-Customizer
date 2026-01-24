@@ -6,7 +6,6 @@ import { moreMenuContent } from "./moreMenuContent";
 import { TUICI18N } from "@modules/i18n";
 import { SIDEBAR_BUTTON_ICON } from "@content/icons";
 import { backgroundColorCheck } from "@content/utils/color";
-import { getPrimitiveOrFunction } from "@content/utils/getValues";
 import { fontSizeClass } from "@content/utils/fontSize";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
@@ -257,12 +256,13 @@ const _data: Record<string, {
 };
 
 function createSidebarButton(id: string, svg: () => JSX.Element): () => JSX.Element {
+    const rawHref = _data[id].url;
+    const href = typeof rawHref === "function" ? rawHref() : rawHref;
+
     return () => (
         <a
             id={`TUICSidebar_${id}`}
-            href={getPrimitiveOrFunction<string>(
-                _data[id].url,
-            )}
+            href={href}
             role="link"
             tabindex="0"
             class="css-175oi2r r-1habvwh r-1loqt21 r-6koalj r-eqz5dr r-16y2uox r-1ny4l3l r-13qz1uu r-cnw61z TUICOriginalContent TUICSidebarButton"
