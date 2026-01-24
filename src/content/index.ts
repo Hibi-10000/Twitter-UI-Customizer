@@ -4,7 +4,7 @@
  */
 
 import { TUICObserver } from "@modules/observer/index";
-import { TUICI18N } from "@modules/i18n";
+import { loadI18n, translate } from "@content/i18n";
 import { applySystemCss, addCssElement, applyDataCss, applyCustomIcon, applyDefaultStyle } from "@content/applyCSS";
 import { isSafemode, runSafemode } from "@content/settings/ui/safemode";
 import { startTluiObserver } from "@shared/tlui/observer";
@@ -17,25 +17,25 @@ import { getPref, mergeDefaultPref, setPref, updatePref } from "@content/setting
 import { waitForElement } from "@content/utils/element";
 
 (async () => {
+    // TODO: twitter.com は x.com に強制的にリダイレクトされるため、これらは使用不可能
     if (location.href === "https://twitter.com/ja/tos") {
         applyDefaultStyle();
         // NOTE: i18n データのフェッチ
-        await TUICI18N.fetch();
+        await loadI18n();
         // Pref救出
         placePrintPrefButton();
     } else if (location.href === "https://twitter.com//") {
         // NOTE: i18n データのフェッチ
-        await TUICI18N.fetch();
+        await loadI18n();
         //document.write("aaa");
-        alert(TUICI18N.get("rescuePref-detail", "ja") + "\n\n" + TUICI18N.get("rescuePref-detail", "en"));
+        alert(translate("rescuePref-detail", "ja") + "\n\n" + translate("rescuePref-detail", "en"));
         alert(localStorage.getItem("TUIC"));
         alert(localStorage.getItem("TUIC_CSS"));
-        alert(TUICI18N.get("rescuePref-complete", "ja") + "\n\n" + TUICI18N.get("rescuePref-complete", "en"));
+        alert(translate("rescuePref-complete", "ja") + "\n\n" + translate("rescuePref-complete", "en"));
     } else {
         await Promise.all([
             // NOTE: i18n データのフェッチ
-            TUICI18N.fetch(),
-
+            loadI18n(),
             // NOTE: 設定の更新
             updatePref(),
 
@@ -47,7 +47,7 @@ import { waitForElement } from "@content/utils/element";
 
         // 起動メッセージ
         console.log(
-            `%cTwitter UI Customizer${isSafemode ? " (Safe Mode)" : ""}%cby kaonasi_biwa\n\nTwitter を思いのままに。⧸ Language: ${TUICI18N.get("@JapaneseLanguageName")}`,
+            `%cTwitter UI Customizer${isSafemode ? " (Safe Mode)" : ""}%cby kaonasi_biwa\n\nTwitter を思いのままに。⧸ Language: ${translate("@JapaneseLanguageName")}`,
             `font-family: system-ui, -apple-system, sans-serif, monospace; font-size: 1.2em; font-weight: bold; text-align: center; background: ${isSafemode ? "#5a9e1b" : "#1da1f2"}; color: #ffffff; padding: 0.5em 2em; margin-top: 0.5em; margin-left: 0.5em;`,
             `font-family: system-ui, -apple-system, sans-serif, monospace; margin: 0.5em; color: ${isSafemode ? "#5a9e1b" : "#1da1f2"};`,
         );

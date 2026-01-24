@@ -2,13 +2,13 @@
     <div class="TUICCheckBoxParent">
         <input type="checkbox" class="bi bi-check" :id="value.replace(/\./g, '-_-')" :checked="getPref(value)" @change="changePref(value, $event)" />
         <div>
-            <label class="TUIC_setting_text" :for="value.replace(/\./g, '-_-')">{{ TUICI18N.get(name) }}</label>
+            <label class="TUIC_setting_text" :for="value.replace(/\./g, '-_-')">{{ translate(name) }}</label>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { TUICI18N } from "@modules/i18n";
+import { translate } from "@content/i18n";
 import { getPref, setPref, savePref } from "@content/settings";
 import { titleObserverFunction } from "@modules/observer/titleObserver";
 import { updateClasses } from "@modules/htmlClass/classManager";

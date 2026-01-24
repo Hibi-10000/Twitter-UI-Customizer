@@ -1,7 +1,7 @@
 import { getPref } from "@content/settings";
 import { followersList } from "./followersListButton";
 import { profileInitialTab } from "./initProfileTab";
-import { TUICI18N } from "@content/modules/i18n";
+import { translate } from "@content/i18n";
 
 export function profileModify() {
     // フォロワー一覧のボタンについての処理
@@ -14,7 +14,7 @@ export function profileModify() {
     if (getPref("profileSetting.tabs.changeNameReplies")) {
         const repliesTabElement = document.querySelector(`[role="navigation"] [href$="/with_replies"] span`);
         if (repliesTabElement) {
-            repliesTabElement.textContent = TUICI18N.get("profileSetting-changeName-replies-oldName");
+            repliesTabElement.textContent = translate("profileSetting-changeName-replies-oldName");
         }
     }
 }

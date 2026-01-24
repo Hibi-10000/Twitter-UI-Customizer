@@ -1,7 +1,7 @@
 import type { JSX } from "solid-js";
-import { TUICI18N } from "@modules/i18n";
 import { backgroundColorCheck } from "@content/utils/color";
 import { fontSizeClass } from "@content/utils/fontSize";
+import { translate } from "@content/i18n";
 
 interface CreateSidebarButtonOptions {
     id: string;
@@ -68,7 +68,7 @@ export function createSidebarButton(options: CreateSidebarButtonOptions): () => 
                     style={{ "margin-right": "15px", "text-overflow": "unset" }}
                 >
                     <span class="css-901oao css-16my406 r-1tl8opc r-bcqeeo r-qvutc0" style={{ "text-overflow": "unset" }}>
-                        {TUICI18N.get("sidebarButtons-" + id)}
+                        {translate("sidebarButtons-" + id)}
                     </span>
                 </div>
             </div>

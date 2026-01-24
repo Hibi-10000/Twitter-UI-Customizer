@@ -1,16 +1,16 @@
 <template>
     <div :class="['TUIC_setting_color_colmn', !isDefault ? 'TUIC_ISNOTDEFAULT' : '', `TUICColorBoxRoot`]" ref="colorRoot">
         <h4 class="text-white wrap-break-word min-w-[0px] twcss-text-explicit TUIC_setting_text">
-            {{ TUICI18N.get(text) }}
+            {{ translate(text) }}
         </h4>
         <div class="TUIC_setting_input_container">
             <template v-if="ColorData.defaultTUICColor.colors[id]?.ldColor && store.editingColorType == 'buttonColor'">
-                <label class="text-white font-tw wrap-break-word min-w-[0px] twcss-text-explicit TUIC_setting_text" style="font-size: 10px"> {{ TUICI18N.get("settingColors-pleaseLD") }} </label><br />
+                <label class="text-white font-tw wrap-break-word min-w-[0px] twcss-text-explicit TUIC_setting_text" style="font-size: 10px"> {{ translate("settingColors-pleaseLD") }} </label><br />
             </template>
             <template v-else>
-                <ColorResetButton :btn-id="`${id}-${type}-default`" :btn-title="TUICI18N.get('settingUI-colorPicker-restoreDefault')" @clicked-btn="resetBtnClicked" />
+                <ColorResetButton :btn-id="`${id}-${type}-default`" :btn-title="translate('settingUI-colorPicker-restoreDefault')" @clicked-btn="resetBtnClicked" />
                 <RoundedColorPicker :input-id="`${id}-${type}`" :input-color-value="TUICColor1" @value-changed="colorChanged" ref="rColorPicker" />
-                <TransparentToggleButton :btn-id="`${id}-${type}`" :is-checked="TUIC_color[3] == '0'" @btn-clicked="TransparentToggleButtonClicked" :title-string="TUICI18N.get(`settingUI-colorPicker-transparent`)" ref="transparentButton" />
+                <TransparentToggleButton :btn-id="`${id}-${type}`" :is-checked="TUIC_color[3] == '0'" @btn-clicked="TransparentToggleButtonClicked" :title-string="translate(`settingUI-colorPicker-transparent`)" ref="transparentButton" />
             </template>
         </div>
     </div>
@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { TUICI18N } from "@modules/i18n";
+import { translate } from "@content/i18n";
 
 import RoundedColorPicker from "@shared/settings/components/RoundedColorPicker.vue";
 import TransparentToggleButton from "@shared/settings/components/TransparentToggleButton.vue";

@@ -1,7 +1,7 @@
 import type { JSX } from "solid-js";
 import { For } from "solid-js";
 import { render } from "solid-js/web";
-import { TUICI18N } from "@modules/i18n";
+import { translate } from "@content/i18n";
 import { waitForElement, hasClosest } from "@content/utils/element";
 import { getPref } from "@content/settings";
 import { backgroundColorClass } from "@content/utils/color";
@@ -41,7 +41,7 @@ const _data = {
                     } ${backgroundColorClass("r-1bwzh9t", "r-115tad6", "r-14j79pv")}`}
                 >
                     <span class="css-901oao css-16my406 r-1tl8opc r-bcqeeo r-qvutc0">
-                        {TUICI18N.get("bottomTweetButtons-setting-placeEngagementsLink-" + id + (isShort ? "-short" : ""))}
+                        {translate("bottomTweetButtons-setting-placeEngagementsLink-" + id + (isShort ? "-short" : ""))}
                     </span>
                 </span>
             </div>

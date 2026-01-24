@@ -1,4 +1,4 @@
-import { TUICI18N } from "@content/modules/i18n";
+import { translate } from "@content/i18n";
 import { hideElement, processElement, waitForElement } from "@content/utils/element";
 import { getPref, getSettingIDs } from "@content/settings";
 import { placeToastMessage } from "@content/utils/toastMessage";
@@ -68,7 +68,7 @@ function composingTweetButton() {
                     }
                     if (hashs.length > 0) {
                         navigator.clipboard.writeText(hashs.join(" "));
-                        placeToastMessage(TUICI18N.get("bottomTweetButtons-urlCopy-layer"));
+                        placeToastMessage(translate("bottomTweetButtons-urlCopy-layer"));
                     }
                 }
                 if (location.pathname === "/compose/post" && composeTweetButton.dataset.testid === "tweetButton" && getPref("composetweet.remainOpened")) {

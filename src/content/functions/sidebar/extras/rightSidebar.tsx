@@ -1,7 +1,7 @@
 import { waitForElement } from "@content/utils/element";
 import { fontSizeClass } from "@content/utils/fontSize";
 import { backgroundColorClass } from "@content/utils/color";
-import { TUICI18N } from "@content/modules/i18n";
+import { translate } from "@content/i18n";
 import { JSX } from "solid-js";
 import { render } from "solid-js/web";
 import { Dialog } from "@shared/tlui/components/Dialog";
@@ -31,16 +31,16 @@ const elem = (): JSX.Element => {
                 e.preventDefault();
                 setTimeout(async () => {
                     await waitForElement("#layers");
-                    const dialog = new Dialog(TUICI18N.get("common-displaySetting"));
+                    const dialog = new Dialog(translate("common-displaySetting"));
                     dialog.contentWidth = "50vw";
                     //dialog.fitContentWidth = true;
                     dialog
                         .addComponents([
-                            new ButtonComponent(TUICI18N.get("common-close"), () => {
+                            new ButtonComponent(translate("common-close"), () => {
                                 dialog.close();
                             }),
                             new DivBoxComponent({ id: "TUICOriginalDisplaySetting" }),
-                            new ButtonComponent(TUICI18N.get("common-close"), () => {
+                            new ButtonComponent(translate("common-close"), () => {
                                 dialog.close();
                             }),
                         ])
@@ -58,7 +58,7 @@ const elem = (): JSX.Element => {
             }}
         >
             <span class="css-1qaijid r-bcqeeo r-qvutc0 r-1tl8opc" style={{ "text-overflow": "unset" }}>
-                {TUICI18N.get("common-displaySetting")}
+                {translate("common-displaySetting")}
             </span>
         </a>
     );

@@ -1,6 +1,6 @@
 import { waitForElement } from "@content/utils/element";
 import { getPref } from "@content/settings";
-import { TUICI18N } from "@modules/i18n";
+import { translate } from "@content/i18n";
 import { JSX } from "solid-js";
 import { ButtonUnderTweetSelectors, TweetUnderButtonsData } from "./_data";
 import { backgroundColorClass } from "@content/utils/color";
@@ -29,7 +29,7 @@ export const tweetButtonData: Record<string, {
         },
         clickEvent: (data: ArticleInfomation) => {
             navigator.clipboard.writeText(data.elements.statusButton.href.replace(/(twitter\.com|x\.com)/, TweetUnderButtonsData.copyURL[getPref("tweetDisplaySetting.linkCopyURL")]));
-            placeToastMessage(TUICI18N.get("bottomTweetButtons-urlCopy-layer"));
+            placeToastMessage(translate("bottomTweetButtons-urlCopy-layer"));
         },
         enable: (articleInfomation: ArticleInfomation): boolean => {
             return true;

@@ -4,7 +4,7 @@
             <div>
                 <a href="https://twitter.com">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6l6 6" /></svg>
-                    <span>{{ TUICI18N.get("settingUI-goBackButton") }}</span>
+                    <span>{{ translate("settingUI-goBackButton") }}</span>
                 </a>
             </div>
             <div>
@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { TUICI18N } from "@modules/i18n";
+import { translate } from "@content/i18n";
 
 import OptionMain from "@shared/settings/SettingMain.ce.vue";
 </script>

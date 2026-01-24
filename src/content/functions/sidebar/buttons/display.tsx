@@ -5,7 +5,7 @@ import { waitForElement } from "@content/utils/element";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 import { DivBoxComponent } from "@shared/tlui/components/DivBox";
-import { TUICI18N } from "@modules/i18n";
+import { translate } from "@content/i18n";
 
 export const display: SidebarButtonDefinition = () =>
     createSidebarButton({
@@ -33,16 +33,16 @@ export const display: SidebarButtonDefinition = () =>
                     await waitForElement(`[data-testid="accountAccessLink"]`);
                     if (location.href.endsWith("/settings/delegate")) {
                         await waitForElement("#layers");
-                        const dialog = new Dialog(TUICI18N.get("common-displaySetting"));
+                        const dialog = new Dialog(translate("common-displaySetting"));
                         dialog.contentWidth = "50vw";
                         //dialog.fitContentWidth = true;
                         dialog
                             .addComponents([
-                                new ButtonComponent(TUICI18N.get("common-close"), () => {
+                                new ButtonComponent(translate("common-close"), () => {
                                     dialog.close();
                                 }),
                                 new DivBoxComponent({ id: "TUICOriginalDisplaySetting" }),
-                                new ButtonComponent(TUICI18N.get("common-close"), () => {
+                                new ButtonComponent(translate("common-close"), () => {
                                     dialog.close();
                                 }),
                             ])

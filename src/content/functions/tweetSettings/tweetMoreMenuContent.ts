@@ -1,7 +1,7 @@
 import { hideElement, waitForElement } from "@content/utils/element";
 import { getPref, getSettingIDs } from "@content/settings";
 import { fontSizeClass } from "@content/utils/fontSize";
-import { TUICI18N } from "@content/modules/i18n";
+import { translate } from "@content/i18n";
 
 interface TweetMoreMenuContentData {
     all: string[];
@@ -40,7 +40,7 @@ const _data: TweetMoreMenuContentData = {
             ).filter((elem) => {
                 const spanElem = elem.closest(`[role="menuitem"]`).querySelector("span");
                 if (spanElem) {
-                    return spanElem.textContent.startsWith("@") || spanElem.textContent === TUICI18N.get("tweetMoreMenuItems-userMute-textContent");
+                    return spanElem.textContent.startsWith("@") || spanElem.textContent === translate("tweetMoreMenuItems-userMute-textContent");
                 } else {
                     return false;
                 }
@@ -54,7 +54,7 @@ const _data: TweetMoreMenuContentData = {
             ).filter((elem) => {
                 const spanElem = elem.closest(`[role="menuitem"]`).querySelector("span");
                 if (spanElem) {
-                    return !spanElem.textContent.startsWith("@") && spanElem.textContent !== TUICI18N.get("tweetMoreMenuItems-userMute-textContent");
+                    return !spanElem.textContent.startsWith("@") && spanElem.textContent !== translate("tweetMoreMenuItems-userMute-textContent");
                 } else {
                     return false;
                 }

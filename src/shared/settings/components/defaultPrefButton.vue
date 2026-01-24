@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { TUICI18N } from "@modules/i18n";
+import { translate } from "@content/i18n";
 import { waitForElement } from "@content/utils/element";
 import { getPref, setPref, mergeDefaultPref, savePref } from "@content/settings";
 import { isSafemode } from "@content/settings/ui/safemode";
@@ -18,11 +18,11 @@ const ICON = ICON_RESET;
 
 const setDefault = async () => {
     await waitForElement("#layers");
-    const dialog = new Dialog(TUICI18N.get("common-confirm"));
+    const dialog = new Dialog(translate("common-confirm"));
     dialog
         .addComponents([
-            TUICI18N.get("settingUI-restoreDefaultAll-confirm"),
-            new ButtonComponent(TUICI18N.get("common-yes"), () => {
+            translate("settingUI-restoreDefaultAll-confirm"),
+            new ButtonComponent(translate("common-yes"), () => {
                 dialog.close();
                 const defaultPref = mergeDefaultPref({});
                 setPref("", defaultPref);
@@ -40,7 +40,7 @@ const setDefault = async () => {
                 }
             }),
             new ButtonComponent(
-                TUICI18N.get("common-no"),
+                translate("common-no"),
                 () => dialog.close(),
 
                 {

@@ -2,7 +2,7 @@
     <div class="TUICIconRadioButton">
         <input type="radio" :id="`${id.replace(/\./g, '-_-')}-_-${valueName}`" :name="id.replace(/\./g, '-_-')" :value="valueName" :checked="getPref(id) == valueName" @change="changePref(id, valueName)" />
         <div>
-            <label class="TUIC_setting_IconRadioButton" :for="`${id.replace(/\./g, '-_-')}-_-${valueName}`" :title="TUICI18N.get(name)">
+            <label class="TUIC_setting_IconRadioButton" :for="`${id.replace(/\./g, '-_-')}-_-${valueName}`" :title="translate(name)">
                 <component :is="props.icon" />
             </label>
         </div>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { TUICI18N } from "@modules/i18n";
+import { translate } from "@content/i18n";
 import { getPref, setPref, savePref } from "@content/settings";
 import { Component } from "vue";
 import { updateClasses } from "@content/modules/htmlClass/classManager";

@@ -116,7 +116,7 @@ import BootstrapIcons from "bootstrap-icons/font/bootstrap-icons.css?url";
 import { isSafemode } from "@content/settings/ui/safemode";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
-import { TUICI18N } from "@content/modules/i18n";
+import { translate } from "@content/i18n";
 
 const BootstrapIconsURL = chrome.runtime.getURL(BootstrapIcons);
 
@@ -143,17 +143,17 @@ function reloadCSS() {
 }
 
 function rescuePref() {
-    const dialog = new Dialog(TUICI18N.get("rescuePref-ButtonLabel"));
+    const dialog = new Dialog(translate("rescuePref-ButtonLabel"));
     dialog
         .addComponents([
-            ...TUICI18N.get("rescuePref-dialog").split("\r"),
+            ...translate("rescuePref-dialog").split("\r"),
             "",
             /*            new TextboxComponent("", { readonly: false, rows: 5 }),
-            new ButtonComponent(TUICI18N.get("common-copy-and-close"), () => {
+            new ButtonComponent(translate("common-copy-and-close"), () => {
                 dialog.close();
                 navigator.clipboard.writeText("");
             }),*/
-            new ButtonComponent(TUICI18N.get("common-go-and-openNewTab"), () => {
+            new ButtonComponent(translate("common-go-and-openNewTab"), () => {
                 openInNewTab("https://twitter.com/?mx=1");
                 document.querySelector("#importSection").setAttribute("open", "true");
                 document.querySelector("#importTitle").scrollIntoView({
@@ -161,7 +161,7 @@ function rescuePref() {
                 });
                 dialog.close();
             }),
-            new ButtonComponent(TUICI18N.get("common-cancel"), () => dialog.close(), { invertColor: true }),
+            new ButtonComponent(translate("common-cancel"), () => dialog.close(), { invertColor: true }),
         ])
         .open();
 }

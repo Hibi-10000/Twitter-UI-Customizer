@@ -9,7 +9,7 @@ import { ButtonUnderTweetSelectors, TweetUnderButtonsData } from "./_data";
 import { ProcessedClass } from "@shared/sharedData";
 import { fontSizeClass } from "@content/utils/fontSize";
 import { placeToastMessage } from "@content/utils/toastMessage";
-import { TUICI18N } from "@content/modules/i18n";
+import { translate } from "@content/i18n";
 import { modifyTweetsStyle } from "./modifyTweetsStyle";
 
 let buttonUnderTweetRunning = false;
@@ -43,7 +43,7 @@ const _data = {
                     .addEventListener("click", (e) => {
                         e.stopImmediatePropagation();
                         navigator.clipboard.writeText(elem.href.replace(/(twitter\.com|x\.com)/, TweetUnderButtonsData.copyURL[getPref("tweetDisplaySetting.linkShareCopyURL").replace("Share", "")]));
-                        placeToastMessage(TUICI18N.get("bottomTweetButtons-urlCopy-layer"));
+                        placeToastMessage(translate("bottomTweetButtons-urlCopy-layer"));
                         document.querySelector<HTMLDivElement>(`#layers > div+div > div > div > div > div+div > div > div`).click();
                     });
             }, 100);

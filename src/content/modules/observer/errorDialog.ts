@@ -1,4 +1,4 @@
-import { TUICI18N } from "@modules/i18n";
+import { translate } from "@content/i18n";
 import { getSourceMap, NRStack, parseErrorStringFF } from "@shared/sourcemap";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 import { Dialog } from "@shared/tlui/components/Dialog";
@@ -22,18 +22,18 @@ export async function catchError(e: Error, callback: (() => unknown) | null = nu
     // })();
 
     if (errors.length > 2) {
-        const dialog = new Dialog(TUICI18N.get("common-error"));
+        const dialog = new Dialog(translate("common-error"));
         dialog
             .addComponents([
-                ...TUICI18N.get("observerError-message").split("\r"),
+                ...translate("observerError-message").split("\r"),
                 "",
                 new TextboxComponent(errors.join("\r\r"), { readonly: true, rows: 5 }),
-                new ButtonComponent(TUICI18N.get("common-copy-and-close"), () => {
+                new ButtonComponent(translate("common-copy-and-close"), () => {
                     dialog.close();
                     navigator.clipboard.writeText(errors.join("\r\r"));
                 }),
                 new ButtonComponent(
-                    TUICI18N.get("common-close"),
+                    translate("common-close"),
                     () => dialog.close(),
 
                     {
