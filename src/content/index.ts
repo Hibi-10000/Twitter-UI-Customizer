@@ -8,7 +8,7 @@ import { TUICI18N } from "@modules/i18n";
 import { applySystemCss, addCssElement, applyDataCss, applyCustomIcon, applyDefaultStyle } from "@content/applyCSS";
 import { isSafemode, runSafemode } from "@content/modules/settings/safemode";
 import { startTluiObserver } from "@shared/tlui/observer";
-import { initIconObserverFunction } from "@modules/observer/functions/changeIcon";
+import { initIconObserverFunction } from "@content/functions/changeIcon";
 import { titleObserverFunction } from "@modules/observer/titleObserver";
 import { updateClasses } from "./modules/htmlClass/classManager";
 import { runSettingComponentObserver } from "./modules/settings";

@@ -1,6 +1,6 @@
-import { tweetSettings, hideOsusumeTweets, replacePost, updateStyles, profileModify, sidebarButtons, dmPage, fixTwittersBugs, changeIcon, hideElements, modifyPostingDialog, pinningTab } from "./functions";
+import { tweetSettings, hideOsusumeTweets, replacePost, updateStyles, profileModify, sidebarButtons, dmPage, fixTwittersBugs, changeIcon, hideElements, modifyPostingDialog, pinningTab } from "@content/functions/index";
 import { catchError } from "./errorDialog";
-import { placeDisplayButton } from "@content/modules/observer/functions/sidebarBtn/rightSidebarTexts";
+import { placeDisplayButton } from "@content/functions/sidebarBtn/rightSidebarTexts";
 import { getPref } from "../pref/index";
 import { hideElement } from "../utils/controlElements";
 
