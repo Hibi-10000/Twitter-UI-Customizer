@@ -1,4 +1,4 @@
-import { sidebarButtons } from "./sidebarBtn";
+import { sidebarButtons } from "./sidebar";
 import { dmPage } from "./fixDM";
 import { replacePost } from "./replacePostWithTweet";
 import { fixTwittersBugs } from "./fixTwittersBugs";
