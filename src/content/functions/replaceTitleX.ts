@@ -1,30 +1,34 @@
 import { translate } from "@content/i18n";
-import { isSafemode } from "@content/settings/ui/safemode";
 import { getPref } from "@content/settings";
 
 const notificationsRegexp = /^(\([0-9]+\))[0-9() ]+([^0-9() ])/;
 
-const headObserver: MutationObserver = new MutationObserver(titleObserverFunction);
-export function titleObserverFunction() {
-    let stoppedObserver = false;
-    if (isSafemode) {
-        headObserver.disconnect();
-        stoppedObserver = true;
-        document.title = translate("safemode-title");
-    } else if (getPref("XToTwitter.XToTwitter")) {
-        const locPath = window.location.pathname;
-        if (!document.title.endsWith("Twitter")) {
-            headObserver.disconnect();
-            stoppedObserver = true;
+const titleObserver: MutationObserver = new MutationObserver(setTitleObserver);
 
+// TODO: これだけ特別で、functions/index.ts にインポートされていない。
+// イベントバスを導入 (#240)し、設定の変更イベント・<title> の変更イベントを購読することにより解決したい。
+// なお放置されているのはよくないので、仮に1年以上放置されているようでしたら容赦なくリファクタリングしてください。(2026/01/25)
+export function setTitleObserver() {
+    const titleElement = document.querySelector("title");
+    if (titleElement) {
+        titleObserver.observe(titleElement, {
+            characterData: true,
+            childList: true,
+        });
+    }
+
+    let newTitle = document.title;
+    if (getPref("XToTwitter.XToTwitter")) {
+        const locPath = window.location.pathname;
+        if (!newTitle.endsWith("Twitter")) {
             const replaceI18NRes = (regexp: string | RegExp, i18nRes: string) => {
-                const titleInfo = document.title.match(new RegExp(regexp)); /*/Xユーザーの(.*)さん: 「(.*)」/*/
+                const titleInfo = newTitle.match(new RegExp(regexp));
                 if (!titleInfo || titleInfo.length <= 1) {
-                    document.title = document.title.replace(/(.*)\/ X/, "$1/ Twitter");
+                    newTitle = newTitle.replace(/(.*)\/ X/, "$1/ Twitter");
                 } else {
-                    document.title
+                    newTitle
                         = (
-                            (document.title.startsWith("(") ? document.title.match(/\(\d*\)/) + " " : "")
+                            (newTitle.startsWith("(") ? newTitle.match(/\(\d*\)/) + " " : "")
                             + i18nRes
                                 .replaceAll("&quot;", '"')
                                 .replace("{fullName}", titleInfo[1])
@@ -35,10 +39,10 @@ export function titleObserverFunction() {
                 }
             };
 
-            if (document.title == "X") {
-                document.title = "Twitter";
+            if (newTitle == "X") {
+                newTitle = "Twitter";
             } else if (locPath.includes("/i/timeline") || locPath.includes("/compose/tweet")) {
-                document.title = (document.title.startsWith("(") ? document.title.match(/\(\d*\)/) + " " : "") + translate("XtoTwitter-PostToTweet-tweetNotificationsTitle") + " / Twitter";
+                newTitle = (newTitle.startsWith("(") ? newTitle.match(/\(\d*\)/) + " " : "") + translate("XtoTwitter-PostToTweet-tweetNotificationsTitle") + " / Twitter";
             } else if (locPath.endsWith("/with_replies") && !locPath.includes("/status/")) {
                 const postsWithRepliesLatest = translate("XtoTwitter-PostToTweet-profile-postsWithReplies-latest");
                 const postsWithRepliesOld = translate("XtoTwitter-PostToTweet-profile-postsWithReplies-old");
@@ -58,7 +62,6 @@ export function titleObserverFunction() {
                 const likesLatest = translate("XtoTwitter-PostToTweet-profile-likes-latest");
                 const likesOld = translate("XtoTwitter-PostToTweet-profile-likes-old");
 
-                /*/Xユーザーの(.*)さん: 「(.*)」/*/
                 const regexp = new RegExp(likesLatest.replaceAll("&quot;", '"').replaceAll("(", "\\(").replaceAll(")", "\\)").replace("{fullName}", "(.*)").replace("{screenName}", "(.*)"));
 
                 replaceI18NRes(regexp, likesOld);
@@ -66,29 +69,21 @@ export function titleObserverFunction() {
                 const titlePeopleTweetedUser = translate("XtoTwitter-PostToTweet-titlePeopleTweetedUser");
                 const titlePeopleTweeted = translate("XtoTwitter-PostToTweet-titlePeopleTweeted");
 
-                /*/Xユーザーの(.*)さん: 「(.*)」/*/
                 const regexp = new RegExp(titlePeopleTweetedUser.replaceAll("&quot;", '"').replace("{fullName}", "(.*)").replace("{tweetText}", "(.*)"));
 
                 replaceI18NRes(regexp, titlePeopleTweeted);
-            } else if (document.title.endsWith(" / X")) {
-                document.title = document.title.replace(/(.*)\/ X/, "$1/ Twitter");
+            } else if (newTitle.endsWith(" / X")) {
+                newTitle = newTitle.replace(/(.*)\/ X/, "$1/ Twitter");
             }
         }
-        if (notificationsRegexp.test(document.title)) {
-            headObserver.disconnect();
-            stoppedObserver = true;
-            document.title = document.title.replace(notificationsRegexp, "$1 $2");
+        if (notificationsRegexp.test(newTitle)) {
+            newTitle = newTitle.replace(notificationsRegexp, "$1 $2");
         }
     } /* else if (document.title.endsWith(" / Twitter")) {
-        headObserver.disconnect();
-        stoppedObserver = true;
         document.title = document.title.replace(" / Twitter", " / X");
     }*/
 
-    if (stoppedObserver) {
-        headObserver.observe(document.querySelector("title"), {
-            characterData: true,
-            childList: true,
-        });
+    if (newTitle !== document.title) {
+        document.title = newTitle;
     }
 }

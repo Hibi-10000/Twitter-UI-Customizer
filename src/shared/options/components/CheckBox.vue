@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import { translate } from "@content/i18n";
 import { getPref, setPref, savePref } from "@content/settings";
-import { titleObserverFunction } from "@content/observer/titleObserver";
+import { setTitleObserver } from "@content/functions/replaceTitleX";
 import { cleanModifiedElements } from "@content/applyCSS";
 
 defineProps<{
@@ -22,7 +22,7 @@ const changePref = (path: string, event: Event) => {
     setPref(path, (event.target as HTMLInputElement).checked);
     savePref();
     cleanModifiedElements();
-    titleObserverFunction();
+    setTitleObserver();
 };
 </script>
 

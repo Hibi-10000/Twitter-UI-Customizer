@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import safemodeVue from "./SafeMode.ce.vue";
 import { createPinia } from "pinia";
+import { translate } from "@content/i18n";
 
 // https://stackoverflow.com/questions/42800035/why-cant-you-create-custom-elements-in-content-scripts
 // import "@webcomponents/custom-elements";
@@ -13,6 +14,7 @@ export const isSafemode = location.pathname === "/tuic/safemode";
 export function runSafemode() {
     if (!isSafemode) return;
 
+    document.title = translate("safemode-title");
     document.querySelector("#TUIC_safemode")?.remove();
     document.querySelector(".twitter_ui_customizer_css")?.remove();
     document.querySelector<HTMLElement>("#react-root").style.display = "none";

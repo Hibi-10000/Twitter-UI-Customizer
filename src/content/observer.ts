@@ -1,16 +1,20 @@
 import { tweetSettings, hideOsusumeTweets, replacePost, updateStyles, profileModify, sidebarButtons, dmPage, fixTwittersBugs, changeIcon, hideElements, modifyPostingDialog, pinningTab } from "@content/functions/index";
-import { catchError } from "./errorDialog";
+import { showErrorDialog } from "./utils/error";
 import { placeDisplayButton } from "@content/functions/sidebar/extras/rightSidebar";
 import { getPref } from "@content/settings/index";
 import { hideElement } from "@content/utils/element";
 
-//let time = 0;
+let causedErrorCount = 0;
 
-export const TUICObserver = new (class TUICObserver {
+export class TUICObserver {
     /** 内部で使用される MutationObserver */
     public observer: MutationObserver = new MutationObserver((mutations) => this.callback(mutations));
     /** 監視対象の要素 */
     public target: Element | null = null;
+
+    public constructor(element: Element | null = null) {
+        this.target = element;
+    }
 
     /** オブザーバーを開始します。 */
     public bind(): void {
@@ -19,6 +23,8 @@ export const TUICObserver = new (class TUICObserver {
             childList: true,
             subtree: true,
         });
+
+        this.callback();
     }
 
     /** オブザーバーを停止します。 */
@@ -26,34 +32,35 @@ export const TUICObserver = new (class TUICObserver {
         this.observer.disconnect();
     }
 
-    /** オブザーバーのコールバック
-     * 引数がなし or undefinedの場合、要素チェックは行われません*/
-    public callback(mutations: MutationRecord[] = undefined): void {
-        const mutationElements = mutations ? mutations.flatMap((m) => Array.from(m.addedNodes) as Element[]) : [];
-        if (mutations) {
+    /**
+     * オブザーバーのコールバック
+     * @param mutations 変化した要素の配列
+     */
+    public callback(mutations: MutationRecord[] = []): void {
+        const mutatedElements = mutations.flatMap((m) => Array.from(m.addedNodes));
+
+        if (mutations.length > 0) {
             if (getPref("performanceSettings.removeDeletedTweets")) {
-                const removedElements = mutations.filter((m) => (Array.from(m.removedNodes) as Element[]).some((e) => (e as HTMLElement)?.tagName === "ARTICLE" && (e as HTMLElement)?.dataset.tuicProcessedArticle === ""));
-                if (removedElements.length !== 0) {
-                    for (const elem of removedElements) {
-                        const removeElement = (elem.target as Element)?.closest<HTMLElement>(`[data-testid="cellInnerDiv"]`);
-                        if (removeElement.nextElementSibling && !removeElement.nextElementSibling.querySelector("article")) {
-                            removeElement.nextElementSibling.remove();
-                            hideElement(removeElement);
+                // NOTE: 削除されたツイートの要素を削除する処理
+                const unusedTweetMutationRecord = mutations.filter((m) => (Array.from(m.removedNodes)).some((e) => (e as HTMLElement)?.tagName === "ARTICLE" && (e as HTMLElement)?.dataset.tuicProcessedArticle === ""));
+                for (const record of unusedTweetMutationRecord) {
+                    const removeElement = (record.target as Element)?.closest<HTMLElement>(`[data-testid="cellInnerDiv"]`);
+                    if (removeElement.nextElementSibling && !removeElement.nextElementSibling.querySelector("article")) {
+                        removeElement.nextElementSibling.remove();
+                        hideElement(removeElement);
+                    } else {
+                        if (removeElement.previousElementSibling && !removeElement.previousElementSibling.querySelector("article")) {
+                            removeElement?.remove();
                         } else {
-                            if (removeElement.previousElementSibling && !removeElement.previousElementSibling.querySelector("article")) {
-                                removeElement?.remove();
-                            } else {
-                                hideElement(removeElement);
-                            }
+                            hideElement(removeElement);
                         }
                     }
                 }
             }
 
-            if (mutationElements.length === 0 || mutationElements.every((e) => e.nodeType === Node.TEXT_NODE || e.nodeName === "SCRIPT")) return;
-            //mutationElements.forEach((e) => console.log(e));
+            if (mutatedElements.every((e) => e.nodeType === Node.TEXT_NODE || e.nodeName === "SCRIPT")) return;
         }
-        this.unbind();
+
         try {
             // Twitterのアイコンに関する設定
             changeIcon();
@@ -66,7 +73,7 @@ export const TUICObserver = new (class TUICObserver {
 
             //tweetSettings();
             //if (mutationElements.some((e) => (e as HTMLElement).dataset?.testid === "cellInnerDiv")) tweetSettings();
-            if (mutationElements.some(
+            if (mutatedElements.some(
                 (e) =>
                     (e as HTMLElement).dataset?.testid === "cellInnerDiv")
                 || (
@@ -111,12 +118,14 @@ export const TUICObserver = new (class TUICObserver {
 
             // ツイート画面関係の変更
             modifyPostingDialog();
-
-            //throw new Error("エラー時のダイアログのテスト用です。");
-
-            this.bind();
         } catch (e) {
-            catchError(e, () => this.callback());
+            console.error(e);
+            causedErrorCount++;
+            if (causedErrorCount >= 3) {
+                showErrorDialog(e);
+            } else {
+                window.setTimeout(() => this.callback(), 3000);
+            }
         }
     }
-})();
+}

@@ -89,7 +89,7 @@ import FIGURE_IMPORTREPLACE from "@content/icons/figure/import_replace.svg?compo
 import SectionTitle2 from "../components/SectionTitle2.vue";
 import SettingSubTitle from "@shared/options/components/textParts/settingSubTitle.vue";
 import { ref } from "vue";
-import { titleObserverFunction } from "@content/observer/titleObserver";
+import { setTitleObserver } from "@content/functions/replaceTitleX";
 
 import { isSafemode } from "@content/settings/ui/safemode";
 import CheckBoxList from "@shared/options/components/CheckBoxList.vue";
@@ -135,7 +135,7 @@ const importFunc = async (type: number) => {
             cleanModifiedElements();
             applySystemCss();
 
-            titleObserverFunction();
+            setTitleObserver();
             if (!getPref("otherBoolSetting.XtoTwitter") && document.title.endsWith(" / Twitter")) {
                 document.title = document.title.replace(" / Twitter", " / X");
             }

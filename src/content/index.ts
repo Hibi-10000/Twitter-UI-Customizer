@@ -3,13 +3,13 @@
  * << Twitter を思いのままに。 >>
  */
 
-import { TUICObserver } from "@content/observer/index";
+import { TUICObserver } from "@content/observer";
 import { loadI18n, translate } from "@content/i18n";
 import { applySystemCss, addCssElement, applyDataCss, applyCustomIcon, applyDefaultStyle, cleanModifiedElements } from "@content/applyCSS";
 import { isSafemode, runSafemode } from "@content/settings/ui/safemode";
 import { startTluiObserver } from "@shared/tlui/observer";
 import { initIconObserverFunction } from "@content/functions/changeIcon";
-import { titleObserverFunction } from "@content/observer/titleObserver";
+import { setTitleObserver } from "@content/functions/replaceTitleX";
 import { runSettingComponentObserver } from "@content/settings/ui";
 import { placePrintPrefButton } from "./printPref";
 import { getPref, mergeDefaultPref, setPref, updatePref } from "@content/settings";
@@ -86,15 +86,14 @@ import { waitForElement } from "@content/utils/element";
         }
 
         // タイトル変更のためのObserver
-        waitForElement("title").then(titleObserverFunction);
+        waitForElement("title").then(setTitleObserver);
 
         // TLUI用のObserver
         startTluiObserver();
 
         // メインのObserver
-        TUICObserver.target = document.body;
-        TUICObserver.bind();
-        TUICObserver.callback();
+        const observer = new TUICObserver(document.body);
+        observer.bind();
         runSettingComponentObserver();
 
         // フォントサイズ変更の検出のためのObserver
