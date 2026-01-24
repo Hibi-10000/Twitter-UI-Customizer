@@ -6,10 +6,10 @@
 </template>
 
 <script setup lang="ts">
-import BRAND_TWITTER from "@content/icons/brand/twitter.svg?component";
-import ICON_VERIFIED from "@content/icons/common/verified.svg?component";
-import ICON_MORE from "@content/icons/common/more.svg?component";
-import BRAND_X from "@content/icons/brand/x.svg?component";
+import BRAND_TWITTER from "@shared/icons/brand/twitter.svg?component";
+import ICON_VERIFIED from "@shared/icons/common/verified.svg?component";
+import ICON_MORE from "@shared/icons/common/more.svg?component";
+import BRAND_X from "@shared/icons/brand/x.svg?component";
 import IconButton from "@shared/settings/components/IconButton.vue";
 import defaultPrefButton from "../components/defaultPrefButton.vue";
 

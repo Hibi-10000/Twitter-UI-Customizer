@@ -1,8 +1,8 @@
-import DOG from "@content/icons/logo/dog.png?url";
-import TWITTER from "@content/icons/logo/twitter.svg?raw";
-import X from "@content/icons/logo/x.svg?raw";
-import { XDaruma } from "@content/icons/index";
-import EMPTY from "@content/icons/logo/empty.svg?url";
+import DOG from "@shared/icons/logo/dog.png?url";
+import TWITTER from "@shared/icons/logo/twitter.svg?raw";
+import X from "@shared/icons/logo/x.svg?raw";
+import { XDaruma } from "@shared/icons";
+import EMPTY from "@shared/icons/logo/empty.svg?url";
 import { getColorFromPref } from "@content/utils/color";
 import { getPref } from "@content/settings";
 import { hideElement } from "@content/utils/element";

@@ -48,11 +48,11 @@ import { ref } from "vue";
 
 // new URL("./img.png", import.meta.url).href;
 
-import ARROW_LEFT from "@content/icons/arrow_cutter/arrow_toleft.svg?component";
-import ARROW_RIGHT from "@content/icons/arrow_cutter/arrow_toright.svg?component";
-import ARROW_UP from "@content/icons/arrow_cutter/arrow_up.svg?component";
-import ARROW_DOWN from "@content/icons/arrow_cutter/arrow_down.svg?component";
-import RESET from "@content/icons/common/reset.svg?component";
+import ARROW_LEFT from "@shared/icons/arrow_cutter/arrow_toleft.svg?component";
+import ARROW_RIGHT from "@shared/icons/arrow_cutter/arrow_toright.svg?component";
+import ARROW_UP from "@shared/icons/arrow_cutter/arrow_up.svg?component";
+import ARROW_DOWN from "@shared/icons/arrow_cutter/arrow_down.svg?component";
+import RESET from "@shared/icons/common/reset.svg?component";
 
 // import { ARROW_LEFT, ARROW_UP, ARROW_DOWN, ARROW_RIGHT, RESET } from "@content/data/icons";
 

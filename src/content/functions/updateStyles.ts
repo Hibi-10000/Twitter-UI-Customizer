@@ -1,5 +1,5 @@
 import { applySystemCss } from "@content/applyCSS";
-import { FAVORITE_ICON, HOME_ICON, SIDEBAR_BUTTON_ICON } from "@content/icons";
+import { FAVORITE_ICON, HOME_ICON, SIDEBAR_BUTTON_ICON } from "@shared/icons";
 import { getPref } from "@content/settings";
 import { ProcessedClass } from "@shared/sharedData";
 import { SidebarButtonSelectors } from "./sidebar";

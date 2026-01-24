@@ -1,5 +1,5 @@
 import type { SidebarButtonDefinition } from "../types";
-import { SIDEBAR_BUTTON_ICON } from "@content/icons";
+import { SIDEBAR_BUTTON_ICON } from "@shared/icons";
 import { createSidebarButton } from "../components";
 import { waitForElement } from "@content/utils/element";
 

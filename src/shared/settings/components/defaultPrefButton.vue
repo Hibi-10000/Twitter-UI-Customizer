@@ -11,7 +11,7 @@ import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 import { setTitleObserver } from "@content/functions/replaceTitleX";
 import { cleanModifiedElements } from "@content/applyCSS";
-import ICON_RESET from "@content/icons/common/reset.svg?component";
+import ICON_RESET from "@shared/icons/common/reset.svg?component";
 import IconButton from "@shared/settings/components/IconButton.vue";
 
 const ICON = ICON_RESET;

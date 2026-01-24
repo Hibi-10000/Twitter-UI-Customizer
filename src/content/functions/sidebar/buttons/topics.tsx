@@ -1,6 +1,6 @@
 import type { SidebarButtonDefinition } from "../types";
 import { waitForElement } from "@content/utils/element";
-import { SIDEBAR_BUTTON_ICON } from "@content/icons";
+import { SIDEBAR_BUTTON_ICON } from "@shared/icons";
 import { createSidebarButton } from "../components";
 import { setDynamicUrl } from "../utils";
 

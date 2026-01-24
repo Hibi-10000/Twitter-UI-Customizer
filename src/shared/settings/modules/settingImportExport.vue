@@ -84,8 +84,8 @@ import { applySystemCss, cleanModifiedElements } from "@content/applyCSS";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 
-import FIGURE_IMPORTAPPEND from "@content/icons/figure/import_append.svg?component";
-import FIGURE_IMPORTREPLACE from "@content/icons/figure/import_replace.svg?component";
+import FIGURE_IMPORTAPPEND from "@shared/icons/figure/import_append.svg?component";
+import FIGURE_IMPORTREPLACE from "@shared/icons/figure/import_replace.svg?component";
 import SectionTitle2 from "../components/SectionTitle2.vue";
 import SettingSubTitle from "@shared/options/components/textParts/settingSubTitle.vue";
 import { ref } from "vue";

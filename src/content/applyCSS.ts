@@ -1,6 +1,6 @@
 import { isSafemode } from "@content/settings/ui/safemode";
 
-import { DOG, TWITTER, X, XDaruma } from "./icons/index";
+import { DOG, TWITTER, X, XDaruma } from "@shared/icons";
 import { AttrList, ClassList, ColorData } from "@shared/sharedData";
 
 import styleUrl from "./styles/index.css?url";
