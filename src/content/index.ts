@@ -3,14 +3,13 @@
  * << Twitter を思いのままに。 >>
  */
 
-import { TUICObserver } from "@modules/observer/index";
+import { TUICObserver } from "@content/observer/index";
 import { loadI18n, translate } from "@content/i18n";
-import { applySystemCss, addCssElement, applyDataCss, applyCustomIcon, applyDefaultStyle } from "@content/applyCSS";
+import { applySystemCss, addCssElement, applyDataCss, applyCustomIcon, applyDefaultStyle, cleanModifiedElements } from "@content/applyCSS";
 import { isSafemode, runSafemode } from "@content/settings/ui/safemode";
 import { startTluiObserver } from "@shared/tlui/observer";
 import { initIconObserverFunction } from "@content/functions/changeIcon";
-import { titleObserverFunction } from "@modules/observer/titleObserver";
-import { updateClasses } from "./modules/htmlClass/classManager";
+import { titleObserverFunction } from "@content/observer/titleObserver";
 import { runSettingComponentObserver } from "@content/settings/ui";
 import { placePrintPrefButton } from "./printPref";
 import { getPref, mergeDefaultPref, setPref, updatePref } from "@content/settings";
@@ -64,7 +63,7 @@ import { waitForElement } from "@content/utils/element";
         }
 
         // 前起動時のTUICの要素・Classが残っていればすべて削除
-        updateClasses(true);
+        cleanModifiedElements();
         for (const elem of document.querySelectorAll(".TUICOriginalContent")) {
             elem.remove();
         }

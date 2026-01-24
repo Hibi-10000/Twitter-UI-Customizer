@@ -13,13 +13,13 @@
 import { translate } from "@content/i18n";
 import { getPref, setPref, savePref } from "@content/settings";
 import { Component } from "vue";
-import { updateClasses } from "@content/modules/htmlClass/classManager";
+import { cleanModifiedElements } from "@content/applyCSS";
 
 const props = defineProps<{ id: string; valueName: string; name: string; icon: Component }>();
 
 const changePref = (path, valueName) => {
     setPref(path, valueName);
     savePref();
-    updateClasses();
+    cleanModifiedElements();
 };
 </script>

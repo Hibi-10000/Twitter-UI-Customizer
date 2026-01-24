@@ -80,7 +80,7 @@
 import { translate } from "@content/i18n";
 import { getPref, setPref, savePref, updatePref, mergePref, mergeDefaultPref, exportPref } from "@content/settings";
 import { waitForElement } from "@content/utils/element";
-import { applySystemCss } from "@content/applyCSS";
+import { applySystemCss, cleanModifiedElements } from "@content/applyCSS";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 
@@ -89,8 +89,8 @@ import FIGURE_IMPORTREPLACE from "@content/icons/figure/import_replace.svg?compo
 import SectionTitle2 from "../components/SectionTitle2.vue";
 import SettingSubTitle from "@shared/options/components/textParts/settingSubTitle.vue";
 import { ref } from "vue";
-import { titleObserverFunction } from "@content/modules/observer/titleObserver";
-import { updateClasses } from "@content/modules/htmlClass/classManager";
+import { titleObserverFunction } from "@content/observer/titleObserver";
+
 import { isSafemode } from "@content/settings/ui/safemode";
 import CheckBoxList from "@shared/options/components/CheckBoxList.vue";
 
@@ -132,7 +132,7 @@ const importFunc = async (type: number) => {
             location.href = `${location.protocol}//${location.hostname}`;
         } else {
             document.querySelector("#TUIC_setting").remove();
-            updateClasses();
+            cleanModifiedElements();
             applySystemCss();
 
             titleObserverFunction();

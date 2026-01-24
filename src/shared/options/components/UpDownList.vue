@@ -59,7 +59,7 @@ import RESET from "@content/icons/common/reset.svg?component";
 import { translate } from "@content/i18n";
 import { getPref, setPref, savePref, getSettingI18n, SettingKeys, getSettingIDs, getDefaultPref } from "@content/settings";
 
-import { updateClasses } from "@modules/htmlClass/classManager";
+import { cleanModifiedElements } from "@content/applyCSS";
 
 const props = defineProps<{ id: SettingKeys }>();
 
@@ -75,7 +75,7 @@ const apply2Settings = () => {
     const id = props.id;
     setPref(id, list.value);
     savePref();
-    updateClasses();
+    cleanModifiedElements();
 };
 
 const toLeft = () => {

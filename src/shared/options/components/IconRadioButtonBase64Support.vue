@@ -12,13 +12,13 @@
 <script setup lang="ts">
 import { translate } from "@content/i18n";
 import { getPref, setPref, savePref } from "@content/settings";
-import { updateClasses } from "@content/modules/htmlClass/classManager";
+import { cleanModifiedElements } from "@content/applyCSS";
 
 defineProps<{ id: string; valueName: string; name: string; base64Img: string }>();
 
 const changePref = (path, valueName) => {
     setPref(path, valueName);
     savePref();
-    updateClasses();
+    cleanModifiedElements();
 };
 </script>

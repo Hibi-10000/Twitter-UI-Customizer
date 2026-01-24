@@ -43,7 +43,7 @@ import { getPref, setPref, savePref, mergePref } from "@content/settings";
 
 import { useStore } from "../store";
 import { ColorData } from "@shared/sharedData";
-import { updateClasses } from "@modules/htmlClass/classManager";
+import { cleanModifiedElements } from "@content/applyCSS";
 
 const ColorSettingRadio = (event) => {
     const store = useStore();
@@ -57,7 +57,7 @@ const setDefaultTwitterColor = () => {
     if (!isSafemode) {
         document.querySelector("#TUIC_setting").remove();
     }
-    updateClasses();
+    cleanModifiedElements();
 };
 </script>
 

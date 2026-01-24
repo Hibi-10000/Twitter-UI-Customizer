@@ -1,7 +1,7 @@
 import { isSafemode } from "@content/settings/ui/safemode";
 
 import { DOG, TWITTER, X, XDaruma } from "./icons/index";
-import { ColorData } from "@shared/sharedData";
+import { AttrList, ClassList, ColorData } from "@shared/sharedData";
 
 import styleUrl from "./styles/index.css?url";
 import unoStyleUrl from "./styles/uno.css?url";
@@ -155,4 +155,19 @@ export function applySystemCss() {
 
 export function applyCustomCss() {
     document.querySelector("#twitter_ui_customizer_css").textContent = localStorage.getItem("TUIC_CSS");
+}
+
+// TODO: 現状、savePref が呼ばれた際にしか呼ばれていないため、設定の更新を検知したら自動的にこれが発火される仕組みを導入したい
+/** Twitter UI Customizer によって変更された要素をすべて元に戻します。 */
+export function cleanModifiedElements() {
+    const selector = [
+        ...ClassList.map((id) => `.${id}`),
+        ...AttrList.map((id) => `[data-${id}]`),
+    ].join(", ");
+    document.querySelectorAll(selector).forEach((elem) => {
+        elem.classList.remove(...ClassList);
+        for (const id of AttrList) elem.removeAttribute(`data-${id}`);
+    });
+
+    applySystemCss();
 }
