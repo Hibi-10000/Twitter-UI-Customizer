@@ -1,6 +1,6 @@
 import { tweetSettings, hideOsusumeTweets, replacePost, updateStyles, profileModify, sidebarButtons, dmPage, fixTwittersBugs, changeIcon, hideElements, modifyPostingDialog, pinningTab } from "@content/functions/index";
 import { catchError } from "./errorDialog";
-import { placeDisplayButton } from "@content/functions/sidebarBtn/rightSidebarTexts";
+import { placeDisplayButton } from "@content/functions/sidebarBtn/extras/rightSidebar";
 import { getPref } from "../pref/index";
 import { hideElement } from "@content/utils/element";
 
@@ -103,7 +103,7 @@ export const TUICObserver = new (class TUICObserver {
             // タイムラインのタブの固定
             pinningTab();
 
-            // 右サイドバーに「表示」を配置
+            // 右サイドバーに「表示設定」を配置
             placeDisplayButton();
 
             // Twitterのバグを修正(現在はDMに関するもののみ)

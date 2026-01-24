@@ -44,7 +44,8 @@ const _data = {
     },
 };
 
-export async function moreMenuContent() {
+/** サイドバーのドロップダウン中から、不要な要素を隠します。 */
+export async function processDropdown() {
     await waitForElement(`[data-testid="Dropdown"]`);
     let menuTopPx = parseFloat(document.querySelector<HTMLDivElement>(`[role="menu"]`).style.top);
     const upPx = {
