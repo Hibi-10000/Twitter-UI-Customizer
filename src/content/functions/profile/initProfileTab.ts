@@ -1,5 +1,5 @@
 import { processElement, waitForElement } from "@content/utils/element";
-import { getPref } from "@modules/pref";
+import { getPref } from "@content/settings";
 import { ProcessedClass } from "@shared/sharedData";
 
 const _data = {

@@ -23,7 +23,7 @@ import { TUICI18N } from "@modules/i18n";
 import RoundedColorPicker from "@shared/settings/components/RoundedColorPicker.vue";
 import TransparentToggleButton from "@shared/settings/components/TransparentToggleButton.vue";
 import ColorResetButton from "@shared/settings/components/ColorResetButton.vue";
-import { getPref, savePref, setPref, deletePref } from "@modules/pref";
+import { getPref, savePref, setPref, deletePref } from "@content/settings";
 import { applySystemCss } from "@content/applyCSS";
 
 import { useStore } from "../store";

@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import { TUICI18N } from "@modules/i18n";
 import { TUICObserver } from "@modules/observer/index";
-import { getPref, setPref, savePref } from "@modules/pref";
+import { getPref, setPref, savePref } from "@content/settings";
 import { updateClasses } from "@modules/htmlClass/classManager";
 
 defineProps<{ id: string; valueName: string; name: string }>();

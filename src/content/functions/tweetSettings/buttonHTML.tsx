@@ -1,5 +1,5 @@
 import { waitForElement } from "@content/utils/element";
-import { getPref } from "@modules/pref";
+import { getPref } from "@content/settings";
 import { TUICI18N } from "@modules/i18n";
 import { JSX } from "solid-js";
 import { ButtonUnderTweetSelectors, TweetUnderButtonsData } from "./_data";

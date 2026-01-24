@@ -1,5 +1,5 @@
 import { hideElement, showElement, processElement } from "@content/utils/element";
-import { getPref } from "@modules/pref";
+import { getPref } from "@content/settings";
 import { ProcessedClass } from "@shared/sharedData";
 import { render } from "solid-js/web";
 import { followersListButton } from "./buttons";

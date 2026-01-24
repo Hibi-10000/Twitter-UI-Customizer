@@ -15,10 +15,10 @@ import defaultPrefButton from "../components/defaultPrefButton.vue";
 
 import { ColorData } from "@shared/sharedData";
 
-import { getPref, setPref, savePref, mergePref } from "@modules/pref";
+import { getPref, setPref, savePref, mergePref } from "@content/settings";
 import { titleObserverFunction } from "@content/modules/observer/titleObserver";
 import { updateClasses } from "@content/modules/htmlClass/classManager";
-import { isSafemode } from "@content/modules/settings/safemode";
+import { isSafemode } from "@content/settings/ui/safemode";
 
 // copied from old component; @shared/options/modules/SettingsHeader.vue
 const buttonList = [

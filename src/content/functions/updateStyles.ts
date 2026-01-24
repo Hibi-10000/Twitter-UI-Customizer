@@ -1,6 +1,6 @@
 import { applySystemCss } from "@content/applyCSS";
 import { FAVORITE_ICON, HOME_ICON, SIDEBAR_BUTTON_ICON } from "@content/icons";
-import { getPref } from "@modules/pref";
+import { getPref } from "@content/settings";
 import { ProcessedClass } from "@shared/sharedData";
 import { SidebarButtonSelectors } from "./sidebar";
 import { ButtonUnderTweetSelectors } from "./tweetSettings/_data";

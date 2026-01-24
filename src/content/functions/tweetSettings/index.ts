@@ -1,5 +1,5 @@
 import { hasClosest, hideElement, showElement, waitForElement } from "@content/utils/element";
-import { getPref, getSettingIDs } from "@modules/pref";
+import { getPref, getSettingIDs } from "@content/settings";
 import { tweetTopButtons } from "./tweetTopButtons";
 import { placeEngagementsLink } from "./placeEngagementsLink";
 import { showLinkCardInfo } from "./showLinkCardInfo";

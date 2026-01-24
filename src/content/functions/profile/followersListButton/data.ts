@@ -1,5 +1,5 @@
 import { waitForElement } from "@content/utils/element";
-import { getPref } from "@content/modules/pref";
+import { getPref } from "@content/settings";
 
 export const data: Record<string, { selector: string; clickEvent?: (baseElement: HTMLElement) => void; svg?: string }> = {
     followButton: {

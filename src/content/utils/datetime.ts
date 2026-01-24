@@ -1,5 +1,5 @@
-import { TUICI18N } from "../modules/i18n";
-import { getPref } from "../modules/pref";
+import { TUICI18N } from "@modules/i18n";
+import { getPref } from "@content/settings";
 
 let TimeFormat: Intl.DateTimeFormat;
 let DateFormat: Intl.DateTimeFormat;

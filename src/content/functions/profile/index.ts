@@ -1,4 +1,4 @@
-import { getPref } from "@content/modules/pref";
+import { getPref } from "@content/settings";
 import { followersList } from "./followersListButton";
 import { profileInitialTab } from "./initProfileTab";
 import { TUICI18N } from "@content/modules/i18n";

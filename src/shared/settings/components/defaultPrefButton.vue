@@ -5,8 +5,8 @@
 <script setup lang="ts">
 import { TUICI18N } from "@modules/i18n";
 import { waitForElement } from "@content/utils/element";
-import { getPref, setPref, mergeDefaultPref, savePref } from "@modules/pref";
-import { isSafemode } from "@content/modules/settings/safemode";
+import { getPref, setPref, mergeDefaultPref, savePref } from "@content/settings";
+import { isSafemode } from "@content/settings/ui/safemode";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 import { titleObserverFunction } from "@modules/observer/titleObserver";

@@ -1,6 +1,6 @@
 import { render } from "solid-js/web";
 import { hideElement } from "@content/utils/element";
-import { getPref } from "@modules/pref";
+import { getPref } from "@content/settings";
 import { processDropdown } from "./extras/dropdown";
 import { sidebarButtonsData } from "./buttons";
 

@@ -113,7 +113,7 @@ import IconButton from "./components/IconButton.vue";
 import TUICLogo from "@content/icons/branding/tuic_unilogo.svg?component";
 import TUICUNILOGO_GRAY from "@content/icons/branding/tuic_unilogo_gray.svg?component";
 import BootstrapIcons from "bootstrap-icons/font/bootstrap-icons.css?url";
-import { isSafemode } from "@content/modules/settings/safemode";
+import { isSafemode } from "@content/settings/ui/safemode";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 import { TUICI18N } from "@content/modules/i18n";

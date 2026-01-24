@@ -60,7 +60,7 @@ function placeSettingPage() {
                 //console.warn(`_large : ${_large}\n_small : ${_small}`);
                 placeSettingComponent(_large ? _large : _small);
             });
-            rewriteTweet();
+            rewriteSampleTweet();
             break;
         }
         case "/i/display": {
@@ -72,12 +72,12 @@ function placeSettingPage() {
                 //console.warn(`_large : ${_large}\n_small : ${_small}`);
                 placeSettingComponent(_dialog ? _dialog : _fullscreen);
             });
-            rewriteTweet();
+            rewriteSampleTweet();
         }
     }
 }
 
-function rewriteTweet() {
+function rewriteSampleTweet() {
     if (document.querySelector(`article[data-testid="tweet"][data-tuic-processed="true"]`) == null && document.querySelector('[role="slider"]:not(article *)') != null) {
         const displayRootElement = document.querySelector('[role="slider"]:not(article *)').closest<HTMLElement>(`:is([data-viewportview="true"],[aria-labelledby="detail-header"],main>div>div>div>div)`).querySelector<HTMLElement>(`:scope > div+div`);
         // displayRootElementについてるモーダル全体に適用された余白を削除

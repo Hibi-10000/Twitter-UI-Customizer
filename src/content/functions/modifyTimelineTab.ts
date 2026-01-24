@@ -1,4 +1,4 @@
-import { getPref } from "@content/modules/pref";
+import { getPref } from "@content/settings";
 
 // PC版の場合ユーザーID、スマホ版の場合アカウント切り替えボタンのaria-labelを格納
 // (Delegate機能に対応するため)

@@ -1,4 +1,4 @@
-import { getPref } from "@modules/pref";
+import { getPref } from "@content/settings";
 import { TUICI18N } from "@modules/i18n";
 import { hasClosestSelector } from "@content/utils/element";
 

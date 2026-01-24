@@ -1,6 +1,6 @@
 import { TUICI18N } from "@modules/i18n";
-import { isSafemode } from "@content/modules/settings/safemode";
-import { getPref } from "../pref";
+import { isSafemode } from "@content/settings/ui/safemode";
+import { getPref } from "@content/settings";
 
 const notificationsRegexp = /^(\([0-9]+\))[0-9() ]+([^0-9() ])/;
 

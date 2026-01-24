@@ -78,7 +78,7 @@
 
 <script setup lang="ts">
 import { TUICI18N } from "@modules/i18n";
-import { getPref, setPref, savePref, updatePref, mergePref, mergeDefaultPref, exportPref } from "@modules/pref";
+import { getPref, setPref, savePref, updatePref, mergePref, mergeDefaultPref, exportPref } from "@content/settings";
 import { waitForElement } from "@content/utils/element";
 import { applySystemCss } from "@content/applyCSS";
 import { Dialog } from "@shared/tlui/components/Dialog";
@@ -91,7 +91,7 @@ import SettingSubTitle from "@shared/options/components/textParts/settingSubTitl
 import { ref } from "vue";
 import { titleObserverFunction } from "@content/modules/observer/titleObserver";
 import { updateClasses } from "@content/modules/htmlClass/classManager";
-import { isSafemode } from "@content/modules/settings/safemode";
+import { isSafemode } from "@content/settings/ui/safemode";
 import CheckBoxList from "@shared/options/components/CheckBoxList.vue";
 
 // EXPORT LOGIC

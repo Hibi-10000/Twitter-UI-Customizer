@@ -1,5 +1,5 @@
 import { hideElement } from "@content/utils/element";
-import { getPref } from "@modules/pref";
+import { getPref } from "@content/settings";
 import { getAbsolutelyTime, isRelativeTime } from "@content/utils/datetime";
 
 // URLなどによる条件分岐が必要だが、一つのファイルとして分離するほどではないものがここには集まっています。

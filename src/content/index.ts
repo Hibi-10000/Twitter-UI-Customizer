@@ -6,14 +6,14 @@
 import { TUICObserver } from "@modules/observer/index";
 import { TUICI18N } from "@modules/i18n";
 import { applySystemCss, addCssElement, applyDataCss, applyCustomIcon, applyDefaultStyle } from "@content/applyCSS";
-import { isSafemode, runSafemode } from "@content/modules/settings/safemode";
+import { isSafemode, runSafemode } from "@content/settings/ui/safemode";
 import { startTluiObserver } from "@shared/tlui/observer";
 import { initIconObserverFunction } from "@content/functions/changeIcon";
 import { titleObserverFunction } from "@modules/observer/titleObserver";
 import { updateClasses } from "./modules/htmlClass/classManager";
-import { runSettingComponentObserver } from "./modules/settings";
+import { runSettingComponentObserver } from "@content/settings/ui";
 import { placePrintPrefButton } from "./printPref";
-import { getPref, mergeDefaultPref, setPref, updatePref } from "@modules/pref";
+import { getPref, mergeDefaultPref, setPref, updatePref } from "@content/settings";
 import { waitForElement } from "@content/utils/element";
 
 (async () => {

@@ -1,4 +1,4 @@
-import { getPref } from "@content/modules/pref";
+import { getPref } from "@content/settings";
 import { hideElement } from "@content/utils/element";
 import { formatTimeText, getAbsolutelyTime, isRelativeTime } from "@content/utils/datetime";
 

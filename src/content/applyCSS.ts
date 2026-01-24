@@ -1,4 +1,4 @@
-import { isSafemode } from "@content/modules/settings/safemode";
+import { isSafemode } from "@content/settings/ui/safemode";
 
 import { DOG, TWITTER, X, XDaruma } from "./icons/index";
 import { ColorData } from "@shared/sharedData";
@@ -6,7 +6,7 @@ import { ColorData } from "@shared/sharedData";
 import styleUrl from "./styles/index.css?url";
 import unoStyleUrl from "./styles/uno.css?url";
 import { backgroundColorCheck, backgroundColorClass, getColorFromPref } from "@content/utils/color";
-import { getPref, getSettingIDs } from "@modules/pref";
+import { getPref, getSettingIDs } from "@content/settings";
 import { fontSizeClass } from "@content/utils/fontSize";
 
 export function applyDefaultStyle() {

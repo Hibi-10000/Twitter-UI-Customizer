@@ -1,6 +1,6 @@
 import { render } from "solid-js/web";
 import { IconElement } from "@content/modules/observer/resources/dmIcon";
-import { getPref } from "@modules/pref";
+import { getPref } from "@content/settings";
 
 export function dmPage() {
     if (getPref("dmPage.showIcon")) {

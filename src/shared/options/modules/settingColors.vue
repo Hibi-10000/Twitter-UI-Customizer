@@ -35,11 +35,11 @@
 
 <script setup lang="ts">
 import { TUICI18N } from "@modules/i18n";
-import { isSafemode } from "@content/modules/settings/safemode";
+import { isSafemode } from "@content/settings/ui/safemode";
 
 import ColorsList from "../components/ColorsList.vue";
 
-import { getPref, setPref, savePref, mergePref } from "@modules/pref";
+import { getPref, setPref, savePref, mergePref } from "@content/settings";
 
 import { useStore } from "../store";
 import { ColorData } from "@shared/sharedData";

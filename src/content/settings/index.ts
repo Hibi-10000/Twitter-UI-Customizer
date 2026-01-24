@@ -1,6 +1,9 @@
-import { TUICSettings } from "./settings";
+import { DEFAULT_SETTINGS, type SettingKeys } from "./settings";
 
-let config = null;
+// TODO: 暫定的対応
+export type { SettingKeys };
+
+let settings = null;
 
 const getPointerFromKey = (object: object, key: string) => {
     const keys = ["o", ...key.split(".").filter((k) => k !== "")];
@@ -28,7 +31,7 @@ const getPointerFromKey = (object: object, key: string) => {
  * @param {object} source 使用するPrefのObject。
  * @return {unknown} 取得した値(identifierが空文字ならTUICのPref全体)
  */
-export function getPref(identifier: string, source = config) {
+export function getPref(identifier: string, source = settings) {
     const { object, key } = getPointerFromKey(source, identifier);
     return object[key];
 }
@@ -41,9 +44,9 @@ export function getPref(identifier: string, source = config) {
  * @param {string} value 設定する値
  * @param {object} source 使用するPrefのObject。
  */
-export function setPref(identifier: string, value: unknown, source = config) {
+export function setPref(identifier: string, value: unknown, source = settings) {
     if (identifier == "") {
-        config = value;
+        settings = value;
     } else {
         const { object, key } = getPointerFromKey(source, identifier);
         object[key] = value;
@@ -56,7 +59,7 @@ export function setPref(identifier: string, value: unknown, source = config) {
  * @param {string} identifier 取得するPrefへのパス(ピリオド区切り)。
  * @param {object} source 使用するPrefのObject。
  */
-export function deletePref(identifier: string, source = config) {
+export function deletePref(identifier: string, source = settings) {
     const { object, key } = getPointerFromKey(source, identifier);
     delete object[key];
 }
@@ -65,7 +68,7 @@ export function deletePref(identifier: string, source = config) {
  * 変更が加えられたTUICのPrefをlocalStorageへ保存します。
  */
 export function savePref() {
-    localStorage.setItem("TUIC", JSON.stringify(config));
+    localStorage.setItem("TUIC", JSON.stringify(settings));
 }
 
 /**
@@ -74,7 +77,7 @@ export function savePref() {
  * @return {string} TUICのPrefをJSON.stringify()で文字列にしたもの
  */
 export function exportPref(): string {
-    return JSON.stringify(config);
+    return JSON.stringify(settings);
 }
 
 /**
@@ -106,7 +109,7 @@ const changeBooleanKey = (previousKey: string, nextKey: string, source, replaceV
     deletePref(previousKey, source);
 };
 
-export async function updatePref(source = config) {
+export async function updatePref(source = settings) {
     const prefVersion_ = getPref("prefVersion", source) ?? 0;
     setPref("prefVersion", prefVersion);
     switch (prefVersion_) {
@@ -249,7 +252,7 @@ let defaultData = null;
 export function mergeDefaultPref(source) {
     if (defaultData == null) {
         defaultData = {};
-        for (const elem in TUICSettings) {
+        for (const elem in DEFAULT_SETTINGS) {
             if (elem == "buttonColor") {
                 defaultData.buttonColor = {};
                 defaultData.buttonColorLight = {};
@@ -279,7 +282,7 @@ export function mergeDefaultPref(source) {
 }
 
 export function getDefaultPref(id: string) {
-    const prefData = TUICSettings[id];
+    const prefData = DEFAULT_SETTINGS[id];
     switch (prefData.type) {
         case "boolean": {
             const returnObject = {};
@@ -298,7 +301,6 @@ export function getDefaultPref(id: string) {
 }
 
 const prefVersion = 5;
-export type TUICSettingIDs = keyof typeof TUICSettings;
 
 /**
  * 指定した設定カテゴリーIDに基づいて値の一覧(CheckboxならCheckboxの全てのID、RadioBox/ListBoxなら値になりうるすべての値)を出力します
@@ -306,8 +308,8 @@ export type TUICSettingIDs = keyof typeof TUICSettings;
  * @param {string} id 設定カテゴリーID
  * @return {string[]} 取得した値一覧
  */
-export function getSettingIDs<T extends TUICSettingIDs>(id: T): (typeof TUICSettings)[T]["values"][number]["id"][] {
-    return TUICSettings[id].values.map((elem) => elem.id);
+export function getSettingIDs<T extends SettingKeys>(id: T): (typeof DEFAULT_SETTINGS)[T]["values"][number]["id"][] {
+    return DEFAULT_SETTINGS[id].values.map((elem) => elem.id);
 }
 
 /**
@@ -316,8 +318,8 @@ export function getSettingIDs<T extends TUICSettingIDs>(id: T): (typeof TUICSett
  * @param {string} id 設定カテゴリーID
  * @return {{id:string,i18n:string}[]} 取得したデータ
  */
-export function getSettingData<T extends TUICSettingIDs>(id: T): (typeof TUICSettings)[T]["values"] {
-    return TUICSettings[id].values;
+export function getSettingData<T extends SettingKeys>(id: T): (typeof DEFAULT_SETTINGS)[T]["values"] {
+    return DEFAULT_SETTINGS[id].values;
 }
 
 /**
@@ -327,8 +329,8 @@ export function getSettingData<T extends TUICSettingIDs>(id: T): (typeof TUICSet
  * @param {string} id 設定自体のID(設定カテゴリーIDを除く)
  * @return {string} i18nのID
  */
-export function getSettingI18n<T extends TUICSettingIDs>(id: T, itemValue: (typeof TUICSettings)[T]["values"][number]["id"]): string {
-    return TUICSettings[id].values.filter((elem) => elem.id == itemValue)[0]?.i18n ?? undefined;
+export function getSettingI18n<T extends SettingKeys>(id: T, itemValue: (typeof DEFAULT_SETTINGS)[T]["values"][number]["id"]): string {
+    return DEFAULT_SETTINGS[id].values.filter((elem) => elem.id == itemValue)[0]?.i18n ?? undefined;
 }
 
-config = JSON.parse(localStorage.getItem("TUIC") ?? JSON.stringify(mergeDefaultPref({})));
+settings = JSON.parse(localStorage.getItem("TUIC") ?? JSON.stringify(mergeDefaultPref({})));

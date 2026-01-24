@@ -3,7 +3,7 @@ import { For } from "solid-js";
 import { render } from "solid-js/web";
 import { TUICI18N } from "@modules/i18n";
 import { waitForElement, hasClosest } from "@content/utils/element";
-import { getPref } from "@modules/pref";
+import { getPref } from "@content/settings";
 import { backgroundColorClass } from "@content/utils/color";
 import { fontSizeClass } from "@content/utils/fontSize";
 

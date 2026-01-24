@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import { TUICI18N } from "@modules/i18n";
 import ThreeColorSetting from "./ThreeColorSetting.vue";
-import { getSettingData } from "@modules/pref";
+import { getSettingData } from "@content/settings";
 </script>
 
 <style scoped></style>

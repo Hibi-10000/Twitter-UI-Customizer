@@ -1,5 +1,5 @@
 import { hideElement, processElement } from "@content/utils/element";
-import { getPref } from "@modules/pref";
+import { getPref } from "@content/settings";
 import { ProcessedClass } from "@shared/sharedData";
 
 export function hideOsusumeTweets() {

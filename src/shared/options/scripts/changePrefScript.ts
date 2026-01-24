@@ -1,5 +1,5 @@
-import { isSafemode } from "@content/modules/settings/safemode";
-import { getPref, setPref, savePref, mergePref } from "@modules/pref";
+import { isSafemode } from "@content/settings/ui/safemode";
+import { getPref, setPref, savePref, mergePref } from "@content/settings";
 import { titleObserverFunction } from "@modules/observer/titleObserver";
 import { updateClasses } from "@modules/htmlClass/classManager";
 
