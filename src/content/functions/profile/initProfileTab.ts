@@ -1,4 +1,4 @@
-import { processElement, waitForElement } from "@modules/utils/controlElements";
+import { processElement, waitForElement } from "@content/utils/controlElements";
 import { getPref } from "@modules/pref";
 import { ProcessedClass } from "@shared/sharedData";
 

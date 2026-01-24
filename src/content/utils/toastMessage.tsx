@@ -1,6 +1,6 @@
 import { render } from "solid-js/web";
 import { JSX } from "solid-js";
-import { fontSizeClass } from "@modules/utils/fontSize";
+import { fontSizeClass } from "@content/utils/fontSize";
 
 const toastMessage = (message: string): (() => JSX.Element) => {
     return () => {

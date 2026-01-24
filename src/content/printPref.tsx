@@ -1,7 +1,7 @@
 import { JSX } from "solid-js";
 import { render } from "solid-js/web";
 import { TUICI18N } from "./modules/i18n";
-import { waitForElement } from "@modules/utils/controlElements";
+import { waitForElement } from "@content/utils/controlElements";
 
 /*
 console.log(location.href);

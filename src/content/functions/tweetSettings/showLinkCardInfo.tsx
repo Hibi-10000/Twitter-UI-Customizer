@@ -1,9 +1,9 @@
 import type { JSX } from "solid-js";
 import { render } from "solid-js/web";
-import { hideElement } from "@modules/utils/controlElements";
-import { fontSizeClass } from "@modules/utils/fontSize";
+import { hideElement } from "@content/utils/controlElements";
+import { fontSizeClass } from "@content/utils/fontSize";
 import { getPref } from "@modules/pref";
-import { backgroundColorClass } from "@content/modules/utils/color";
+import { backgroundColorClass } from "@content/utils/color";
 
 const showLinkCardInfoElement = (link: string, domain: string, title: string, description: string): () => JSX.Element => {
     return () => (

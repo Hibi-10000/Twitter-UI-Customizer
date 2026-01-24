@@ -1,13 +1,13 @@
 import type { JSX } from "solid-js";
 import { render } from "solid-js/web";
-import { waitForElement, hideElement } from "@modules/utils/controlElements";
+import { waitForElement, hideElement } from "@content/utils/controlElements";
 import { getPref } from "@modules/pref";
 import { moreMenuContent } from "./moreMenuContent";
 import { TUICI18N } from "@modules/i18n";
 import { SIDEBAR_BUTTON_ICON } from "@content/icons";
-import { backgroundColorCheck } from "@modules/utils/color";
-import { getPrimitiveOrFunction } from "@modules/utils/getValues";
-import { fontSizeClass } from "@modules/utils/fontSize";
+import { backgroundColorCheck } from "@content/utils/color";
+import { getPrimitiveOrFunction } from "@content/utils/getValues";
+import { fontSizeClass } from "@content/utils/fontSize";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 import { DivBoxComponent } from "@shared/tlui/components/DivBox";

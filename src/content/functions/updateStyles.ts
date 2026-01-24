@@ -4,7 +4,7 @@ import { getPref } from "@modules/pref";
 import { ProcessedClass } from "@shared/sharedData";
 import { SidebarButtonSelectors } from "./sidebarBtn";
 import { ButtonUnderTweetSelectors } from "./tweetSettings/_data";
-import { hasClosest, processElement } from "@content/modules/utils/controlElements";
+import { hasClosest, processElement } from "@content/utils/controlElements";
 
 let fontSize1 = "";
 let fontSize2: boolean | null = null;

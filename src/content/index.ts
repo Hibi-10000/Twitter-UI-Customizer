@@ -14,7 +14,7 @@ import { updateClasses } from "./modules/htmlClass/classManager";
 import { runSettingComponentObserver } from "./modules/settings";
 import { placePrintPrefButton } from "./printPref";
 import { getPref, mergeDefaultPref, setPref, updatePref } from "@modules/pref";
-import { waitForElement } from "@modules/utils/controlElements";
+import { waitForElement } from "@content/utils/controlElements";
 
 (async () => {
     if (location.href === "https://twitter.com/ja/tos") {

@@ -1,6 +1,6 @@
 import { getPref } from "@content/modules/pref";
-import { hideElement } from "@content/modules/utils/controlElements";
-import { formatTimeText, getAbsolutelyTime, isRelativeTime } from "@content/modules/utils/dateAndTime";
+import { hideElement } from "@content/utils/controlElements";
+import { formatTimeText, getAbsolutelyTime, isRelativeTime } from "@content/utils/dateAndTime";
 
 export function modifyTweetsStyle(articleInfo: ArticleInfomation) {
     const articleBase = articleInfo.elements.articleBase;

@@ -1,5 +1,5 @@
 import { ColorData } from "@shared/sharedData";
-import { getPref } from "../pref";
+import { getPref } from "@content/modules/pref";
 
 /**
  * RGB配列を#XXXXXX表記に変換します。

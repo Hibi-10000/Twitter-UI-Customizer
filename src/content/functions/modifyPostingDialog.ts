@@ -1,7 +1,7 @@
 import { TUICI18N } from "@content/modules/i18n";
-import { hideElement, processElement, waitForElement } from "@modules/utils/controlElements";
+import { hideElement, processElement, waitForElement } from "@content/utils/controlElements";
 import { getPref, getSettingIDs } from "@modules/pref";
-import { placeToastMessage } from "@content/modules/utils/toastMessage";
+import { placeToastMessage } from "@content/utils/toastMessage";
 import { ProcessedClass } from "@shared/sharedData";
 
 const _data = {

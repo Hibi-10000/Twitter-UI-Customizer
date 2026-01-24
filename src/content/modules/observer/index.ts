@@ -2,7 +2,7 @@ import { tweetSettings, hideOsusumeTweets, replacePost, updateStyles, profileMod
 import { catchError } from "./errorDialog";
 import { placeDisplayButton } from "@content/functions/sidebarBtn/rightSidebarTexts";
 import { getPref } from "../pref/index";
-import { hideElement } from "../utils/controlElements";
+import { hideElement } from "@content/utils/controlElements";
 
 //let time = 0;
 

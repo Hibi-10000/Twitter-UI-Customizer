@@ -79,7 +79,7 @@
 <script setup lang="ts">
 import { TUICI18N } from "@modules/i18n";
 import { getPref, setPref, savePref, updatePref, mergePref, mergeDefaultPref, exportPref } from "@modules/pref";
-import { waitForElement } from "@modules/utils/controlElements";
+import { waitForElement } from "@content/utils/controlElements";
 import { applySystemCss } from "@content/applyCSS";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";

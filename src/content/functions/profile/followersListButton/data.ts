@@ -1,4 +1,4 @@
-import { waitForElement } from "@content/modules/utils/controlElements";
+import { waitForElement } from "@content/utils/controlElements";
 import { getPref } from "@content/modules/pref";
 
 export const data: Record<string, { selector: string; clickEvent?: (baseElement: HTMLElement) => void; svg?: string }> = {

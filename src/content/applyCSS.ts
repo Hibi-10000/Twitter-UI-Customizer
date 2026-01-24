@@ -5,9 +5,9 @@ import { ColorData } from "@shared/sharedData";
 
 import styleUrl from "./styles/index.css?url";
 import unoStyleUrl from "./styles/uno.css?url";
-import { backgroundColorCheck, backgroundColorClass, getColorFromPref } from "@modules/utils/color";
+import { backgroundColorCheck, backgroundColorClass, getColorFromPref } from "@content/utils/color";
 import { getPref, getSettingIDs } from "@modules/pref";
-import { fontSizeClass } from "@modules/utils/fontSize";
+import { fontSizeClass } from "@content/utils/fontSize";
 
 export function applyDefaultStyle() {
     document.querySelector("#tuicDefaultStyle")?.remove();

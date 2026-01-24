@@ -1,6 +1,6 @@
-import { hideElement, waitForElement } from "@modules/utils/controlElements";
+import { hideElement, waitForElement } from "@content/utils/controlElements";
 import { getPref, getSettingIDs } from "@modules/pref";
-import { fontSizeClass } from "@modules/utils/fontSize";
+import { fontSizeClass } from "@content/utils/fontSize";
 import { TUICI18N } from "@content/modules/i18n";
 
 interface TweetMoreMenuContentData {

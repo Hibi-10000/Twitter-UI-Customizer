@@ -28,7 +28,7 @@ import { applySystemCss } from "@content/applyCSS";
 
 import { useStore } from "../store";
 import { ColorData } from "@shared/sharedData";
-import { getColorFromPref, hex2rgb, rgb2hex } from "@content/modules/utils/color";
+import { getColorFromPref, hex2rgb, rgb2hex } from "@content/utils/color";
 
 const props = defineProps<{
     id: string;

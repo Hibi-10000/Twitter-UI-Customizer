@@ -2,10 +2,10 @@ import type { JSX } from "solid-js";
 import { For } from "solid-js";
 import { render } from "solid-js/web";
 import { TUICI18N } from "@modules/i18n";
-import { waitForElement, hasClosest } from "@modules/utils/controlElements";
+import { waitForElement, hasClosest } from "@content/utils/controlElements";
 import { getPref } from "@modules/pref";
-import { backgroundColorClass } from "@content/modules/utils/color";
-import { fontSizeClass } from "@modules/utils/fontSize";
+import { backgroundColorClass } from "@content/utils/color";
+import { fontSizeClass } from "@content/utils/fontSize";
 
 const _data = {
     engagementsBox: (ids: string[], article: Element, isShort: boolean): () => JSX.Element => {

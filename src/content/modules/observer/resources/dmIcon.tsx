@@ -1,4 +1,4 @@
-import { fontSizeClass } from "@modules/utils/fontSize";
+import { fontSizeClass } from "@content/utils/fontSize";
 import { JSX } from "solid-js";
 
 export const IconElement = (): JSX.Element => {

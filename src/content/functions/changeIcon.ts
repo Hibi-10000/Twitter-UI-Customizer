@@ -3,9 +3,9 @@ import TWITTER from "@content/icons/logo/twitter.svg?raw";
 import X from "@content/icons/logo/x.svg?raw";
 import { XDaruma } from "@content/icons/index";
 import EMPTY from "@content/icons/logo/empty.svg?url";
-import { getColorFromPref } from "@content/modules/utils/color";
+import { getColorFromPref } from "@content/utils/color";
 import { getPref } from "@modules/pref";
-import { hideElement } from "@modules/utils/controlElements";
+import { hideElement } from "@content/utils/controlElements";
 
 let iconObserver: MutationObserver | null = null;
 

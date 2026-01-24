@@ -1,7 +1,7 @@
-import { waitForElement } from "@modules/utils/controlElements";
-import { fontSizeClass } from "@modules/utils/fontSize";
+import { waitForElement } from "@content/utils/controlElements";
+import { fontSizeClass } from "@content/utils/fontSize";
+import { backgroundColorClass } from "@content/utils/color";
 import { TUICI18N } from "@content/modules/i18n";
-import { backgroundColorClass } from "@content/modules/utils/color";
 import { JSX } from "solid-js";
 import { render } from "solid-js/web";
 import { Dialog } from "@shared/tlui/components/Dialog";

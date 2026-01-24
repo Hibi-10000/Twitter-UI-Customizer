@@ -1,11 +1,11 @@
 import type { JSX } from "solid-js";
 import { render } from "solid-js/web";
-import { waitForElement, hideElement, showElement, processElement } from "@modules/utils/controlElements";
+import { waitForElement, hideElement, showElement, processElement } from "@content/utils/controlElements";
 import { getPref, getSettingIDs } from "@modules/pref";
 import { tweetMoreMenuContent } from "./tweetMoreMenuContent";
 import { ProcessedClass } from "@shared/sharedData";
-import { backgroundColorClass } from "@content/modules/utils/color";
-import { fontSizeClass } from "@modules/utils/fontSize";
+import { backgroundColorClass } from "@content/utils/color";
+import { fontSizeClass } from "@content/utils/fontSize";
 
 const eventHandle = (elem: Element, func: () => void) => {
     elem.addEventListener("keydown", (e: KeyboardEvent) => {

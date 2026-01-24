@@ -1,4 +1,4 @@
-import { hasClosest, hideElement, showElement, waitForElement } from "@modules/utils/controlElements";
+import { hasClosest, hideElement, showElement, waitForElement } from "@content/utils/controlElements";
 import { getPref, getSettingIDs } from "@modules/pref";
 import { tweetTopButtons } from "./tweetTopButtons";
 import { placeEngagementsLink } from "./placeEngagementsLink";
@@ -7,8 +7,8 @@ import { render } from "solid-js/web";
 import { EmptyButtonHTML, TweetUnderButtonsHTML, tweetButtonData, willClickRT } from "./buttonHTML";
 import { ButtonUnderTweetSelectors, TweetUnderButtonsData } from "./_data";
 import { ProcessedClass } from "@shared/sharedData";
-import { fontSizeClass } from "@modules/utils/fontSize";
-import { placeToastMessage } from "@content/modules/utils/toastMessage";
+import { fontSizeClass } from "@content/utils/fontSize";
+import { placeToastMessage } from "@content/utils/toastMessage";
 import { TUICI18N } from "@content/modules/i18n";
 import { modifyTweetsStyle } from "./modifyTweetsStyle";
 

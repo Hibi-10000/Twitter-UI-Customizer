@@ -1,11 +1,11 @@
-import { waitForElement } from "@modules/utils/controlElements";
+import { waitForElement } from "@content/utils/controlElements";
 import { getPref } from "@modules/pref";
 import { TUICI18N } from "@modules/i18n";
 import { JSX } from "solid-js";
 import { ButtonUnderTweetSelectors, TweetUnderButtonsData } from "./_data";
-import { backgroundColorClass } from "@modules/utils/color";
-import { fontSizeClass } from "@modules/utils/fontSize";
-import { placeToastMessage } from "@content/modules/utils/toastMessage";
+import { backgroundColorClass } from "@content/utils/color";
+import { fontSizeClass } from "@content/utils/fontSize";
+import { placeToastMessage } from "@content/utils/toastMessage";
 
 export const willClickRT = { data: false };
 

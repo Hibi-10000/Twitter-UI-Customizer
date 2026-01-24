@@ -1,5 +1,5 @@
-import { fontSizeClass } from "@modules/utils/fontSize";
-import { backgroundColorClass } from "@content/modules/utils/color";
+import { fontSizeClass } from "@content/utils/fontSize";
+import { backgroundColorClass } from "@content/utils/color";
 import { JSX } from "solid-js";
 import { data } from "./data";
 
