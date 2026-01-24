@@ -1,6 +1,6 @@
-import { hideElement } from "@content/utils/controlElements";
+import { hideElement } from "@content/utils/element";
 import { getPref } from "@modules/pref";
-import { getAbsolutelyTime, isRelativeTime } from "@content/utils/dateAndTime";
+import { getAbsolutelyTime, isRelativeTime } from "@content/utils/datetime";
 
 // URLなどによる条件分岐が必要だが、一つのファイルとして分離するほどではないものがここには集まっています。
 // NOTE: 条件分岐とClass付与を一行にまとめる場合は、.? をつけるのを忘れないようにしましょう

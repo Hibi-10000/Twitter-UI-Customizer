@@ -1,6 +1,6 @@
 import type { JSX } from "solid-js";
 import { render } from "solid-js/web";
-import { waitForElement, hideElement } from "@content/utils/controlElements";
+import { waitForElement, hideElement } from "@content/utils/element";
 import { getPref } from "@modules/pref";
 import { moreMenuContent } from "./moreMenuContent";
 import { TUICI18N } from "@modules/i18n";

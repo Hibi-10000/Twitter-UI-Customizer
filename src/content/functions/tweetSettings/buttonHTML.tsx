@@ -1,4 +1,4 @@
-import { waitForElement } from "@content/utils/controlElements";
+import { waitForElement } from "@content/utils/element";
 import { getPref } from "@modules/pref";
 import { TUICI18N } from "@modules/i18n";
 import { JSX } from "solid-js";

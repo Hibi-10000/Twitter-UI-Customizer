@@ -1,6 +1,6 @@
 import type { JSX } from "solid-js";
 import { render } from "solid-js/web";
-import { hideElement } from "@content/utils/controlElements";
+import { hideElement } from "@content/utils/element";
 import { fontSizeClass } from "@content/utils/fontSize";
 import { getPref } from "@modules/pref";
 import { backgroundColorClass } from "@content/utils/color";

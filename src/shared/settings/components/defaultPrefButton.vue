@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { TUICI18N } from "@modules/i18n";
-import { waitForElement } from "@content/utils/controlElements";
+import { waitForElement } from "@content/utils/element";
 import { getPref, setPref, mergeDefaultPref, savePref } from "@modules/pref";
 import { isSafemode } from "@content/modules/settings/safemode";
 import { Dialog } from "@shared/tlui/components/Dialog";

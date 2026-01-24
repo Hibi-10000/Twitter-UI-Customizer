@@ -5,7 +5,7 @@ import { XDaruma } from "@content/icons/index";
 import EMPTY from "@content/icons/logo/empty.svg?url";
 import { getColorFromPref } from "@content/utils/color";
 import { getPref } from "@modules/pref";
-import { hideElement } from "@content/utils/controlElements";
+import { hideElement } from "@content/utils/element";
 
 let iconObserver: MutationObserver | null = null;
 

@@ -2,20 +2,20 @@ import { ColorData } from "@shared/sharedData";
 import { getPref } from "@content/modules/pref";
 
 /**
- * RGB配列を#XXXXXX表記に変換します。
+ * RGB 配列を `#XXXXXX` 表記に変換します。
  *
  * @param {[number, number, number]} rgb RGBの色を表す配列
- * @return {string} #XXXXXX表記
+ * @return `#XXXXXX`表記
  */
-export function rgb2hex(rgb: [number, number, number]) {
+export function rgb2hex(rgb: [number, number, number]): string {
     return `#${rgb.map((value) => ("0" + value.toString(16)).slice(-2)).join("")}`;
 }
 
 /**
- * #XXXXXX表記をRGB配列に変換します。
+ * `#XXXXXX` 表記を RGB 配列に変換します。
  *
- * @param {[number, number, number]} hex #XXXXXX表記
- * @return {string} rgbの色を表す配列
+ * @param {[number, number, number]} hex `#XXXXXX`表記
+ * @return RGB 配列
  */
 export function hex2rgb(hex: string): [number, number, number] {
     if (hex.startsWith("#")) hex = hex.slice(1);

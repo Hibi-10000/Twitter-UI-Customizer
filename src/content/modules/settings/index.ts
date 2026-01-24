@@ -1,4 +1,4 @@
-import { waitForElement } from "@content/utils/controlElements";
+import { waitForElement } from "@content/utils/element";
 import { createApp } from "vue";
 import SettingsMain from "@shared/settings/SettingMain.ce.vue";
 import { createPinia } from "pinia";

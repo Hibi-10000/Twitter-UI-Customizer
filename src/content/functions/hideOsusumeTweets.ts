@@ -1,4 +1,4 @@
-import { hideElement, processElement } from "@content/utils/controlElements";
+import { hideElement, processElement } from "@content/utils/element";
 import { getPref } from "@modules/pref";
 import { ProcessedClass } from "@shared/sharedData";
 

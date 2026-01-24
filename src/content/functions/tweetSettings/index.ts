@@ -1,4 +1,4 @@
-import { hasClosest, hideElement, showElement, waitForElement } from "@content/utils/controlElements";
+import { hasClosest, hideElement, showElement, waitForElement } from "@content/utils/element";
 import { getPref, getSettingIDs } from "@modules/pref";
 import { tweetTopButtons } from "./tweetTopButtons";
 import { placeEngagementsLink } from "./placeEngagementsLink";

@@ -1,5 +1,5 @@
 import { TUICI18N } from "@content/modules/i18n";
-import { hideElement, processElement, waitForElement } from "@content/utils/controlElements";
+import { hideElement, processElement, waitForElement } from "@content/utils/element";
 import { getPref, getSettingIDs } from "@modules/pref";
 import { placeToastMessage } from "@content/utils/toastMessage";
 import { ProcessedClass } from "@shared/sharedData";

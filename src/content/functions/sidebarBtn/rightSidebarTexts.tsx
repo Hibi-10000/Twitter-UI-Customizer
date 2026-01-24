@@ -1,4 +1,4 @@
-import { waitForElement } from "@content/utils/controlElements";
+import { waitForElement } from "@content/utils/element";
 import { fontSizeClass } from "@content/utils/fontSize";
 import { backgroundColorClass } from "@content/utils/color";
 import { TUICI18N } from "@content/modules/i18n";

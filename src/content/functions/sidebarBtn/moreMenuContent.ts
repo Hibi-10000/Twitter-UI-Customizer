@@ -1,4 +1,4 @@
-import { hideElement, waitForElement } from "@content/utils/controlElements";
+import { hideElement, waitForElement } from "@content/utils/element";
 import { fontSizeClass } from "@content/utils/fontSize";
 import { getPref, getSettingIDs } from "@modules/pref";
 
