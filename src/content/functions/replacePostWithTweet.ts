@@ -127,11 +127,6 @@ export function replacePost() {
                 elem.closest(`[role="menuitem"]`).querySelector("span").textContent = translate("XtoTwitter-PostToTweet-shareMenu-copyOtherWay");
         }
 
-        // 左サイドバーのツイートボタン
-        for (const elem of getNotReplacedElements('[data-testid="SideNav_NewTweet_Button"] :not(:has(*))')) {
-            elem.textContent = translate("XtoTwitter-PostToTweet-tweetButton");
-        }
-
         // ツイート入力ダイアログ
         const isDialog = !!document.querySelector('[role="alertdialog"],[role="dialog"],[data-testid="twc-cc-mask"]+div');
         const isReply = !!document.querySelector('[role="dialog"] [data-testid="tweet"]');
@@ -144,7 +139,7 @@ export function replacePost() {
         }
         tweetCount = writingTweetCount;
         // ツイートボタン
-        for (const elem of getNotReplacedElements(':is([data-testid="tweetButton"], [data-testid="tweetButtonInline"]) :not(:has(*))')) {
+        for (const elem of getNotReplacedElements(':is([data-testid="tweetButton"], [data-testid="tweetButtonInline"], [data-testid="SideNav_NewTweet_Button"]) :not(:has(*))')) {
             if (isDialog && isMultipleTweet) {
                 // ダイアログで複数ツイートする場合
                 elem.textContent = translate("XtoTwitter-PostToTweet-tweetAllButton");
