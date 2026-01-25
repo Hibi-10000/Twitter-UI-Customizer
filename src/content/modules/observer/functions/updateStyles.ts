@@ -26,7 +26,7 @@ export function updateStyles() {
 const tuicButtonUrl = {
     topics: "/topics",
     lists: "/lists",
-    communities: "/communities",
+    communities: ["/communities", "/communities/explore"],
     connect: "/i/connect_people",
     drafts: "/compose/tweet/unsent/",
     display: ["/i/display", "/settings/display"],
@@ -38,6 +38,7 @@ const tuicButtonUrl = {
     chat: "/i/chat",
 };
 
+// TODO: サイドバーボタン定義において svg() { return unselectedSvg; } と定義していて、クリック時は動的にここで変更している問題をどうにかできないか？
 function sidebarButtons() {
     // TUIC独自のサイドバーボタン(太線かどうかを変更)
     for (const i of document.querySelectorAll(".TUICSidebarButton")) {
