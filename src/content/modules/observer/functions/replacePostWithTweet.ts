@@ -226,7 +226,7 @@ export function replacePost() {
         localizeElemText('[role="menu"] a[role="menuitem"][href$="/analytics"] span', TUICI18N.get("XtoTwitter-PostToTweet-tweetAnalytics"));
 
         // サイドバーのツイートボタン
-        localizeElemText('[data-testid="SideNav_NewTweet_Button"] :not(:has(*))', TUICI18N.get("XtoTwitter-PostToTweet-tweetButton"));
+        localizeElemText('[data-testid="SideNav_NewTweet_Button"]:not(:has(svg)) :not(:has(*))', TUICI18N.get("XtoTwitter-PostToTweet-tweetButton"));
 
         //右サイドバーのスペースのやつ
         for (const elem of getNotReplacedElements(`[data-testid="sidebarColumn"] [data-testid="pill-contents-container"]`)) hasClosestSelector(elem, "h2 span").textContent = TUICI18N.get("XtoTwitter-PostToTweet-rightSidebar-spaceTitle");
