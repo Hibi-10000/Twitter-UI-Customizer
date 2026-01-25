@@ -139,7 +139,7 @@ export function replacePost() {
         }
         tweetCount = writingTweetCount;
         // ツイートボタン
-        for (const elem of getNotReplacedElements(':is([data-testid="tweetButton"], [data-testid="tweetButtonInline"], [data-testid="SideNav_NewTweet_Button"]) :not(:has(*))')) {
+        for (const elem of getNotReplacedElements(':is([data-testid="tweetButton"], [data-testid="tweetButtonInline"]) :not(:has(*))')) {
             if (isDialog && isMultipleTweet) {
                 // ダイアログで複数ツイートする場合
                 elem.textContent = TUICI18N.get("XtoTwitter-PostToTweet-tweetAllButton");
@@ -226,7 +226,7 @@ export function replacePost() {
         localizeElemText('[role="menu"] a[role="menuitem"][href$="/analytics"] span', TUICI18N.get("XtoTwitter-PostToTweet-tweetAnalytics"));
 
         // サイドバーのツイートボタン
-        localizeElemText('[data-testid="SideNav_NewTweet_Button"] > div > span > div > div > span > span', TUICI18N.get("XtoTwitter-PostToTweet-tweetButton"));
+        localizeElemText('[data-testid="SideNav_NewTweet_Button"] :not(:has(*))', TUICI18N.get("XtoTwitter-PostToTweet-tweetButton"));
 
         //右サイドバーのスペースのやつ
         for (const elem of getNotReplacedElements(`[data-testid="sidebarColumn"] [data-testid="pill-contents-container"]`)) hasClosestSelector(elem, "h2 span").textContent = TUICI18N.get("XtoTwitter-PostToTweet-rightSidebar-spaceTitle");
