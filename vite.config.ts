@@ -91,10 +91,6 @@ export default defineConfig(({ command, mode }) => {
                     "firefox 121", //:has()
                     //"safari 16.2", //color-mix()
                 ]),
-                // https://lightningcss.dev/transpilation.html#feature-flags
-                nonStandard: {
-                    deepSelectorCombinator: true,
-                },
                 customAtRules: {
                     unocss: lightningcssPluginUnoCSS.customAtRules.unocss,
                 },
