@@ -27,6 +27,7 @@ const tuicButtonUrl = {
     topics: "/topics",
     lists: "/lists",
     communities: ["/communities", "/communities/explore"],
+    communitynotes: "/i/communitynotes",
     connect: "/i/connect_people",
     drafts: "/compose/tweet/unsent/",
     display: ["/i/display", "/settings/display"],

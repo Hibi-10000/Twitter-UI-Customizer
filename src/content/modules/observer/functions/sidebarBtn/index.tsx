@@ -99,6 +99,16 @@ const _data: Record<string, {
             });
         },
     },
+    communitynotes: {
+        html: () => {
+            return createSidebarButton("communitynotes", () => <path d={SIDEBAR_BUTTON_ICON.communitynotes.unselected}></path>);
+        },
+        onclick: (e: Event) => {
+            e.preventDefault();
+            buttonClickInMoreMenu(`[href="/i/communitynotes"]`);
+        },
+        url: `/i/communitynotes`,
+    },
     drafts: {
         html: () => {
             return createSidebarButton("drafts", () => <path d={SIDEBAR_BUTTON_ICON.drafts.unselected}></path>);
