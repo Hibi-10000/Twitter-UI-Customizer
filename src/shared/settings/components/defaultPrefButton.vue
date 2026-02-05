@@ -31,12 +31,13 @@ const setDefault = async () => {
                 if (isSafemode) {
                     location.href = `${location.protocol}//${location.hostname}`;
                 } else {
-                    document.querySelector("#TUIC_setting").remove();
+                    document.querySelector("#TUICSettings")?.remove();
                     updateClasses();
                     titleObserverFunction();
                     if (!getPref("XToTwitter.XtoTwitter") && document.title.endsWith(" / Twitter")) {
                         document.title = document.title.replace(" / Twitter", " / X");
                     }
+                    // TODO: 要素がいきなり消えて終わりなので、もっと親切なダイアログを表示する
                 }
             }),
             new ButtonComponent(

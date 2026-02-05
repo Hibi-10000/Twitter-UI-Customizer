@@ -131,7 +131,7 @@ const importFunc = async (type: number) => {
         if (isSafemode) {
             location.href = `${location.protocol}//${location.hostname}`;
         } else {
-            document.querySelector("#TUIC_setting").remove();
+            document.querySelector("#TUICSettings")?.remove();
             updateClasses();
             applySystemCss();
 
@@ -139,6 +139,7 @@ const importFunc = async (type: number) => {
             if (!getPref("otherBoolSetting.XtoTwitter") && document.title.endsWith(" / Twitter")) {
                 document.title = document.title.replace(" / Twitter", " / X");
             }
+            // TODO: 要素がいきなり消えて終わりなので、もっと親切なダイアログを表示する
         }
     } catch (x) {
         console.error(x);
