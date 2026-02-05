@@ -264,6 +264,7 @@ export const DEFAULT_SETTINGS = {
             { id: "spaces", i18n: "sidebarButton-moreMenuItems-spaces" },
             { id: "jobs", i18n: "sidebarButton-moreMenuItems-jobs" },
             { id: "grok", i18n: "sidebarButtons-grok" },
+            { id: "creatorStudio", i18n: "sidebarButton-moreMenuItems-creatorStudio" },
         ],
     },
     "sidebarSetting.buttonConfig": {

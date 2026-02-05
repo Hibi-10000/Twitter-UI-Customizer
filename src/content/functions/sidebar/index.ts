@@ -29,6 +29,7 @@ export const SidebarButtonSelectors = {
     spaces: "#TUICSidebar_spaces",
     grok: '[href="/i/grok"]',
     //chat: `#TUICSidebar_chat, [href="/i/chat"]`,
+    creatorStudio: '[href="/i/jf/creators/studio"]',
 };
 
 export function sidebarButtons() {
