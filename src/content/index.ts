@@ -5,7 +5,7 @@
 
 import { TUICObserver } from "@content/observer";
 import { loadI18n, translate } from "@content/i18n";
-import { applySystemCss, addCssElement, applyDataCss, applyCustomIcon, injectSystemStyle, cleanModifiedElements } from "@content/applyCSS";
+import { injectSettingsStyle, injectSystemIconStyle, injectSettingsIconStyle, injectSystemStyle, cleanModifiedElements, injectCustomStyle } from "@content/applyCSS";
 import { isSafemode, runSafemode } from "@content/settings/ui/safemode";
 import { startTluiObserver } from "@shared/tlui/observer";
 import { initIconObserverFunction } from "@content/functions/changeIcon";
@@ -76,9 +76,10 @@ import { waitForElement } from "@content/utils/element";
 
         // CSSの適用
         injectSystemStyle();
-        addCssElement();
-        applyDataCss();
-        applyCustomIcon();
+        injectSettingsStyle();
+        injectCustomStyle();
+        injectSystemIconStyle();
+        injectSettingsIconStyle();
 
         // 起動時のTwitterアイコンを変更
         if (document.querySelector(`#placeholder > svg`)) {
@@ -98,7 +99,7 @@ import { waitForElement } from "@content/utils/element";
         runSettingComponentObserver();
 
         // フォントサイズ変更の検出のためのObserver
-        new MutationObserver(applySystemCss).observe(document.body, {
+        new MutationObserver(injectSettingsStyle).observe(document.body, {
             childList: false,
             subtree: false,
             attributes: true,

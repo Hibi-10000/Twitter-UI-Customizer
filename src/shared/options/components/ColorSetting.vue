@@ -24,7 +24,7 @@ import RoundedColorPicker from "@shared/settings/components/RoundedColorPicker.v
 import TransparentToggleButton from "@shared/settings/components/TransparentToggleButton.vue";
 import ColorResetButton from "@shared/settings/components/ColorResetButton.vue";
 import { getPref, savePref, setPref, deletePref } from "@content/settings";
-import { applySystemCss } from "@content/applyCSS";
+import { injectSettingsStyle } from "@content/applyCSS";
 
 import { useStore } from "../store";
 import { ColorData } from "@shared/sharedData";
@@ -79,7 +79,7 @@ function defaultColor(colorAttr, colorType, colorKind) {
 
     savePref();
 
-    applySystemCss();
+    injectSettingsStyle();
 }
 
 function changeColor(colorAttr, colorType, colorKind, colorPickerVal) {
@@ -93,7 +93,7 @@ function changeColor(colorAttr, colorType, colorKind, colorPickerVal) {
 
     savePref();
 
-    applySystemCss();
+    injectSettingsStyle();
 }
 
 function changeColorCheck(colorAttr, colorType, colorKind, isChecked) {
@@ -104,7 +104,7 @@ function changeColorCheck(colorAttr, colorType, colorKind, isChecked) {
 
     savePref();
 
-    applySystemCss();
+    injectSettingsStyle();
 }
 </script>
 

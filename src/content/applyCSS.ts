@@ -48,12 +48,14 @@ export function injectSystemStyle() {
     }
 }
 
-export function addCssElement() {
-    applySystemCss();
-    if (!isSafemode) applyCustomCss();
+/** 設定されたカスタム CSS を head 要素に注入します。 */
+export function injectCustomStyle() {
+    if (isSafemode) return;
+    injectStyle(CSS_ID_CUSTOM, localStorage.getItem("TUIC_CSS") ?? "");
 }
 
-export function applyDataCss() {
+/** TUIC で使用されるアイコンの CSS を head 要素に注入します。 */
+export function injectSystemIconStyle() {
     injectStyle(CSS_ID_SYSTEM_ICON, `
         [data-tuic-icon-type="dog"] {
             background-image: url('${chrome.runtime.getURL(DOG)}');
@@ -70,7 +72,10 @@ export function applyDataCss() {
     `);
 }
 
-export function applyCustomIcon() {
+/** 設定されたカスタムアイコン CSS を head 要素に注入します。 */
+export function injectSettingsIconStyle() {
+    if (isSafemode) return;
+
     injectStyle(CSS_ID_SETTINGS_ICON, `
         [data-tuic-icon-type="custom"],
         #TUICIcon_IconImg {
@@ -79,7 +84,10 @@ export function applyCustomIcon() {
     `);
 }
 
-export function applySystemCss() {
+/** 設定項目の CSS を head 要素に注入します。 */
+export function injectSettingsStyle() {
+    if (isSafemode) return;
+
     const backgroundColor = backgroundColorCheck();
 
     const settingsArr = [
@@ -159,10 +167,6 @@ export function applySystemCss() {
     injectStyle(CSS_ID_SETTINGS, rule.cssText);
 }
 
-export function applyCustomCss() {
-    injectStyle(CSS_ID_CUSTOM, localStorage.getItem("TUIC_CSS") ?? "");
-}
-
 // TODO: 現状、savePref が呼ばれた際にしか呼ばれていないため、設定の更新を検知したら自動的にこれが発火される仕組みを導入したい
 /**
  * Twitter UI Customizer によって変更された要素をすべて元に戻します。
@@ -178,5 +182,5 @@ export function cleanModifiedElements() {
         for (const id of AttrList) elem.removeAttribute(`data-${id}`);
     });
 
-    applySystemCss();
+    injectSettingsStyle();
 }

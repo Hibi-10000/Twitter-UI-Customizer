@@ -1,4 +1,4 @@
-import { applySystemCss } from "@content/applyCSS";
+import { injectSettingsStyle } from "@content/applyCSS";
 import { FAVORITE_ICON, HOME_ICON, SIDEBAR_BUTTON_ICON } from "@shared/icons";
 import { getPref } from "@content/settings";
 import { ProcessedClass } from "@shared/sharedData";
@@ -15,7 +15,7 @@ export function updateStyles() {
 
     //* apply CSS
     if (document.documentElement.style.fontSize != fontSize1 || document.querySelector(`h1[role="heading"] > a[href="/home"]`)?.className.includes("r-116um31") !== fontSize2) {
-        applySystemCss();
+        injectSettingsStyle();
         fontSize1 = document.documentElement.style.fontSize;
         fontSize2 = document.querySelector(`h1[role="heading"] > a[href="/home"]`)?.className.includes("r-116um31");
     }
