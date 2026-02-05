@@ -5,7 +5,7 @@
 
 import { TUICObserver } from "@content/observer";
 import { loadI18n, translate } from "@content/i18n";
-import { applySystemCss, addCssElement, applyDataCss, applyCustomIcon, injectDefaultStyle, cleanModifiedElements } from "@content/applyCSS";
+import { applySystemCss, addCssElement, applyDataCss, applyCustomIcon, injectSystemStyle, cleanModifiedElements } from "@content/applyCSS";
 import { isSafemode, runSafemode } from "@content/settings/ui/safemode";
 import { startTluiObserver } from "@shared/tlui/observer";
 import { initIconObserverFunction } from "@content/functions/changeIcon";
@@ -18,7 +18,7 @@ import { waitForElement } from "@content/utils/element";
 (async () => {
     // TODO: twitter.com は x.com に強制的にリダイレクトされるため、これらは使用不可能
     if (location.href === "https://twitter.com/ja/tos") {
-        injectDefaultStyle();
+        injectSystemStyle();
         // NOTE: i18n データのフェッチ
         await loadI18n();
         // Pref救出
@@ -75,7 +75,7 @@ import { waitForElement } from "@content/utils/element";
         });
 
         // CSSの適用
-        injectDefaultStyle();
+        injectSystemStyle();
         addCssElement();
         applyDataCss();
         applyCustomIcon();

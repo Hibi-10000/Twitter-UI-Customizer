@@ -16,7 +16,7 @@ export function runSafemode() {
 
     document.title = translate("safemode-title");
     document.querySelector("#TUIC_safemode")?.remove();
-    document.querySelector(".twitter_ui_customizer_css")?.remove();
+    // TODO: できればここに CSS のクリーンアップが欲しいっぽい
     document.querySelector<HTMLElement>("#react-root").style.display = "none";
 
     const entry = document.createElement("div");
