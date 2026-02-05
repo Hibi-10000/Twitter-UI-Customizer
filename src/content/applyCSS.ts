@@ -3,29 +3,27 @@ import { isSafemode } from "@content/settings/ui/safemode";
 import { DOG, TWITTER, X, XDaruma } from "@shared/icons";
 import { AttrList, ClassList, ColorData } from "@shared/sharedData";
 
-import styleUrl from "./styles/index.css?url";
+import tuicStyleUrl from "./styles/index.css?url";
 import unoStyleUrl from "./styles/uno.css?url";
 import { backgroundColorCheck, backgroundColorClass, getColorFromPref } from "@content/utils/color";
 import { getPref, getSettingIDs } from "@content/settings";
 import { fontSizeClass } from "@content/utils/fontSize";
 
-export function applyDefaultStyle() {
-    document.querySelector("#tuicDefaultStyle")?.remove();
-    const link = document.createElement("link");
-    link.id = "tuicDefaultStyle";
-    link.rel = "stylesheet";
-    link.href = chrome.runtime.getURL(styleUrl);
-    document.head.appendChild(link);
-    applyUnocssStyle();
-}
+/** TUIC で使用される必須の CSS を head 要素に注入します。 */
+export function injectDefaultStyle() {
+    const styleUrls = [tuicStyleUrl, unoStyleUrl];
 
-function applyUnocssStyle() {
-    document.querySelector("#tuicUnocssStyle")?.remove();
-    const link = document.createElement("link");
-    link.id = "tuicUnocssStyle";
-    link.rel = "stylesheet";
-    link.href = chrome.runtime.getURL(unoStyleUrl);
-    document.head.appendChild(link);
+    for (let i = 0; i < styleUrls.length; i++) {
+        const id = "tuic-style-default-" + i;
+        const url = chrome.runtime.getURL(styleUrls[i]);
+
+        document.getElementById(id)?.remove();
+        const link = document.createElement("link");
+        link.id = id;
+        link.rel = "stylesheet";
+        link.href = url;
+        document.head.appendChild(link);
+    }
 }
 
 export function addCssElement() {
