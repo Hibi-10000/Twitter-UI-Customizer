@@ -28,7 +28,16 @@ export const tweetButtonData: Record<string, {
             );
         },
         clickEvent: (data: ArticleInfomation) => {
-            navigator.clipboard.writeText(data.elements.statusButton.href.replace(/(twitter\.com|x\.com)/, TweetUnderButtonsData.copyURL[getPref("tweetDisplaySetting.linkCopyURL")]));
+            let tweetUrl = data.elements.statusButton.href;
+
+            // NOTE: ドメインを変更
+            tweetUrl = tweetUrl.replace(/(twitter\.com|x\.com)/, TweetUnderButtonsData.copyURL[getPref("tweetDisplaySetting.linkCopyURL")]);
+
+            // NOTE: 編集済みのツイートであることがあるため、"/history" を削除する
+            tweetUrl = tweetUrl.replace(/\/history$/, "");
+
+            // NOTE: クリップボードにコピーし、トーストを表示
+            navigator.clipboard.writeText(tweetUrl);
             placeToastMessage(TUICI18N.get("bottomTweetButtons-urlCopy-layer"));
         },
         enable: (articleInfomation: ArticleInfomation): boolean => {
