@@ -8,6 +8,7 @@
         "debug": "pnpm run debug:firefox",
         "debug:firefox": "pnpm run build:firefox --watch",
         "debug:chromium": "pnpm run build:chromium --watch",
+        "clean": "node -e \"(await import('fs')).rmSync('dist', { recursive: true })\"",
         "type-check": "pnpm run lint:tsc",
         "lint": "pnpm run lint:tsc & pnpm run lint:eslint & pnpm run lint:stylelint & pnpm run lint:prettier",
         "lint:tsc": "vue-tsc --build --noEmit",
