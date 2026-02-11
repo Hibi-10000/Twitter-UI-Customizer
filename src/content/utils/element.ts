@@ -85,7 +85,7 @@ export function hasClosest<T extends Element>(elem: Element, selector: string): 
  */
 export function hasClosestSelector<T extends Element>(elem: Element, selector: string): T {
     let elem2 = elem;
-    let returnElem = null;
+    let returnElem: T = null;
     while (elem2 && !(returnElem = elem2.querySelector(selector))) {
         elem2 = elem2.parentElement;
     }
