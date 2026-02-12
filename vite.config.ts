@@ -64,7 +64,7 @@ export default defineConfig(({ command, mode }) => {
                         }
                     },
                     assetFileNames(assetInfo) {
-                        if (assetInfo.originalFileNames.some((v) => v.endsWith(".css"))) {
+                        if (assetInfo.names.some((v) => v.endsWith(".css"))) {
                             return "assets/css/[name][extname]";
                         }
                         if (assetInfo.originalFileNames.some((v) => v.endsWith(".svg"))) {
