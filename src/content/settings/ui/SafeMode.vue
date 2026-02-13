@@ -39,7 +39,7 @@
 <script setup lang="ts">
 import { translate } from "@content/i18n";
 
-import OptionMain from "@shared/settings/SettingMain.ce.vue";
+import OptionMain from "@shared/settings/SettingMain.vue";
 </script>
 
 <style scoped>

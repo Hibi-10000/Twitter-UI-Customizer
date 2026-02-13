@@ -1,8 +1,9 @@
 import { waitForElement } from "@content/utils/element";
 import { createApp } from "vue";
-import SettingsMain from "@shared/settings/SettingMain.ce.vue";
+import SettingsMain from "@shared/settings/SettingMain.vue";
 import { createPinia } from "pinia";
 import { isSafemode } from "./safemode";
+import vueStyleUrl from "virtual:vue.css?url";
 
 let DisplaySettingObserver: MutationObserver = null;
 
@@ -27,12 +28,10 @@ function placeSettingComponent(rootElement: HTMLElement) {
     // NOTE: すでに SettingsMain.ce.vue が配置されている場合は何もしない
     if (document.querySelector("#TUICSettings")) return;
 
-    // NOTE: SettingsMain.ce.vue 内で定義されたスタイルを適用する
-    if (SettingsMain.styles !== undefined) {
-        const style = document.createElement("style");
-        style.textContent = SettingsMain.styles;
-        document.head.appendChild(style);
-    }
+    const style = document.createElement("link");
+    style.rel = "stylesheet";
+    style.href = chrome.runtime.getURL(vueStyleUrl);
+    document.head.appendChild(style);
 
     if (document.querySelector("#TUICSettingsContainer") === null) {
         const div = document.createElement("div");

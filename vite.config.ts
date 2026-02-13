@@ -62,6 +62,9 @@ export default defineConfig(({ command, mode }) => {
                         if (id.includes("i18n")) {
                             return "i18n";
                         }
+                        if (id.includes(".vue?vue&type=style&")) {
+                            return "vue";
+                        }
                     },
                     assetFileNames(assetInfo) {
                         if (assetInfo.names.some((v) => v.endsWith(".css"))) {
@@ -124,6 +127,20 @@ export default defineConfig(({ command, mode }) => {
                 enforce: "post",
                 closeBundle() {
                     console.log(new Date().toLocaleString());
+                },
+            },
+            {
+                name: "vueCSSUrlImport",
+                enforce: "post",
+                resolveId(id) {
+                    if (id === "virtual:vue.css?url") {
+                        return "\0virtual:vuecss?url";
+                    }
+                },
+                load(id) {
+                    if (id === "\0virtual:vuecss?url") {
+                        return `export default "/assets/css/vue.css"`;
+                    }
                 },
             },
             vitePluginWebExt(import.meta.dirname, r("dist"), r("dist"), mode === "chromiumCRX" ? "disable-web-ext" : mode),

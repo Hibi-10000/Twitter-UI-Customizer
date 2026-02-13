@@ -1,7 +1,8 @@
 import { createApp } from "vue";
-import safemodeVue from "./SafeMode.ce.vue";
+import safemodeVue from "./SafeMode.vue";
 import { createPinia } from "pinia";
 import { translate } from "@content/i18n";
+import vueStyleUrl from "virtual:vue.css?url";
 
 // https://stackoverflow.com/questions/42800035/why-cant-you-create-custom-elements-in-content-scripts
 // import "@webcomponents/custom-elements";
@@ -23,12 +24,10 @@ export function runSafemode() {
     entry.id = "TUICOptionSafemodeEntry";
     document.body.appendChild(entry);
 
-    // styles, not style
-    if (safemodeVue.styles !== undefined) {
-        const style = document.createElement("style");
-        style.textContent = safemodeVue.styles;
-        document.head.appendChild(style);
-    }
+    const style = document.createElement("link");
+    style.rel = "stylesheet";
+    style.href = chrome.runtime.getURL(vueStyleUrl);
+    document.head.appendChild(style);
 
     const app = createApp(safemodeVue);
     app.use(createPinia());
