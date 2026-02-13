@@ -1,13 +1,3 @@
-/* セーフモード時の設定画面スタイル */
-#TUIC_safemode > #TUIC_setting {
-    max-width: 600px;
-    margin: 2em auto;
-}
-
-#TUIC_safemode > .r-135wba7 {
-    line-height: 1em;
-}
-
 .TUICDefaultColor {
     display: flex;
     align-items: center;
@@ -493,7 +483,7 @@ textarea#css_textarea {
     }
 }
 
-#TUIC_setting :is(label, span, button, h2) {
+#TUICSettings :is(label, span, button, h2) {
     white-space: pre-wrap;
 }
 
@@ -536,11 +526,11 @@ textarea#css_textarea {
     justify-content: center;
     width: 100%;
 }
-#TUIC_setting {
+#TUICSettings {
     padding: 0;
 }
 
-#TUIC_setting * {
+#TUICSettings * {
     font-family:
         Inter,
         -apple-system,

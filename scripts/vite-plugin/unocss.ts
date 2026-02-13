@@ -19,6 +19,11 @@ export const vitePluginUnoCSS = async (configOrPath?: string | UserConfig): Prom
             ]).process("@unocss;", { from: "src/content/styles/uno.css" });
             //unoResult.messages.map((message) => console.log("[vitePluginUnocss]", message.file));
         },
+        shouldTransformCachedModule(options) {
+            if (options.id.endsWith("src/content/styles/uno.css?transform-only")) {
+                return true;
+            }
+        },
     };
 };
 

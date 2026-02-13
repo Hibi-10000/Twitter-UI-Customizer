@@ -93,7 +93,17 @@ nav {
         display: none;
     }
 }
-#TUIC_setting > div:first-of-type {
+/* セーフモード時の設定画面スタイル */
+#TUIC_safemode > :deep(#TUICSettings) {
+    max-width: 600px;
+    margin: 2em auto;
+}
+/*
+#TUIC_safemode > :deep(.r-135wba7) {
+    line-height: 1em;
+}
+:deep(#TUICSettings > div:first-of-type) {
     display: none;
 }
+*/
 </style>

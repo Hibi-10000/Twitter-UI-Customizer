@@ -66,7 +66,7 @@
             <IconButton i18n="addonInfo-github" :icon="ICON_GITHUB" @click="openGithub" />
         </div>
         <a class="TUIC_setting_bottom_copyright" href="https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer/blob/main/LICENSE">
-            <span style=" font-size: 15px;color: rgb(113 118 124); text-align: center">&copy; 2022-2025 kaonasi-biwa</span>
+            <span style=" font-size: 15px;color: rgb(113 118 124); text-align: center">&copy; 2022-2026 kaonasi-biwa</span>
         </a>
     </div>
 </template>
