@@ -147,7 +147,11 @@ export default defineConfig(({ command, mode }) => {
             vitePluginUnoCSS(),
             solidPlugin(),
             // Vue Plugins
-            vue(),
+            vue({
+                features: {
+                    optionsAPI: false,
+                },
+            }),
             svgLoader({
                 svgoConfig: {
                     plugins: ["prefixIds"],
