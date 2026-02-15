@@ -36,4 +36,17 @@ const clickedBtn = () => {
 .TUICDefaultColor:active {
     background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 10%);
 }
+
+.TUICButtonRest_innersvg__container svg {
+    width: 22px;
+    height: 22px;
+    opacity: 1;
+}
+.TUICButtonRest_innersvg__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
 </style>
