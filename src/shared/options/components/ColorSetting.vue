@@ -108,4 +108,19 @@ function changeColorCheck(colorAttr, colorType, colorKind, isChecked) {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.TUIC_ISNOTDEFAULT :deep(.TUICDefaultColor:is(:hover, :focus-visible, :active)) {
+    background: transparent;
+}
+
+.TUIC_ISNOTDEFAULT:not(:last-of-type) {
+    /* margin-bottom: calc(12px + 1em); */
+}
+.TUIC_ISNOTDEFAULT :deep(.TUICDefaultColor .TUICButtonRest_innersvg__container svg) {
+    opacity: 0.6;
+}
+
+.TUIC_ISNOTDEFAULT :deep(button.TUICDefaultColor) {
+    cursor: not-allowed;
+}
+</style>
