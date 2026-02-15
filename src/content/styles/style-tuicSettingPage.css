@@ -1,22 +1,3 @@
-/* 色選択 */
-.TUIC_setting_color_colmn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.TUIC_setting_color_colmn > h4 {
-    margin: 0 !important;
-    font-size: 15px;
-    font-weight: 700 !important;
-    color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 40%);
-}
-
-.TUIC_setting_color_colmn > .TUIC_setting_input_container {
-    display: flex;
-    gap: 10px;
-}
-
 /* 無理やり丸くするための準備（スタイルを消しまくったりポインタをカーソルにしてわかりやすく） */
 .TUIC_col_setting_container input[type="color"] {
     width: 200%;
@@ -55,12 +36,6 @@
 
 .TUIC_input_color_rounded__container:active {
     border-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 40%);
-}
-
-/* 色設定項目の操作可能なオブジェクトのコンテナ */
-.TUIC_setting_input_container {
-    display: flex;
-    align-items: center;
 }
 
 /* 設定項目のタイトル */

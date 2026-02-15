@@ -123,4 +123,29 @@ function changeColorCheck(colorAttr, colorType, colorKind, isChecked) {
 .TUIC_ISNOTDEFAULT :deep(button.TUICDefaultColor) {
     cursor: not-allowed;
 }
+
+/* 色選択 */
+.TUIC_setting_color_colmn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.TUIC_setting_color_colmn > h4 {
+    margin: 0 !important;
+    font-size: 15px;
+    font-weight: 700 !important;
+    color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 40%);
+}
+
+.TUIC_setting_color_colmn > .TUIC_setting_input_container {
+    display: flex;
+    gap: 10px;
+}
+
+/* 色設定項目の操作可能なオブジェクトのコンテナ */
+.TUIC_setting_input_container {
+    display: flex;
+    align-items: center;
+}
 </style>
