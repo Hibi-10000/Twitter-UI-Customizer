@@ -166,4 +166,19 @@ if (UDALL.length > 5) {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+/* 表示非表示のセレクトボックス */
+.TUIC_selectbox {
+    padding-bottom: 5px;
+    margin-top: 10px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    background: black;
+    border: solid 1px #71767b;
+    border-radius: 6px;
+}
+
+.TUIC_selectbox::-webkit-scrollbar {
+    height: 8px;
+}
+</style>
