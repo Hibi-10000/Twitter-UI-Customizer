@@ -178,14 +178,6 @@ div[tuicudbox] > .UpDownButtons {
     flex-direction: column;
 }
 
-textarea#css_textarea {
-    width: calc(100% - 10px);
-    height: 300px;
-    margin-bottom: 20px;
-    resize: vertical;
-    border-radius: 6px;
-}
-
 .TUICTextInput {
     width: calc(100% - 10px);
     padding-top: 5px;

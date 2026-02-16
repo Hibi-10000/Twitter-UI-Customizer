@@ -20,3 +20,13 @@ function changeCustomCSS() {
 
 const customCSS = localStorage.getItem("TUIC_CSS");
 </script>
+
+<style scoped>
+textarea#css_textarea {
+    width: calc(100% - 10px);
+    height: 300px;
+    margin-bottom: 20px;
+    resize: vertical;
+    border-radius: 6px;
+}
+</style>
