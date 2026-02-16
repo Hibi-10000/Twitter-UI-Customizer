@@ -27,3 +27,34 @@ function setInputValue(value: string) {
     colorPicker.value.value = value;
 }
 </script>
+
+<style scoped>
+/* type=colorなinputタグを無理やり丸くするためのマスク */
+.TUIC_input_color_rounded {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+/* ホバー時の背景色変化とクリック時のサイズ変更を加えるためだけのコンテナ */
+.TUIC_input_color_rounded__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #9c9c9c80;
+    border: solid 3px color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 20%);
+    border-radius: 50%;
+    transition: none;
+}
+
+.TUIC_input_color_rounded__container:is(:hover, :focus-visible) {
+    background: var(--TUIC-color-hover-efect);
+}
+
+.TUIC_input_color_rounded__container:active {
+    border-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 40%);
+}
+</style>
