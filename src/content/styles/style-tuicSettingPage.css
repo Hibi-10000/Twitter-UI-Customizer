@@ -27,18 +27,6 @@
     border-radius: 14px;
 }
 
-.TUIC_col_setting_container_2 {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-#TUICColorSettingsDivBox {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
 /* 表示非表示のセレクトボックス */
 .TUIC_selectbox {
     padding-bottom: 5px;
