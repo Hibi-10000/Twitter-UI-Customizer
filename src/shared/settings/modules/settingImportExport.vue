@@ -149,3 +149,14 @@ const importFunc = async (type: number) => {
     }
 };
 </script>
+
+<style scoped>
+.TUICTextInput {
+    width: calc(100% - 10px);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #808080;
+    border-radius: 6px;
+}
+</style>
