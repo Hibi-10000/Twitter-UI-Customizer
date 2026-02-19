@@ -222,11 +222,6 @@ div[tuicudbox] > .UpDownButtons {
     white-space: pre-wrap;
 }
 
-.TUICUpDownTitle {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
 #TUICSelectedColorType {
     position: sticky;
     top: 0;

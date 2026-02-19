@@ -181,4 +181,9 @@ if (UDALL.length > 5) {
 .TUIC_selectbox::-webkit-scrollbar {
     height: 8px;
 }
+
+.TUICUpDownTitle {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
 </style>
