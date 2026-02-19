@@ -52,4 +52,19 @@ async function changeCustomCSS() {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.TUICUploadedImg {
+    background-size: cover;
+}
+:root[data-tuic-settings*="|twitterIcon.options.roundIcon|"] #TUICIcon_IconImg {
+    border-radius: 9999px !important;
+}
+
+.TUICUploadedImg:not([data-testid="interstitialGraphic"] > svg) {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border: 1px solid;
+    border-color: var(--TUIC-detail-border) !important;
+}
+</style>
