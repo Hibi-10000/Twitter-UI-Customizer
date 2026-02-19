@@ -61,4 +61,52 @@ const setDefaultTwitterColor = () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.TUICSettingRadioTypeBigButton {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 20px;
+    border: 3px solid color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 10%);
+    border-radius: 10px !important;
+}
+
+.TUICSettingRadioTypeBigButton > span > span {
+    /* font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        Helvetica,
+        Roboto,
+        "Segoe UI",
+        "Noto Sans" "Noto Sans JP",
+        Meiryo,
+        system-ui,
+        sans-serif; */
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    mix-blend-mode: difference;
+}
+
+.TUICSettingRadioTypeBigButton > span {
+    white-space: nowrap;
+}
+
+.TUICColorSettingRadio {
+    display: none;
+}
+
+.TUICColorSettingRadio:checked + .TUICSettingRadioTypeBigButton {
+    border: 3px solid #1da1f2 !important;
+}
+
+.TUICColorSettingRadio:not(:checked) + .TUICSettingRadioTypeBigButton {
+    font-weight: 400;
+    border: 3px solid color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 5%) !important;
+}
+</style>
