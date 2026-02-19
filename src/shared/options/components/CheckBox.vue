@@ -26,4 +26,37 @@ const changePref = (path: string, event: Event) => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.TUICCheckBoxParent > input[type="checkbox"] {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    appearance: none;
+    background-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) var(--TUIC-checkbox-opacity, 7%));
+    border-radius: 0.25rem;
+    &:is(:hover, :focus-visible) {
+        --TUIC-checkbox-opacity: 12%;
+    }
+    &:active {
+        --TUIC-checkbox-opacity: 17%;
+    }
+    &:checked {
+        background-color: rgb(37 99 235);
+        &:is(:hover, :focus-visible) {
+            background-color: rgb(59 130 246);
+        }
+        &:active {
+            background-color: rgb(96 165 250);
+        }
+        &::before {
+            opacity: 1;
+        }
+    }
+    &::before {
+        font-size: 1rem;
+        vertical-align: 0.05rem;
+        color: #fff;
+        opacity: 0;
+    }
+}
+</style>
