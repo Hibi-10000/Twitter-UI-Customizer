@@ -236,35 +236,6 @@ div[tuicudbox] > .UpDownButtons {
     margin: 35px 0;
 }
 
-.TUIC_setting_toplogo {
-    width: 150px;
-}
-
-.TUIC_setting_toplogo_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-#TUICSettings {
-    padding: 0;
-}
-
-#TUICSettings * {
-    font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        Helvetica,
-        Roboto,
-        "Segoe UI",
-        "Noto Sans",
-        "Noto Sans JP",
-        Meiryo,
-        system-ui,
-        sans-serif;
-}
-
 .TUIC_settings_header_container {
     display: flex;
     flex-direction: column;

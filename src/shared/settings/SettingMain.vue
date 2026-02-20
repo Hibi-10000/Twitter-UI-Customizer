@@ -166,9 +166,40 @@ function rescuePref() {
         .open();
 }
 </script>
-<!--
+
 <style scoped>
+/*
 * {
     background: red;
 }
-</style> -->
+*/
+
+.TUIC_setting_toplogo {
+    width: 150px;
+}
+
+.TUIC_setting_toplogo_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+#TUICSettings {
+    padding: 0;
+}
+
+#TUICSettings * {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        Helvetica,
+        Roboto,
+        "Segoe UI",
+        "Noto Sans",
+        "Noto Sans JP",
+        Meiryo,
+        system-ui,
+        sans-serif;
+}
+</style>
