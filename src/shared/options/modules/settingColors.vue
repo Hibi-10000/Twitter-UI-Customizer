@@ -109,4 +109,14 @@ const setDefaultTwitterColor = () => {
     font-weight: 400;
     border: 3px solid color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 5%) !important;
 }
+
+#TUICSelectedColorType {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;
+    background-color: var(--TUIC-container-background);
+}
 </style>

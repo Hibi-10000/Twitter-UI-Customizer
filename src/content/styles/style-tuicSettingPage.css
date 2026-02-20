@@ -222,16 +222,6 @@ div[tuicudbox] > .UpDownButtons {
     white-space: pre-wrap;
 }
 
-#TUICSelectedColorType {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    display: flex;
-    gap: 10px;
-    padding-top: 20px;
-    background-color: var(--TUIC-container-background);
-}
-
 .TUIC_setting_divider {
     margin: 20px 0;
     border: none;
