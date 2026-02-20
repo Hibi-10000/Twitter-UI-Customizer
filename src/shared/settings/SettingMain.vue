@@ -202,4 +202,8 @@ function rescuePref() {
         system-ui,
         sans-serif;
 }
+
+.TUIC_setting_easysetting_container {
+    margin-bottom: 35px;
+}
 </style>
