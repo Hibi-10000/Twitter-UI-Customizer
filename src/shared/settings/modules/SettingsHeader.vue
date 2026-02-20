@@ -24,4 +24,30 @@ withDefaults(defineProps<Props>(), {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.TUIC_settings_header_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+    padding: 0 35px;
+    padding-top: 35px;
+}
+
+.TUIC_settings_header_title {
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+}
+
+.TUIC_settings_header_desc {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    color: #71767c;
+}
+
+.TUIC_settings_header_title.TUIC_settings_header_lv2 {
+    font-size: 20px;
+}
+</style>
