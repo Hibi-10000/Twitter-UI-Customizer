@@ -236,12 +236,6 @@ div[tuicudbox] > .UpDownButtons {
     margin: 35px 0;
 }
 
-.TUIC_setting_defaultprefbutton {
-    color: rgb(244 34 45);
-
-    --twitter-TUIC-color: rgb(244 34 45);
-}
-
 .TUIC_setting_section_title {
     padding: 0 35px 10px;
     margin: 0;
