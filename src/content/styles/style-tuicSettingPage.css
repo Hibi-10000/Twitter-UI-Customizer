@@ -236,16 +236,6 @@ div[tuicudbox] > .UpDownButtons {
     margin: 35px 0;
 }
 
-.TUIC_RoundedColorPicker_input {
-    width: 200%;
-    height: 200%;
-    appearance: none;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    transform: translate(-25%, -25%);
-}
-
 .TUIC_setting_color_select_info {
     display: flex;
     padding: 0;

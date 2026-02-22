@@ -57,4 +57,14 @@ function setInputValue(value: string) {
 .TUIC_input_color_rounded__container:active {
     border-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 40%);
 }
+
+.TUIC_RoundedColorPicker_input {
+    width: 200%;
+    height: 200%;
+    appearance: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    transform: translate(-25%, -25%);
+}
 </style>
