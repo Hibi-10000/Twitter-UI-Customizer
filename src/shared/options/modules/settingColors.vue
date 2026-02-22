@@ -119,4 +119,15 @@ const setDefaultTwitterColor = () => {
     padding-top: 20px;
     background-color: var(--TUIC-container-background);
 }
+
+.TUIC_setting_color_select_info {
+    display: flex;
+    padding: 0;
+    margin: 20px 0 0;
+    font-size: 15px;
+    font-feature-settings: "palt";
+    line-height: 1.4;
+    color: rgb(113 118 124);
+    letter-spacing: 1px;
+}
 </style>

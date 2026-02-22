@@ -236,17 +236,6 @@ div[tuicudbox] > .UpDownButtons {
     margin: 35px 0;
 }
 
-.TUIC_setting_color_select_info {
-    display: flex;
-    padding: 0;
-    margin: 20px 0 0;
-    font-size: 15px;
-    font-feature-settings: "palt";
-    line-height: 1.4;
-    color: rgb(113 118 124);
-    letter-spacing: 1px;
-}
-
 .TUIC_setting_sidebarFigure {
     width: 100%;
     height: 100%;
