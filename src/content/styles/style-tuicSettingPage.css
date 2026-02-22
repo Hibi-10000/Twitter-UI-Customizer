@@ -236,14 +236,6 @@ div[tuicudbox] > .UpDownButtons {
     margin: 35px 0;
 }
 
-.TUIC_setting_section_title_2 {
-    padding: 0;
-    margin: 0;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--twitter-TUIC-color);
-}
-
 .TUIC_setting_detailsbox_icon {
     width: 24px;
     margin: auto;
