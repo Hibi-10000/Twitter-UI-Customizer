@@ -236,17 +236,6 @@ div[tuicudbox] > .UpDownButtons {
     margin: 35px 0;
 }
 
-.TUIC_setting_sidebarFigure {
-    width: 100%;
-    height: 100%;
-    margin: 20px 0;
-    border-radius: 0 10px 10px 0;
-}
-
-.TUIC_setting_rightSidebarFigure {
-    border-radius: 10px 0 0 10px;
-}
-
 .TUIC_setting_TwButtonFigure {
     width: 100%;
     height: 100%;
