@@ -236,14 +236,6 @@ div[tuicudbox] > .UpDownButtons {
     margin: 35px 0;
 }
 
-.TUIC_setting_UpdownListBtnDivider {
-    width: 100%;
-    height: 1px;
-    margin: 5px 0;
-    background-color: #303438;
-    border: none;
-}
-
 .TUIC_settings_subtitle2 {
     margin: 20px 0 10px;
     font-size: 15px;

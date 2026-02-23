@@ -186,4 +186,12 @@ if (UDALL.length > 5) {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
+
+.TUIC_setting_UpdownListBtnDivider {
+    width: 100%;
+    height: 1px;
+    margin: 5px 0;
+    background-color: #303438;
+    border: none;
+}
 </style>
