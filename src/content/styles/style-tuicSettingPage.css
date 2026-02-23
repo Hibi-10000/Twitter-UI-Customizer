@@ -236,14 +236,6 @@ div[tuicudbox] > .UpDownButtons {
     margin: 35px 0;
 }
 
-.TUIC_settings_subtitle2 {
-    margin: 20px 0 10px;
-    font-size: 15px;
-    font-feature-settings: "palt";
-    color: rgb(113 118 124);
-    letter-spacing: 1px;
-}
-
 .TUIC_setting_IconRadioButton > svg {
     width: 24px;
     height: 24px;
