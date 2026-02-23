@@ -86,3 +86,23 @@ import CheckBoxList from "@shared/options/components/CheckBoxList.vue";
 import RadioButtonList from "@shared/options/components/RadioButtonList.vue";
 import SettingSubTitle from "@shared/options/components/textParts/settingSubTitle.vue";
 </script>
+
+<style scoped>
+.TUIC_setting_TwButtonFigure {
+    width: 100%;
+    height: 100%;
+    margin: 20px 0;
+    border-radius: 10px 10px 0;
+}
+
+.TUIC_setting_TwButtonFigure_top {
+    border-radius: 10px 0 10px 10px;
+}
+
+.TUIC_setting_TwEngagementFigure {
+    width: 100%;
+    height: 100%;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+</style>
