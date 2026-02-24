@@ -269,11 +269,6 @@ div[tuicudbox] > .UpDownButtons {
     display: none;
 }
 
-.TUIC_settings_settingsSidebar_IconRadioBtnList_container {
-    display: flex;
-    gap: 10px;
-}
-
 .TUICSettingSubTitleNomargin {
     padding: 0;
     margin: 0;

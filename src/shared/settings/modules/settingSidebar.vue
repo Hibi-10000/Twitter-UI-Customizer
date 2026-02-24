@@ -63,4 +63,9 @@ const iconsList: Component[] = [ICON_HOME_X, ICON_HOME_TWITTER, ICON_HOME_TUIC];
 .TUIC_setting_rightSidebarFigure {
     border-radius: 10px 0 0 10px;
 }
+
+.TUIC_settings_settingsSidebar_IconRadioBtnList_container {
+    display: flex;
+    gap: 10px;
+}
 </style>
