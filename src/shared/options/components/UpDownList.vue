@@ -182,6 +182,39 @@ if (UDALL.length > 5) {
     height: 8px;
 }
 
+#TUIC_invisible,
+#TUIC_visible {
+    height: 100%;
+    padding-bottom: 50px;
+    overflow-y: clip;
+    background: transparent;
+    border-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 20%);
+}
+
+#TUIC_invisible span,
+#TUIC_visible span {
+    color: var(--twitter-TUIC-color);
+    background: transparent;
+}
+
+#TUIC_invisible > div,
+#TUIC_visible > div {
+    /* height: 100$; */
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+#TUIC_invisible > div:is(:hover, :focus-visible),
+#TUIC_visible > div:is(:hover, :focus-visible) {
+    background-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 5%);
+}
+
+#TUIC_invisible > div span,
+#TUIC_visible > div > span {
+    line-height: calc(1em + 5px);
+    white-space: nowrap;
+}
+
 [TUICSelectedUpDownContent="true"],
 [TUICSelectedUpDownContent="true"]:is(:hover, :focus-visible) {
     background-color: #1da1f2 !important;
