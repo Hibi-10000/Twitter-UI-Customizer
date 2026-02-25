@@ -67,4 +67,15 @@ async function changeCustomCSS() {
     border: 1px solid;
     border-color: var(--TUIC-detail-border) !important;
 }
+
+.TUICSelectImg {
+    font-size: 15px;
+}
+.TUICSelectImg::file-selector-button {
+    padding: 10px 20px;
+    margin-right: 12px;
+    background-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 20%);
+    border: none;
+    border-radius: 10px;
+}
 </style>

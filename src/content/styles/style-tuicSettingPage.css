@@ -269,17 +269,6 @@ div[tuicudbox] > .UpDownButtons {
     display: none;
 }
 
-.TUICSelectImg {
-    font-size: 15px;
-}
-.TUICSelectImg::file-selector-button {
-    padding: 10px 20px;
-    margin-right: 12px;
-    background-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 20%);
-    border: none;
-    border-radius: 10px;
-}
-
 .TUIC_setting_bottom_copyright {
     margin: 35px 0;
     text-decoration-line: none;
