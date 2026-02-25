@@ -159,4 +159,35 @@ const importFunc = async (type: number) => {
     border: 1px solid #808080;
     border-radius: 6px;
 }
+
+.TUIC_setting_button_new {
+    width: 100%;
+    height: 40px;
+    font-size: 15px !important;
+    font-weight: bold;
+    color: var(--TUIC-container-background);
+    text-align: center !important;
+    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 90%);
+    border: none;
+    border-radius: 9999px;
+}
+
+.TUIC_setting_button_new:active {
+    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 30%);
+}
+.TUIC_setting_intro_paragraph_bold {
+    font-weight: bold;
+}
+
+.TUIC_setting_intro_paragraph {
+    margin: 20px 0 10px;
+    font-size: 15px;
+    font-feature-settings: "palt";
+    color: rgb(113 118 124);
+    letter-spacing: 1px;
+}
+.TUIC_setting_textarea_new {
+    background: var(--tlui-dialog-background);
+    border: 1px solid color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 10%);
+}
 </style>
