@@ -206,4 +206,21 @@ function rescuePref() {
 .TUIC_setting_easysetting_container {
     margin-bottom: 35px;
 }
+
+.TUIC_setting_bottom_copyright {
+    margin: 35px 0;
+    text-decoration-line: none;
+    text-decoration-color: rgb(113 118 124) !important;
+}
+.TUIC_setting_bottom_copyright:is(:hover, :focus-visible) {
+    text-decoration: underline;
+}
+.TUIC_setting_bottom_copyright:active {
+    text-decoration: none;
+}
+.TUIC_setting_bottom_copyright span {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 </style>
