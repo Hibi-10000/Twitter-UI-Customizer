@@ -156,6 +156,8 @@ const importFunc = async (type: number) => {
     padding-top: 5px;
     padding-bottom: 5px;
     margin-bottom: 20px;
+    color: var(--twitter-TUIC-color);
+    background: transparent;
     border: 1px solid #808080;
     border-radius: 6px;
 }

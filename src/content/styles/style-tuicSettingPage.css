@@ -127,11 +127,6 @@
     display: none;
 }
 
-.TUICTextInput {
-    color: var(--twitter-TUIC-color);
-    background: transparent;
-}
-
 div[tuicudbox] > .UpDownButtons {
     padding: 0 7px;
 }
