@@ -182,6 +182,16 @@ if (UDALL.length > 5) {
     height: 8px;
 }
 
+[TUICSelectedUpDownContent="true"],
+[TUICSelectedUpDownContent="true"]:is(:hover, :focus-visible) {
+    background-color: #1da1f2 !important;
+}
+
+.TUIC_setting_UpdownList_listContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .TUICUpDownTitle {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
