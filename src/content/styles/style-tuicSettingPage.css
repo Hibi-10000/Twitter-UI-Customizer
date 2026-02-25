@@ -1,14 +1,3 @@
-/* 無理やり丸くするための準備（スタイルを消しまくったりポインタをカーソルにしてわかりやすく） */
-.TUIC_col_setting_container input[type="color"] {
-    width: 200%;
-    height: 200%;
-    appearance: none;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    transform: translate(-25%, -25%);
-}
-
 /* 設定項目のタイトル */
 .TUIC_setting_title {
     padding: 0;
@@ -20,35 +9,9 @@
     color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 90%) !important;
 }
 
-/* 設定用項目のコンテナ */
-.TUIC_col_setting_container {
-    /* margin-top: 8px; */
-    padding: 10px 14px;
-    border-radius: 14px;
-}
-
 /* 設定画面の文字色 */
 .TUIC_setting_text {
     color: var(--twitter-TUIC-color);
-}
-
-.TUICDetails,
-.TUICEasySetting {
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    margin-bottom: 20px;
-    font-family: sans-serif;
-    background-color: var(--TUIC-container-background);
-    border: 2px solid;
-    border-color: rgb(0 0 0 / 0%) !important;
-    border-radius: 5px;
-}
-
-.TUICDetails:not([open]),
-.TUICEasySetting {
-    padding-bottom: 10px;
-    border-color: var(--TUIC-detail-border) !important;
 }
 
 .TUIC_icon_button_con {
@@ -116,15 +79,6 @@
     padding-bottom: 5px !important;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-.TUIC_none_scroll {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.TUIC_none_scroll::-webkit-scrollbar {
-    display: none;
 }
 
 div[tuicudbox] > .UpDownButtons {
