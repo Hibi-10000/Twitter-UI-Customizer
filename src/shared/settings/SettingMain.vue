@@ -224,3 +224,5 @@ function rescuePref() {
     height: 100%;
 }
 </style>
+
+<style src="@content/styles/style-tuicSettingPage.css"></style>
