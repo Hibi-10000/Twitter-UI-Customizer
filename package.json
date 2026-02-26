@@ -58,8 +58,16 @@
         "vue-tsc": "^3.1.8",
         "web-ext": "^9.2.0"
     },
-    "engines": {
-        "node": ">=24.11",
-        "pnpm": ">=10"
+    "devEngines": {
+        "runtime": {
+            "name": "node",
+            "version": ">=24.11",
+            "onFail": "error"
+        },
+        "packageManager": {
+            "name": "pnpm",
+            "version": ">=10.16",
+            "onFail": "error"
+        }
     }
 }
