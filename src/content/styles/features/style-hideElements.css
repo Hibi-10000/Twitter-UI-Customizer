@@ -44,7 +44,7 @@
 }
 
 /* ツイートの画像右下の画像を編集ボタン */
-:root[data-tuic-settings*="|tweetDisplaySetting.invisible.editImage|"] article div:has(> div > [href^="/i/imagine?postId="]) {
+:root[data-tuic-settings*="|tweetDisplaySetting.invisible.editImage|"] article div:has(> div > :is([href^="/i/imagine?postId="], [href^="https://grok.com/imagine?parent_x_post_id"])) {
     display: none !important;
 }
 
