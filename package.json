@@ -27,6 +27,7 @@
         "vue": "^3.5.28"
     },
     "devDependencies": {
+        "@csstools/stylelint-formatter-github": "^2.0.0",
         "@eslint/js": "^9.39.3",
         "@stylistic/eslint-plugin": "^5.9.0",
         "@types/chrome": "^0.1.36",
