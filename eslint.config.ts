@@ -31,10 +31,8 @@ export default tseslint.config(
     {
         files: ["**/*.{js,ts,tsx,vue}"],
         languageOptions: {
-            parserOptions: {
-                ecmaVersion: 2023,
-                sourceType: "module",
-            },
+            ecmaVersion: 2023,
+            sourceType: "module",
         },
         extends: [
             eslint.configs.recommended,
