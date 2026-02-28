@@ -25,7 +25,7 @@ export function runSettingComponentObserver() {
  * @param rootElement 設定コンポーネントを配置する親要素
  */
 function placeSettingComponent(rootElement: HTMLElement) {
-    // NOTE: すでに SettingsMain.ce.vue が配置されている場合は何もしない
+    // NOTE: すでに SettingsMain.vue が配置されている場合は何もしない
     if (document.querySelector("#TUICSettings")) return;
 
     const style = document.createElement("link");
