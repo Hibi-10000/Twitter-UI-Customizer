@@ -31,10 +31,8 @@ export default tseslint.config(
     {
         files: ["**/*.{js,ts,tsx,vue}"],
         languageOptions: {
-            parserOptions: {
-                ecmaVersion: 2023,
-                sourceType: "module",
-            },
+            ecmaVersion: 2023,
+            sourceType: "module",
         },
         extends: [
             eslint.configs.recommended,
@@ -55,6 +53,7 @@ export default tseslint.config(
             "import-x/no-self-import": "error",
             "import-x/newline-after-import": "error",
             "import-x/no-cycle": "error",
+            "import-x/no-unresolved": ["error", { ignore: ["^virtual:"] }],
             "import-x/no-named-as-default-member": 0,
             "unocss/order": 0,
             "style/spaced-comment": 0,

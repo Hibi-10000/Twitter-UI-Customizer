@@ -41,7 +41,7 @@ const manifest: {
             },
         ],
         permissions: [
-            "declarativeNetRequest",
+            "declarativeNetRequestWithHostAccess",
             "notifications",
             "storage",
         ],

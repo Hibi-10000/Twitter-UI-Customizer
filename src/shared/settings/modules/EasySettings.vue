@@ -101,3 +101,9 @@ const clickEv = (index) => {
 };
 // end of copied codes
 </script>
+
+<style scoped>
+.TUIC_setting_easysetting_buttons_container {
+    margin-top: 15px;
+}
+</style>

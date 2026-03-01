@@ -51,3 +51,21 @@ import { Component } from "vue";
 
 const iconsList: Component[] = [ICON_HOME_X, ICON_HOME_TWITTER, ICON_HOME_TUIC];
 </script>
+
+<style scoped>
+.TUIC_setting_sidebarFigure {
+    width: 100%;
+    height: 100%;
+    margin: 20px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.TUIC_setting_rightSidebarFigure {
+    border-radius: 10px 0 0 10px;
+}
+
+.TUIC_settings_settingsSidebar_IconRadioBtnList_container {
+    display: flex;
+    gap: 10px;
+}
+</style>
