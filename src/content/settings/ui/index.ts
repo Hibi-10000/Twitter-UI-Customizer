@@ -28,8 +28,10 @@ function placeSettingComponent(rootElement: HTMLElement) {
     // NOTE: すでに SettingsMain.vue が配置されている場合は何もしない
     if (document.querySelector("#TUICSettings")) return;
 
+    document.head.querySelector(`#tuicVueStyle`)?.remove();
     const style = document.createElement("link");
     style.rel = "stylesheet";
+    style.id = "tuicVueStyle";
     style.href = chrome.runtime.getURL(vueStyleUrl);
     document.head.appendChild(style);
 
