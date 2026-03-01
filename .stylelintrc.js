@@ -6,7 +6,11 @@ export default {
         "stylelint-config-recess-order",
         "@stylistic/stylelint-config",
     ],
+    plugins: [
+        "stylelint-use-nesting",
+    ],
     rules: {
+        "csstools/use-nesting": "always",
         "@stylistic/indentation": 4,
         "@stylistic/declaration-block-trailing-semicolon": null,
         "@stylistic/max-line-length": null,
