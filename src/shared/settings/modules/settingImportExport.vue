@@ -56,7 +56,7 @@
         </div>
 
         <!--EXPLAIN APPEND/REPLACE-->
-        <div style=" display: flex; flex-direction: column; gap: 35px;margin: 35px 0 20px">
+        <div style="display: flex; flex-direction: column; gap: 35px; margin: 35px 0 20px">
             <div>
                 <SettingSubTitle i18n="import-importAppend" />
                 <FIGURE_IMPORTAPPEND height="87px" />
