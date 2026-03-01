@@ -3,8 +3,8 @@
         <input type="radio" :id="`${id.replace(/\./g, '-_-')}-_-${valueName}`" :name="id.replace(/\./g, '-_-')" :value="valueName" :checked="getPref(id) == valueName" @change="changePref(id, valueName)" />
         <div>
             <label class="TUIC_setting_IconRadioButton" :for="`${id.replace(/\./g, '-_-')}-_-${valueName}`" :title="translate(name)">
-                <component v-if="props.icon" :is="props.icon" />
-                <img v-else-if="props.iconSrc" :src="props.iconSrc" />
+                <img v-if="typeof props.icon === 'string'" :src="props.icon" />
+                <component v-else :is="props.icon" />
             </label>
         </div>
     </div>
@@ -20,8 +20,7 @@ const props = defineProps<{
     id: string;
     valueName: string;
     name: string;
-    icon?: Component;
-    iconSrc?: string;
+    icon: Component | string;
 }>();
 
 const changePref = (path, valueName) => {
