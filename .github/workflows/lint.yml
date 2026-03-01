@@ -57,7 +57,6 @@ jobs:
           pnpm run lint:tsc
           pnpm run lint:eslint
           pnpm run lint:stylelint --custom-formatter @csstools/stylelint-formatter-github
-          pnpm run lint:prettier
         continue-on-error: ${{ (github.repository_owner == 'Ablaze-MIRAI' && github.event_name != 'pull_request' ) || github.event_name == 'workflow_dispatch' }}
 
       - name: Run format
@@ -66,7 +65,6 @@ jobs:
           git checkout -- .
           git pull
           pnpm run format:eslint
-          pnpm run format:prettier
           pnpm run format:stylelint
 
       - name: Commit
@@ -89,4 +87,3 @@ jobs:
           pnpm run lint:tsc
           pnpm run lint:eslint
           pnpm run lint:stylelint --custom-formatter @csstools/stylelint-formatter-github
-          pnpm run lint:prettier

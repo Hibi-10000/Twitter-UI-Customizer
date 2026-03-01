@@ -4,8 +4,13 @@ export default {
         "stylelint-config-standard",
         "stylelint-config-recommended-vue",
         "stylelint-config-recess-order",
+        "@stylistic/stylelint-config",
     ],
     rules: {
+        "@stylistic/indentation": 4,
+        "@stylistic/declaration-block-trailing-semicolon": null,
+        "@stylistic/max-line-length": null,
+        "@stylistic/selector-pseudo-class-parentheses-space-inside": null,
         // https://stylelint.io/user-guide/rules
         "at-rule-no-unknown": null,
         "comment-empty-line-before": null,

@@ -4,7 +4,7 @@
         "editor.tabSize": 2,
     },
     "editor.formatOnSave": false,
-    "[javascript][json]": {
+    "[javascript][json][css][scss][postcss]": {
         "editor.formatOnSave": false,
     },
     "editor.quickSuggestions": {
@@ -12,22 +12,12 @@
     },
     "files.autoSave": "onFocusChange",
     "json.schemaDownload.enable": true,
+    "prettier.enable": false,
     // linter
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit",
         "source.fixAll.stylelint": "explicit",
         "source.organizeImports": "never",
-    },
-    // prettier
-    "prettier.enable": true,
-    "[css][scss][postcss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true,
-        "prettier.tabWidth": 4,
-        "prettier.semi": true,
-        "prettier.singleQuote": false,
-        "prettier.endOfLine": "auto",
-        "prettier.printWidth": 300,
     },
     // stylelint
     "css.validate": false,
