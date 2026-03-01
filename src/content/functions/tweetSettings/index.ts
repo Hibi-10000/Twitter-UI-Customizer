@@ -97,7 +97,7 @@ export function tweetSettings() {
                         // 名前の判断に使う要素(画面左下...だったはず)
                         const userNameElem = document.querySelector(`[data-testid="SideNav_AccountSwitcher_Button"] [data-testid^="UserAvatar-Container-"]`);
                         // ツイート下ボタンの親
-                        const buttonBarBase = hasClosest<HTMLDivElement>(articleBase.querySelector(_data.selectors["reply-button"]), _data.selectors["like-button"]);
+                        const buttonBarBase = hasClosest<HTMLDivElement>(articleBase.querySelector(`${_data.selectors["reply-button"]}:not([data-testid="twitterArticleReadView"] *)`), _data.selectors["like-button"]);
                         buttonBarBase.parentElement.classList.add("TUICTweetButtomBarBase");
                         // ボタンたち
                         const underTweetButtons: Record<string, HTMLElement> = {};

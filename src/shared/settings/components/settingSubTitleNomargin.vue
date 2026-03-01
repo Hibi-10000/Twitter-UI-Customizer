@@ -11,3 +11,10 @@ defineProps<{
     i18n: string;
 }>();
 </script>
+
+<style scoped>
+.TUICSettingSubTitleNomargin {
+    padding: 0;
+    margin: 0;
+}
+</style>

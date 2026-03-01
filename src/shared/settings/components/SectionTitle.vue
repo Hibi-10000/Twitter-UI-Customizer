@@ -11,3 +11,13 @@ defineProps<{
     titleI18N: string;
 }>();
 </script>
+
+<style scoped>
+.TUIC_setting_section_title {
+    padding: 0 35px 10px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(113 118 124);
+}
+</style>

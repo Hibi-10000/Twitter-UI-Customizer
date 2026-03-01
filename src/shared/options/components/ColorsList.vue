@@ -19,4 +19,16 @@ import ThreeColorSetting from "./ThreeColorSetting.vue";
 import { getSettingData } from "@content/settings";
 </script>
 
-<style scoped></style>
+<style scoped>
+.TUIC_col_setting_container_2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#TUICColorSettingsDivBox {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+</style>

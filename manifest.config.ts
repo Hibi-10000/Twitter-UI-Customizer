@@ -8,7 +8,7 @@ const manifest: {
 } = {
     // 共通設定
     common: {
-        version: "5.6.5",
+        version: "5.6.6",
         manifest_version: 3,
         name: "__MSG_extensionName__",
         description: "__MSG_extensionDescription__",
@@ -41,7 +41,7 @@ const manifest: {
             },
         ],
         permissions: [
-            "declarativeNetRequest",
+            "declarativeNetRequestWithHostAccess",
             "notifications",
             "storage",
         ],

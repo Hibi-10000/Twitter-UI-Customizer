@@ -11,3 +11,13 @@ defineProps<{
     titleI18N: string;
 }>();
 </script>
+
+<style scoped>
+.TUIC_setting_section_title_2 {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--twitter-TUIC-color);
+}
+</style>

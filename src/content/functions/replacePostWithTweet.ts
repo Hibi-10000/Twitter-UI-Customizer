@@ -133,7 +133,7 @@ export function replacePost() {
         const isMultipleTweet = !isReply && document.querySelectorAll(':is([role="dialog"],[data-testid="twc-cc-mask"]+div) [data-testid^="UserAvatar-Container-"]:not([data-testid="attachments"] *)').length !== 1;
         const writingTweetCount = document.querySelectorAll(':is([role="dialog"],[data-testid="twc-cc-mask"]+div) [data-testid^="UserAvatar-Container-"]:not([data-testid="attachments"] *)').length;
         if (writingTweetCount != tweetCount) {
-            for (const elem of document.querySelectorAll(`${!document.querySelector(`[data-testid="twc-cc-mask"]`) ? `:is([role="dialog"])` : ""} :is([data-testid="tweetButton"], [data-testid="tweetButtonInline"]) > div > span > span.TUIC_TWEETREPLACE`)) {
+            for (const elem of document.querySelectorAll(`${!document.querySelector(`[data-testid="twc-cc-mask"]`) ? `:is([role="dialog"])` : ""} :is([data-testid="tweetButton"], [data-testid="tweetButtonInline"]) > div > div > span > span.TUIC_TWEETREPLACE`)) {
                 elem.classList.remove("TUIC_TWEETREPLACE");
             }
         }
@@ -275,7 +275,7 @@ export function replacePost() {
                 elem.textContent = translate("XtoTwitter-PostToTweet-liked-none-header");
             }
         }
-        // 誰にも反応（いいね/RT/引用）されていない状況においての、一覧ページの「まだ○○はありません」
+        // 誰にも反応（いいね/RT/引用）されていない状況においての、一覧ページの「○○するとここに表示されます。」
         const blockTextEmptyProfile = new RegExp(translate("XtoTwitter-PostToTweet-blocked-none-body-latest").replaceAll("&quot;", '"').replaceAll("(", "\\(").replaceAll(")", "\\)").replace("{screenName}", "(.*)"));
         for (const elem of getNotReplacedElements('[data-testid="emptyState"] [data-testid="empty_state_body_text"]')) {
             const blockTextMatch = elem.textContent.match(blockTextEmptyProfile);
@@ -287,7 +287,7 @@ export function replacePost() {
                 elem.textContent = translate("XtoTwitter-PostToTweet-liked-none-body");
             } else if (blockTextMatch && blockTextMatch.length > 1) {
                 elem.childNodes[0].textContent = translate("XtoTwitter-PostToTweet-blocked-none-body-old").replaceAll("{screenName}", blockTextMatch[1]);
-                elem.parentElement.querySelector(`[data-testid="empty_state_button_text"] > div > span > span`).textContent = translate("XtoTwitter-PostToTweet-blocked-none-button");
+                elem.parentElement.querySelector(`[data-testid="empty_state_button_text"] > div > div > span > span`).textContent = translate("XtoTwitter-PostToTweet-blocked-none-button");
             }
         }
 

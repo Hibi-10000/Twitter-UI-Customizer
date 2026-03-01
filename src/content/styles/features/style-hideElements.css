@@ -44,12 +44,12 @@
 }
 
 /* ツイートの画像右下の画像を編集ボタン */
-:root[data-tuic-settings*="|tweetDisplaySetting.invisible.editImage|"] article div:has(> div > [href^="/i/imagine?postId="]) {
+:root[data-tuic-settings*="|tweetDisplaySetting.invisible.editImage|"] article div:has(> div > :is([href^="/i/imagine?postId="], [href^="https://grok.com/imagine?parent_x_post_id"])) {
     display: none !important;
 }
 
 /* 右サイドバー */
-:root[data-tuic-settings*="|rightSidebar.verified|"] div + div:has(> div > :is([data-testid="super-upsell-UpsellCardRenderProperties"], aside[role="complementary"]) :is([href="/i/verified-choose"], [href="/i/premium_tier_switch"], [href="/i/premium_sign_up"])),
+:root[data-tuic-settings*="|rightSidebar.verified|"] div + div:has(> div > :is([data-testid="super-upsell-UpsellCardRenderProperties"], aside[role="complementary"]) :is([href="/i/verified-choose"], [href="/i/premium_tier_switch"], [href^="/i/premium_sign_up"])),
 :root[data-tuic-settings*="|rightSidebar.trend|"] [data-testid="sidebarColumn"] div:has(> section [data-testid="trend"]),
 :root[data-tuic-settings*="|rightSidebar.news|"] [data-testid="sidebarColumn"] div:has(> [data-testid="news_sidebar"]),
 :root[data-tuic-settings*="|rightSidebar.links|"] [data-testid="sidebarColumn"] :has(> nav),

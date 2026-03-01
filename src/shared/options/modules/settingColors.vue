@@ -61,4 +61,73 @@ const setDefaultTwitterColor = () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.TUICSettingRadioTypeBigButton {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 20px;
+    border: 3px solid color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 10%);
+    border-radius: 10px !important;
+}
+
+.TUICSettingRadioTypeBigButton > span > span {
+    /* font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        Helvetica,
+        Roboto,
+        "Segoe UI",
+        "Noto Sans" "Noto Sans JP",
+        Meiryo,
+        system-ui,
+        sans-serif; */
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    mix-blend-mode: difference;
+}
+
+.TUICSettingRadioTypeBigButton > span {
+    white-space: nowrap;
+}
+
+.TUICColorSettingRadio {
+    display: none;
+}
+
+.TUICColorSettingRadio:checked + .TUICSettingRadioTypeBigButton {
+    border: 3px solid #1da1f2 !important;
+}
+
+.TUICColorSettingRadio:not(:checked) + .TUICSettingRadioTypeBigButton {
+    font-weight: 400;
+    border: 3px solid color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 5%) !important;
+}
+
+#TUICSelectedColorType {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;
+    background-color: var(--TUIC-container-background);
+}
+
+.TUIC_setting_color_select_info {
+    display: flex;
+    padding: 0;
+    margin: 20px 0 0;
+    font-size: 15px;
+    font-feature-settings: "palt";
+    line-height: 1.4;
+    color: rgb(113 118 124);
+    letter-spacing: 1px;
+}
+</style>

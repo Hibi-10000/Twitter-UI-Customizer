@@ -15,3 +15,30 @@ defineProps<{
     actionIcon?: string;
 }>();
 </script>
+
+<style scoped>
+.TUIC_setting_iconbutton_icon {
+    width: 24px;
+    margin: auto;
+}
+
+.TUIC_setting_iconbutton {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    align-items: center;
+    height: 50px;
+    font-size: 15px;
+    font-feature-settings: "palt";
+    cursor: pointer;
+    transition: 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.TUIC_setting_iconbutton:is(:hover, :focus-visible) {
+    background: var(--TUIC-container-background);
+    transition: none;
+}
+
+.TUIC_setting_iconbutton:active {
+    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 20%);
+}
+</style>

@@ -19,7 +19,7 @@ export const SidebarButtonSelectors = {
     lists: '#TUICSidebar_lists,[href$="/lists"]',
     drafts: "#TUICSidebar_drafts",
     connect: "#TUICSidebar_connect",
-    communitynotes: '[href="/i/communitynotes"]',
+    communitynotes: '[href="/i/communitynotes"],#TUICSidebar_communitynotes',
     "verified-choose": '[href="/i/verified-choose"],[href="/i/premium_sign_up"],[href^="/i/premium"]',
     display: "#TUICSidebar_display",
     muteAndBlock: "#TUICSidebar_muteAndBlock",
@@ -29,6 +29,7 @@ export const SidebarButtonSelectors = {
     spaces: "#TUICSidebar_spaces",
     grok: '[href="/i/grok"]',
     //chat: `#TUICSidebar_chat, [href="/i/chat"]`,
+    creatorStudio: '[href="/i/jf/creators/studio"]',
 };
 
 export function sidebarButtons() {

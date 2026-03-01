@@ -1,12 +1,10 @@
 import type { Plugin } from "vite";
+import fs from "node:fs";
 import { isMainThread } from "node:worker_threads";
 import { type WebExtRunArgs, WebExtRun } from "./web-ext.ts";
 
-try {
-    process.loadEnvFile(".env.local");
-} catch {
-    // do nothing
-}
+const existEnvLocal = fs.existsSync(".env.local");
+if (existEnvLocal) process.loadEnvFile(".env.local");
 
 export default async (root: string, sourceDir: string, artifactsDir: string, mode: string): Promise<Plugin> => {
     let watch = false;
@@ -21,17 +19,19 @@ export default async (root: string, sourceDir: string, artifactsDir: string, mod
     // let worker;
     let webExtRunner: WebExtRun;
 
-    switch (mode) {
-        case "firefox":
-            console.log("firefox_executable          ", firefox_executable);
-            console.log("firefox_profile             ", firefox_profile);
-            console.log("firefox_keep_profile_changes", firefox_keep_profile_changes);
-            break;
-        case "chromium":
-            console.log("chromium_executable          ", chromium_executable);
-            console.log("chromium_profile             ", chromium_profile);
-            console.log("chromium_keep_profile_changes", chromium_keep_profile_changes);
-            break;
+    if (existEnvLocal) {
+        switch (mode) {
+            case "firefox":
+                console.log("firefox_executable          ", firefox_executable);
+                console.log("firefox_profile             ", firefox_profile);
+                console.log("firefox_keep_profile_changes", firefox_keep_profile_changes);
+                break;
+            case "chromium":
+                console.log("chromium_executable          ", chromium_executable);
+                console.log("chromium_profile             ", chromium_profile);
+                console.log("chromium_keep_profile_changes", chromium_keep_profile_changes);
+                break;
+        }
     }
 
     return {

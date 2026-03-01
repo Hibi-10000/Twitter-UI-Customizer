@@ -52,7 +52,7 @@ const _data = {
 export function placeEngagementsLink(articleInfo: ArticleInfomation) {
     const articleBase = articleInfo.elements.articleBase;
     const buttonBarBase = articleInfo.elements.buttonBarBase;
-    for (const boxElem of Array.from(articleBase.querySelectorAll(`.TUICEngagementsBox`))) {
+    for (const boxElem of Array.from(articleBase.querySelectorAll(`.TUICEngagementsBoxBase`))) {
         boxElem.remove();
     }
 

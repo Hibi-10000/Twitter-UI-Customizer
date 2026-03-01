@@ -62,9 +62,12 @@ export default defineConfig(({ command, mode }) => {
                         if (id.includes("i18n")) {
                             return "i18n";
                         }
+                        if (id.includes("?vue&type=style&")) {
+                            return "vue";
+                        }
                     },
                     assetFileNames(assetInfo) {
-                        if (assetInfo.originalFileNames.some((v) => v.endsWith(".css"))) {
+                        if (assetInfo.names.some((v) => v.endsWith(".css"))) {
                             return "assets/css/[name][extname]";
                         }
                         if (assetInfo.originalFileNames.some((v) => v.endsWith(".svg"))) {
@@ -91,10 +94,6 @@ export default defineConfig(({ command, mode }) => {
                     "firefox 121", //:has()
                     //"safari 16.2", //color-mix()
                 ]),
-                // https://lightningcss.dev/transpilation.html#feature-flags
-                nonStandard: {
-                    deepSelectorCombinator: true,
-                },
                 customAtRules: {
                     unocss: lightningcssPluginUnoCSS.customAtRules.unocss,
                 },
@@ -130,11 +129,29 @@ export default defineConfig(({ command, mode }) => {
                     console.log(new Date().toLocaleString());
                 },
             },
+            {
+                name: "vueCSSUrlImport",
+                enforce: "post",
+                resolveId(id) {
+                    if (id === "virtual:vue.css?url") {
+                        return "\0virtual:vuecss?url";
+                    }
+                },
+                load(id) {
+                    if (id === "\0virtual:vuecss?url") {
+                        return `export default "/assets/css/vue.css"`;
+                    }
+                },
+            },
             vitePluginWebExt(import.meta.dirname, r("dist"), r("dist"), mode === "chromiumCRX" ? "disable-web-ext" : mode),
             vitePluginUnoCSS(),
             solidPlugin(),
             // Vue Plugins
-            vue(),
+            vue({
+                features: {
+                    optionsAPI: false,
+                },
+            }),
             svgLoader({
                 svgoConfig: {
                     plugins: ["prefixIds"],

@@ -52,3 +52,11 @@ const setDefault = async () => {
         .open();
 };
 </script>
+
+<style scoped>
+.TUIC_setting_defaultprefbutton {
+    color: rgb(244 34 45);
+
+    --twitter-TUIC-color: rgb(244 34 45);
+}
+</style>

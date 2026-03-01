@@ -2,6 +2,7 @@ import type { SidebarButtonDefinition } from "../types";
 import { topics } from "./topics";
 import { lists } from "./lists";
 import { communities } from "./communities";
+import { communitynotes } from "./communitynotes";
 import { drafts } from "./drafts";
 import { connect } from "./connect";
 import { display } from "./display";
@@ -18,6 +19,7 @@ export const sidebarButtonsData = {
     topics,
     lists,
     communities,
+    communitynotes,
     drafts,
     connect,
     display,
