@@ -7,8 +7,7 @@
         <div>
             <div style="display: flex; gap: 10px">
                 <template v-for="i in presetsRadioButtonsIconAvailable" :key="i.radioName">
-                    <IconRadioButton v-if="i.svgComponent" id="twitterIcon.icon" :valueName="i.radioName" :name="getSettingI18n('twitterIcon.icon', i.radioName)" :icon="i.svgComponent" />
-                    <IconRadioButtonBase64Support v-if="i.base64Img" id="twitterIcon.icon" :valueName="i.radioName" :name="getSettingI18n('twitterIcon.icon', i.radioName)" :base64-img="i.base64Img" />
+                    <IconRadioButton id="twitterIcon.icon" :valueName="i.radioName" :name="getSettingI18n('twitterIcon.icon', i.radioName)" :icon="i.svgComponent" :icon-src="i.base64Img" />
                 </template>
             </div>
             <!-- アイコンが利用不可なものがあるならdetailsboxメニューに追いやる -->
@@ -29,7 +28,6 @@
 import { Component } from "vue";
 import RadioButton from "@shared/options/components/RadioButton.vue";
 import IconRadioButton from "@shared/options/components/IconRadioButton.vue";
-import IconRadioButtonBase64Support from "@shared/options/components/IconRadioButtonBase64Support.vue";
 import { translate } from "@content/i18n";
 import { getSettingI18n } from "@content/settings";
 
