@@ -42,40 +42,40 @@ function toggled($event: ToggleEvent) {
     margin: auto;
 }
 
-.TUIC_setting_detailsbox summary > div {
-    display: grid;
-    grid-template-columns: 90px 1fr 90px;
-    align-items: center;
-    height: 100%;
-    font-size: 15px;
-    font-feature-settings: "palt";
-    user-select: none;
-}
-
-.TUIC_setting_detailsbox summary {
-    height: 50px;
-    cursor: pointer;
-    list-style-type: none;
-}
-
 .TUIC_setting_detailsbox {
     height: fit-content;
     transition: 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-}
 
-.TUIC_setting_detailsbox summary:is(:hover, :focus-visible) {
-    background: var(--TUIC-container-background);
-    transition: none;
-}
+    summary {
+        > div {
+            display: grid;
+            grid-template-columns: 90px 1fr 90px;
+            align-items: center;
+            height: 100%;
+            font-size: 15px;
+            font-feature-settings: "palt";
+            user-select: none;
+        }
 
-.TUIC_setting_detailsbox summary:active {
-    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 20%);
+        height: 50px;
+        cursor: pointer;
+        list-style-type: none;
+
+        &:is(:hover, :focus-visible) {
+            background: var(--TUIC-container-background);
+            transition: none;
+        }
+
+        &:active {
+            background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 20%);
+        }
+    }
 }
 
 .TUIC_setting_detailsbox_content_container {
     background-color: var(--TUIC-container-background);
-}
-.TUIC_setting_detailsbox_content_container > :not(hr) {
-    padding: 20px 35px;
+    > :not(hr) {
+        padding: 20px 35px;
+    }
 }
 </style>

@@ -172,10 +172,10 @@ const importFunc = async (type: number) => {
     background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 90%);
     border: none;
     border-radius: 9999px;
-}
 
-.TUIC_setting_button_new:active {
-    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 30%);
+    &:active {
+        background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 30%);
+    }
 }
 .TUIC_setting_intro_paragraph_bold {
     font-weight: bold;

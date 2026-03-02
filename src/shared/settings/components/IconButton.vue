@@ -31,14 +31,14 @@ defineProps<{
     font-feature-settings: "palt";
     cursor: pointer;
     transition: 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-}
 
-.TUIC_setting_iconbutton:is(:hover, :focus-visible) {
-    background: var(--TUIC-container-background);
-    transition: none;
-}
+    &:is(:hover, :focus-visible) {
+        background: var(--TUIC-container-background);
+        transition: none;
+    }
 
-.TUIC_setting_iconbutton:active {
-    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 20%);
+    &:active {
+        background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 20%);
+    }
 }
 </style>

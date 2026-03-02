@@ -48,26 +48,26 @@
 }
 */
 
-.TUICSidebarButton:is(:hover, :focus-visible) > div {
-    background-color: var(--TUIC-sidebar-hover-color);
-}
-
-.TUICSidebarButton[data-focusvisible-polyfill] > div {
-    box-shadow: var(--TUIC-sidebar-focus-color) 0 0 0 2px;
-}
-
 .TUICSidebarButton {
+    &:is(:hover, :focus-visible) > div {
+        background-color: var(--TUIC-sidebar-hover-color);
+    }
+
+    &[data-focusvisible-polyfill] > div {
+        box-shadow: var(--TUIC-sidebar-focus-color) 0 0 0 2px;
+    }
+
     width: fit-content;
     padding-top: 4px;
     padding-bottom: 4px;
     text-decoration: none;
-}
 
-.TUICSidebarButton > div {
-    display: flex;
-}
-.TUICSidebarButton:active > div {
-    background-color: var(--TUIC-sidebar-active-color);
+    > div {
+        display: flex;
+    }
+    &:active > div {
+        background-color: var(--TUIC-sidebar-active-color);
+    }
 }
 
 .TUIC_DeleteButton {
@@ -76,14 +76,14 @@
 
 .TUICEngagementsBox {
     display: flex;
-}
 
-.TUICEngagementsBox > div > span {
-    transition: border-bottom 0.2s;
-}
+    > div > span {
+        transition: border-bottom 0.2s;
+    }
 
-.TUICEngagementsBox > div > span:is(:hover, :focus-visible) {
-    border-bottom: solid 0.05px;
+    > div > span:is(:hover, :focus-visible) {
+        border-bottom: solid 0.05px;
+    }
 }
 
 [tabindex="0"] > .TUIC_ButtonHover2:is(:hover, :focus-visible) > .TUIC_ButtonHover > div {
@@ -109,10 +109,10 @@
 
 .TUICButtonUnderTweet > div {
     display: flex;
-}
-.TUICButtonUnderTweet > div > div {
-    display: flex;
-    align-items: stretch;
+    > div {
+        display: flex;
+        align-items: stretch;
+    }
 }
 
 .TUIC_LinkCardInfo > a {
@@ -182,10 +182,10 @@
 
 :root[data-tuic-settings*="|tweetDisplaySetting.option.likeToFavo|"] [data-testid="like"] > div:is(:hover, :focus-visible) > div {
     color: rgb(255 212 0) !important;
-}
 
-:root[data-tuic-settings*="|tweetDisplaySetting.option.likeToFavo|"] [data-testid="like"] > div:is(:hover, :focus-visible) > div > div {
-    background-color: rgb(255 212 0 / 10%) !important;
+    > div {
+        background-color: rgb(255 212 0 / 10%) !important;
+    }
 }
 
 :root[data-tuic-settings*="|tweetDisplaySetting.option.likeToFavo|"] [data-testid="like"][data-focusvisible-polyfill] > div > div > div {

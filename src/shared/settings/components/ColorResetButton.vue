@@ -28,21 +28,21 @@ const clickedBtn = () => {
     width: 36px !important;
     height: 36px !important;
     border-color: #71767b !important;
-}
 
-.TUICDefaultColor:is(:hover, :focus-visible) {
-    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 5%);
-}
-.TUICDefaultColor:active {
-    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 10%);
-}
-
-.TUICButtonRest_innersvg__container svg {
-    width: 22px;
-    height: 22px;
-    opacity: 1;
+    &:is(:hover, :focus-visible) {
+        background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 5%);
+    }
+    &:active {
+        background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 10%);
+    }
 }
 .TUICButtonRest_innersvg__container {
+    svg {
+        width: 22px;
+        height: 22px;
+        opacity: 1;
+    }
+
     display: flex;
     align-items: center;
     justify-content: center;

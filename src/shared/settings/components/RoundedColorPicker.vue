@@ -48,14 +48,14 @@ function setInputValue(value: string) {
     border: solid 3px color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 20%);
     border-radius: 50%;
     transition: none;
-}
 
-.TUIC_input_color_rounded__container:is(:hover, :focus-visible) {
-    background: var(--TUIC-color-hover-efect);
-}
+    &:is(:hover, :focus-visible) {
+        background: var(--TUIC-color-hover-efect);
+    }
 
-.TUIC_input_color_rounded__container:active {
-    border-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 40%);
+    &:active {
+        border-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 40%);
+    }
 }
 
 .TUIC_RoundedColorPicker_input {

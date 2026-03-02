@@ -42,9 +42,9 @@ textarea#css_textarea {
     background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 90%);
     border: none;
     border-radius: 9999px;
-}
 
-.TUIC_setting_customcss_button:active {
-    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 30%);
+    &:active {
+        background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 30%);
+    }
 }
 </style>
