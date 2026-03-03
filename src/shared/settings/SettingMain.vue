@@ -146,7 +146,7 @@ function rescuePref() {
     const dialog = new Dialog(translate("rescuePref-ButtonLabel"));
     dialog
         .addComponents([
-            ...translate("rescuePref-dialog").split("\r"),
+            ...translate("rescuePref-dialog").split("\n"),
             "",
             /*            new TextboxComponent("", { readonly: false, rows: 5 }),
             new ButtonComponent(translate("common-copy-and-close"), () => {
