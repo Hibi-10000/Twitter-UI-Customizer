@@ -20,6 +20,9 @@
 - `pnpm debug` または `pnpm debug:firefox`  
   Firefox または Firefox系ブラウザでのデバッグを実行します。
 
+- `pnpm debug:firefox-android`  
+  Android 上の Firefox または Firefox系ブラウザ でのデバッグを実行します。
+
 - `pnpm debug:chromium`  
   Chrome または Chromium系ブラウザでのデバッグを実行します。
 

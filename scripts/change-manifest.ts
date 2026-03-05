@@ -4,13 +4,13 @@ import type { Manifest } from "webextension-polyfill";
 import manifest from "../manifest.config.ts";
 
 export async function changeManifest(target: string) {
-    if (target !== "firefox" && target !== "chromium" && target !== "chromiumCRX") return;
+    if (target === "firefox-android") target = "firefox";
     const config = manifest;
 
     const targets = Object.keys(config).filter((k) => k !== "common");
 
     if (!targets.includes(target)) {
-        console.error(`Error: Invalid platform "${target ?? ""}". (${targets.join(", ")})`);
+        console.error(`Error: Invalid platform "${target}". (${targets.join(", ")})`);
         process.exit(1);
     }
 
@@ -32,7 +32,7 @@ export async function changeManifest(target: string) {
 
 if (process.argv[1] === import.meta.filename) {
     const target = process.argv[2];
-    if (target === "firefox" || target === "chromium" || target === "chromiumCRX") {
+    if (target === "firefox" || target === "firefox-android" || target === "chromium" || target === "chromiumCRX") {
         changeManifest(target);
     } else {
         console.error(`Error: Invalid platform "${target ?? ""}".`);

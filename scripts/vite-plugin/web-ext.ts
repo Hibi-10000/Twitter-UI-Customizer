@@ -12,6 +12,10 @@ export interface WebExtRunArgs {
         profile: string | undefined;
         keep_profile_changes: boolean;
     };
+    firefox_android: {
+        apk: string | undefined;
+        adb_device: string | undefined;
+    };
     chromium: {
         executable: string | undefined;
         profile: string | undefined;
@@ -60,6 +64,20 @@ export class WebExtRun {
                             firefox: this.args.firefox.executable,
                             firefoxProfile: this.args.firefox.profile,
                             keepProfileChanges: this.args.firefox.keep_profile_changes,
+                        },
+                        {},
+                    );
+                } else if (this.args.mode === "firefox-android") {
+                    this.webExtRunner = await this.webExt.cmd.run(
+                        {
+                            target: "firefox-android",
+                            sourceDir: this.args.sourceDir,
+                            noReload: true,
+                            startUrl: "twitter.com",
+                            firefoxApk: this.args.firefox_android.apk,
+                            adbDevice: this.args.firefox_android.adb_device,
+                            //firefoxProfile: this.args.firefox.profile,
+                            //keepProfileChanges: this.args.firefox.keep_profile_changes,
                         },
                         {},
                     );
