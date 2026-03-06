@@ -213,8 +213,9 @@ export function replacePost() {
             }
         }
         // ツイートその他ポップアップの「ツイートを報告」ボタン
+        // NOTE: ツイート投稿画面の「コンテンツ開示」でも同じボタンが使用されているので、:not()で除外しています
         if (!isFollowersList) {
-            for (const elem of getNotReplacedElements('path[d="M3 2h18.61l-3.5 7 3.5 7H5v6H3V2zm2 12h13.38l-2.5-5 2.5-5H5v10z"]')) {
+            for (const elem of getNotReplacedElements('path[d="M3 2h18.61l-3.5 7 3.5 7H5v6H3V2zm2 12h13.38l-2.5-5 2.5-5H5v10z"]:not([data-testid="contentDisclosureButton"] > div > svg > g > path)')) {
                 const changeElem = elem?.parentElement?.parentElement?.parentElement?.parentElement?.querySelector("span");
                 if (changeElem) {
                     changeElem.textContent = translate("XtoTwitter-PostToTweet-reportTweet");
