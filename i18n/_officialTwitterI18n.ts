@@ -156,6 +156,7 @@ export const TUICI18ns = {
     "postingDialog-toolbar-items-addEmoji": "d4a4842e",
     "postingDialog-toolbar-items-scheduleOption": "ha5e2e7a",
     "postingDialog-toolbar-items-geoButton": "cce30dcc",
+    "postingDialog-toolbar-items-contentDisclosureButton": "e6d31b8a",
     "dateAndTime.options.absolutelyTime.ago": "f0e84609",
     "timeline-pinningTab-foryou": "d1e0a75f",
     "timeline-pinningTab-following": "dafd69e9",
