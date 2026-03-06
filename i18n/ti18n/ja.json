@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "絵文字を追加",
     "postingDialog-toolbar-items-scheduleOption": "ツイートを予約",
     "postingDialog-toolbar-items-geoButton": "位置情報を追加",
+    "postingDialog-toolbar-items-contentDisclosureButton": "コンテンツ開示",
     "dateAndTime.options.absolutelyTime.ago": "{0}前",
     "timeline-pinningTab-foryou": "おすすめ",
     "timeline-pinningTab-following": "フォロー中",

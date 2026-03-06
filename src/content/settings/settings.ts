@@ -211,6 +211,7 @@ export const DEFAULT_SETTINGS = {
             { id: "addEmoji", i18n: "postingDialog-toolbar-items-addEmoji" },
             { id: "scheduleOption", i18n: "postingDialog-toolbar-items-scheduleOption" },
             { id: "geoButton", i18n: "postingDialog-toolbar-items-geoButton" },
+            { id: "contentDisclosureButton", i18n: "postingDialog-toolbar-items-contentDisclosureButton" }
         ],
     },
 
