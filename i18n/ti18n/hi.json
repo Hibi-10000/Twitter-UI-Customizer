@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "इमोजी जोड़ें",
     "postingDialog-toolbar-items-scheduleOption": "ट्वीट शेड्यूल करें",
     "postingDialog-toolbar-items-geoButton": "स्थान टैग करें",
+    "postingDialog-toolbar-items-contentDisclosureButton": "सामग्री प्रकटीकरण",
     "dateAndTime.options.absolutelyTime.ago": "{0} पहले",
     "timeline-pinningTab-foryou": "आपके लिए",
     "timeline-pinningTab-following": "फ़ॉलोइंग",

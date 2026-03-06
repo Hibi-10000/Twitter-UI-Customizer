@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "Tilføj emoji",
     "postingDialog-toolbar-items-scheduleOption": "Planlæg Tweet",
     "postingDialog-toolbar-items-geoButton": "Føj tag til lokalitet",
+    "postingDialog-toolbar-items-contentDisclosureButton": "Indholdsoplysning",
     "dateAndTime.options.absolutelyTime.ago": "{0} siden",
     "timeline-pinningTab-foryou": "Til dig",
     "timeline-pinningTab-following": "Følger",

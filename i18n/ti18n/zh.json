@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "添加表情符号",
     "postingDialog-toolbar-items-scheduleOption": "预排期推文",
     "postingDialog-toolbar-items-geoButton": "标记位置",
+    "postingDialog-toolbar-items-contentDisclosureButton": "内容披露",
     "dateAndTime.options.absolutelyTime.ago": "{0} 前",
     "timeline-pinningTab-foryou": "为你推荐",
     "timeline-pinningTab-following": "正在关注",

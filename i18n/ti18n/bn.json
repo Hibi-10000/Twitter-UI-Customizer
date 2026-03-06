@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "ইমোজি যোগ করুন",
     "postingDialog-toolbar-items-scheduleOption": "টুইটের সময় নির্ধারণ করুন",
     "postingDialog-toolbar-items-geoButton": "অবস্থান ট্যাগ করুন",
+    "postingDialog-toolbar-items-contentDisclosureButton": "কন্টেন্ট প্রকাশ",
     "dateAndTime.options.absolutelyTime.ago": "{0} আগে",
     "timeline-pinningTab-foryou": "আপনার জন্য ",
     "timeline-pinningTab-following": " করছেন",

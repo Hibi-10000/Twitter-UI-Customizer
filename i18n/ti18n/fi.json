@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "Lisää emoji",
     "postingDialog-toolbar-items-scheduleOption": "Ajasta twiitti",
     "postingDialog-toolbar-items-geoButton": "Merkitse sijainti",
+    "postingDialog-toolbar-items-contentDisclosureButton": "Sisältöä koskeva ilmoitus",
     "dateAndTime.options.absolutelyTime.ago": "{0} sitten",
     "timeline-pinningTab-foryou": "Sinulle",
     "timeline-pinningTab-following": "Seurataan",

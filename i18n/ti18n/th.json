@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "เพิ่มอีโมจิ",
     "postingDialog-toolbar-items-scheduleOption": "ตั้งเวลาทวีต",
     "postingDialog-toolbar-items-geoButton": "แท็กตําแหน่ง",
+    "postingDialog-toolbar-items-contentDisclosureButton": "การเปิดเผยข้อมูลเนื้อหา",
     "dateAndTime.options.absolutelyTime.ago": "{0} ที่แล้ว",
     "timeline-pinningTab-foryou": "สำหรับคุณ",
     "timeline-pinningTab-following": "กําลังติดตาม",
