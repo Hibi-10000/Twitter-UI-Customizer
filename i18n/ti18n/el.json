@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "Προσθήκη emoji",
     "postingDialog-toolbar-items-scheduleOption": "Προγραμματισμός Tweet",
     "postingDialog-toolbar-items-geoButton": "Προσθήκη ετικέτας τοποθεσίας",
+    "postingDialog-toolbar-items-contentDisclosureButton": "Γνωστοποίηση περιεχομένου",
     "dateAndTime.options.absolutelyTime.ago": "Πριν από ",
     "timeline-pinningTab-foryou": "Για εσάς",
     "timeline-pinningTab-following": "Ακολουθείτε",

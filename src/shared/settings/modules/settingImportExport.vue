@@ -80,7 +80,7 @@
 import { translate } from "@content/i18n";
 import { getPref, setPref, savePref, updatePref, mergePref, mergeDefaultPref, exportPref } from "@content/settings";
 import { waitForElement } from "@content/utils/element";
-import { applySystemCss, cleanModifiedElements } from "@content/applyCSS";
+import { injectSettingsStyle, cleanModifiedElements } from "@content/applyCSS";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 
@@ -133,7 +133,7 @@ const importFunc = async (type: number) => {
         } else {
             document.querySelector("#TUICSettings")?.remove();
             cleanModifiedElements();
-            applySystemCss();
+            injectSettingsStyle();
 
             setTitleObserver();
             if (!getPref("otherBoolSetting.XtoTwitter") && document.title.endsWith(" / Twitter")) {

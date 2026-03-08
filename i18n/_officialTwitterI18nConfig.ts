@@ -48,6 +48,7 @@ export const config = {
         "f88553c8",
         "fd45fe70",
         "bb07870e",
+        "e6d31b8a",
     ] satisfies readonly TranslateKey[] as readonly TranslateKey[],
     fixPlural: [
         "c42234da",

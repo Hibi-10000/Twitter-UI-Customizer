@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "Добавить эмодзи",
     "postingDialog-toolbar-items-scheduleOption": "Добавить твит в расписание",
     "postingDialog-toolbar-items-geoButton": "Отметить местоположение",
+    "postingDialog-toolbar-items-contentDisclosureButton": "Уведомление о контенте",
     "dateAndTime.options.absolutelyTime.ago": "{0} назад",
     "timeline-pinningTab-foryou": "Для вас",
     "timeline-pinningTab-following": "Вы читаете",

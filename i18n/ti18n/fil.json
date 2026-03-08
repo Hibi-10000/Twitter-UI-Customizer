@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "Magdagdag ng emoji",
     "postingDialog-toolbar-items-scheduleOption": "Iiskedyul ang Tweet",
     "postingDialog-toolbar-items-geoButton": "I-tag ang lokasyon",
+    "postingDialog-toolbar-items-contentDisclosureButton": "Paghahayag ng content",
     "dateAndTime.options.absolutelyTime.ago": "{0} ang nakalipas",
     "timeline-pinningTab-foryou": "Para sa iyo",
     "timeline-pinningTab-following": "Sinusundan",

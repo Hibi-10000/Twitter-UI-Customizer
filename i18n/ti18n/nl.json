@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "Emoji toevoegen",
     "postingDialog-toolbar-items-scheduleOption": "Tweet plannen",
     "postingDialog-toolbar-items-geoButton": "Locatie taggen",
+    "postingDialog-toolbar-items-contentDisclosureButton": "Content disclosure",
     "dateAndTime.options.absolutelyTime.ago": "{0} geleden",
     "timeline-pinningTab-foryou": "Voor jou",
     "timeline-pinningTab-following": "Volgend",

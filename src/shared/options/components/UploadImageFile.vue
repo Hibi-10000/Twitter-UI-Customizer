@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { applyCustomIcon, applySystemCss } from "@content/applyCSS";
+import { injectSettingsIconStyle, injectSettingsStyle } from "@content/applyCSS";
 import { translate } from "@content/i18n";
 import { ref } from "vue";
 
@@ -47,8 +47,8 @@ async function changeCustomCSS() {
         localStorage.setItem("TUIC_IconImg_Favicon", "");
     }
 
-    applySystemCss();
-    applyCustomIcon();
+    injectSettingsStyle();
+    injectSettingsIconStyle();
 }
 </script>
 

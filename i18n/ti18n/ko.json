@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "이모티콘 추가하기",
     "postingDialog-toolbar-items-scheduleOption": "트윗 예약하기",
     "postingDialog-toolbar-items-geoButton": "위치 태그하기",
+    "postingDialog-toolbar-items-contentDisclosureButton": "콘텐츠 정보 공개 문구",
     "dateAndTime.options.absolutelyTime.ago": "{0} 전",
     "timeline-pinningTab-foryou": "추천",
     "timeline-pinningTab-following": "팔로우 중",

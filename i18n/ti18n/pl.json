@@ -148,6 +148,7 @@
     "postingDialog-toolbar-items-addEmoji": "Dodaj emoji",
     "postingDialog-toolbar-items-scheduleOption": "Zaplanuj Tweeta",
     "postingDialog-toolbar-items-geoButton": "Oznacz lokalizację",
+    "postingDialog-toolbar-items-contentDisclosureButton": "Ujawnienie informacji o treści",
     "dateAndTime.options.absolutelyTime.ago": "{0} temu",
     "timeline-pinningTab-foryou": "Dla Ciebie",
     "timeline-pinningTab-following": "Obserwujesz",

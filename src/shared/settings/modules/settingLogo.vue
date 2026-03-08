@@ -37,28 +37,27 @@ const twitterLogosList: twIconsRadioListProps[] = [
     {
         radioName: "invisible",
         isText: false,
-        svgComponent: ICON_COMMON_NONE,
+        icon: ICON_COMMON_NONE,
     },
     {
         radioName: "twitterIcon-X",
         isText: false,
-        svgComponent: ICON_BRAND_X,
+        icon: ICON_BRAND_X,
     },
     {
         radioName: "twitter",
         isText: false,
-        svgComponent: ICON_BRAND_TWITTER,
+        icon: ICON_BRAND_TWITTER,
     },
     {
-        // TODO: base64対応後設定
         radioName: "dog",
         isText: false,
-        base64Img: chrome.runtime.getURL(ICON_DOG),
+        icon: chrome.runtime.getURL(ICON_DOG),
     },
     {
         radioName: "twitterIcon-XDaruma",
         isText: false,
-        svgComponent: ICON_X_DARUMA,
+        icon: ICON_X_DARUMA,
     },
     {
         radioName: "custom",

@@ -8,14 +8,14 @@
 </template>
 
 <script setup lang="ts">
-import { applyCustomCss } from "@content/applyCSS";
+import { injectCustomStyle } from "@content/applyCSS";
 import { translate } from "@content/i18n";
 
 const CustomCSSBox = defineModel<HTMLTextAreaElement>();
 
 function changeCustomCSS() {
     localStorage.setItem("TUIC_CSS", CustomCSSBox.value.value);
-    applyCustomCss();
+    injectCustomStyle();
 }
 
 const customCSS = localStorage.getItem("TUIC_CSS");
