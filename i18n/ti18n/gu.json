@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "એક્સપ્લોર",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "સૂચનાઓ",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "સીધા સંદેશા",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "તમે @{screenName}માટે પોસ્ટ કરી રહ્યા છો.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "તમે @{screenName} માટે ટ્વીટ કરી રહ્યા છો.",
     "profileSetting-profileInitialTab-likes": "લાઈક્સ",
     "profileSetting-profileInitialTab-media": "મીડિયા",
     "profileSetting-profileInitialTab-reply": "પ્રત્યુતરો",

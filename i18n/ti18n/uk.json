@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Ознайомлення",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Сповіщення",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Приватні повідомлення",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Ви публікуєте пост від імені @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Ви твітите до @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Вподобання",
     "profileSetting-profileInitialTab-media": "Медіафайли",
     "profileSetting-profileInitialTab-reply": "Відповіді",

@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Przeglądaj",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Powiadomienia",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Wiadomości prywatne",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Publikujesz wpis dla użytkownika @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Tweetujesz w imieniu użytkownika @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Polubienia",
     "profileSetting-profileInitialTab-media": "Multimedia",
     "profileSetting-profileInitialTab-reply": "Odpowiedzi",

@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "دریافت کریں",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "اطلاعات",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "ذاتی پیغامات",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "You’re posting for @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "آپ @{screenName} کیلئے ٹویٹ کر رہے ہیں۔",
     "profileSetting-profileInitialTab-likes": "لائک",
     "profileSetting-profileInitialTab-media": "میڈیا",
     "profileSetting-profileInitialTab-reply": "جوابات",

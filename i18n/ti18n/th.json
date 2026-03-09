@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "สำรวจ",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "การแจ้งเตือน",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "ข้อความส่วนตัว",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "คุณกำลังโพสต์สำหรับ @{screenName}",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "คุณกำลังทวีตสำหรับ @{screenName}",
     "profileSetting-profileInitialTab-likes": "ความชอบ",
     "profileSetting-profileInitialTab-media": "สื่อ",
     "profileSetting-profileInitialTab-reply": "การตอบกลับ",

@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Felfedezés",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Értesítések",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Privát üzenetek",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "@{screenName} nevében teszel közzé bejegyzést.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "@{screenName} nevében Tweetelsz.",
     "profileSetting-profileInitialTab-likes": "Kedvelések",
     "profileSetting-profileInitialTab-media": "Média",
     "profileSetting-profileInitialTab-reply": "Válaszok",

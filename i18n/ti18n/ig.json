@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Nyochaa",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Nziọkwa",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Ozi Òzugbo",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "You’re posting for @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Ị na-ezipụ Twiit maka @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Mmasị",
     "profileSetting-profileInitialTab-media": "Midia",
     "profileSetting-profileInitialTab-reply": "Nzaghachi ",

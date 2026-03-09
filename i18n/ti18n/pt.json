@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Explorar",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Notificações",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Mensagens Diretas",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Você está postando para @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Você está Tweetando para @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Curtidas",
     "profileSetting-profileInitialTab-media": "Mídia",
     "profileSetting-profileInitialTab-reply": "Respostas",

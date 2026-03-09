@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Teroka",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Pemberitahuan",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Mesej Langsung",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Anda membuat siaran untuk @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Anda sedang Tweet untuk @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Suka",
     "profileSetting-profileInitialTab-media": "Media",
     "profileSetting-profileInitialTab-reply": "Balasan",

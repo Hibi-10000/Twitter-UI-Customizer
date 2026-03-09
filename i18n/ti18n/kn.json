@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "ಅನ್ವೇಷಿಸಿ",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "ಸೂಚನೆಗಳು",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "ನೇರ ಸಂದೇಶಗಳು",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "ನೀವು @{screenName} ಗಾಗಿ ಪೋಸ್ಟ್ ಮಾಡುತ್ತಿದ್ದೀರಿ.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "ನೀವು @{screenName} ಗೆ ಟ್ವೀಟ್ ಮಾಡುತ್ತಿದ್ದೀರಿ.",
     "profileSetting-profileInitialTab-likes": "ಇಷ್ಟಗಳು",
     "profileSetting-profileInitialTab-media": "ಮಾಧ್ಯಮ",
     "profileSetting-profileInitialTab-reply": "ಪ್ರತಿಕ್ರಿಯೆಗಳು",

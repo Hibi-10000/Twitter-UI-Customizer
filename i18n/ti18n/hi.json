@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "देखें",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "सूचनाएं",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "प्रत्यक्ष संदेश",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "आप @{screenName} के लिए पोस्ट कर रहे हैं.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "आप @{screenName} के लिए ट्वीट कर रहे हैं.",
     "profileSetting-profileInitialTab-likes": "पसंद",
     "profileSetting-profileInitialTab-media": "मीडिया",
     "profileSetting-profileInitialTab-reply": "जवाब",

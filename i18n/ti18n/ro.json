@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Explorează",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Notificări",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Mesaje directe",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Postezi pentru @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Dai Tweet de pe contul @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Aprecieri",
     "profileSetting-profileInitialTab-media": "Conținut media",
     "profileSetting-profileInitialTab-reply": "Răspunsuri",

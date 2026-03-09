@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Ìwádìí",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Àwọn ìfitónilétí",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Ìfiránṣẹ́ Tààrà",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "You’re posting for @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Ò ń twíìtì fún @{screenName}",
     "profileSetting-profileInitialTab-likes": "Àwọn ìfẹ́ràn",
     "profileSetting-profileInitialTab-media": "Mídíà",
     "profileSetting-profileInitialTab-reply": "Àwọn èsì",

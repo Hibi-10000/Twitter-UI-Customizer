@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Féach thart",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Fógraí",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Teachtaireachtaí Díreacha",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "You’re posting for @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "You’re Tweeting for @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Thaitin siad seo le",
     "profileSetting-profileInitialTab-media": "Meáin",
     "profileSetting-profileInitialTab-reply": "Freagraí",

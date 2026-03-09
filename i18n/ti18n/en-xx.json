@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "[Explöøréê]",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "[Nöøtïífïícåätïíöøns]",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "[Dïíréêct Méêssåägéês]",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "[Yöøü’réê pöøstïíng föør @{screenName}.]",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "[Yöøü’réê Twéêéêtïíng föør @{screenName}.]",
     "profileSetting-profileInitialTab-likes": "[Lïíkéês]",
     "profileSetting-profileInitialTab-media": "[Méêdïíåä]",
     "profileSetting-profileInitialTab-reply": "[Réêplïíéês]",

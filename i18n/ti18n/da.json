@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Udforsk",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Meddelelser",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Direkte beskeder",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Du poster for @{screenName}",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Du tweeter for @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Likes",
     "profileSetting-profileInitialTab-media": "Medier",
     "profileSetting-profileInitialTab-reply": "Svar",

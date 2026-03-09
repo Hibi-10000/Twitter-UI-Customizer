@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Arakatu",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Jakinarazpenak",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Mezu Zuzenak",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "You’re posting for @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "You’re Tweeting for @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Atsegiteak",
     "profileSetting-profileInitialTab-media": "Media",
     "profileSetting-profileInitialTab-reply": "Erantzunak",

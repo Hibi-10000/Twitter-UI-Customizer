@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Khám phá",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Thông báo",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Tin nhắn Trực tiếp",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Bạn đang đăng cho @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Bạn đang đăng Tweet cho @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Lượt thích",
     "profileSetting-profileInitialTab-media": "Phương tiện",
     "profileSetting-profileInitialTab-reply": "Các phản hồi",

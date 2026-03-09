@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Explora",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Notificacions",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Missatges directes",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Estàs publicant per a l'usuari @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Estàs tuitant per a l'usuari @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Agradaments",
     "profileSetting-profileInitialTab-media": "Continguts",
     "profileSetting-profileInitialTab-reply": "Respostes",

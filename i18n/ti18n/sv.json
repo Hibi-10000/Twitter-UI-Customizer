@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Utforska",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Notiser",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Direktmeddelanden",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Du gör inlägg för @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Du tweetar för @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Gilla-markeringar",
     "profileSetting-profileInitialTab-media": "Medier",
     "profileSetting-profileInitialTab-reply": "Svar",

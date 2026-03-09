@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "کاوش",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "آگاه‌سازی‌ها",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "پیام‌های خصوصی",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "دارید برای @{screenName} پست می‌کنید.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "دارید برای @{screenName} توییت می‌کنید.",
     "profileSetting-profileInitialTab-likes": "پسندها",
     "profileSetting-profileInitialTab-media": "رسانه تصویری",
     "profileSetting-profileInitialTab-reply": "پاسخ‌ها",

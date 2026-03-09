@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "探索",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "通知",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "私人訊息",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "你正在為 @{screenName} 發佈貼文。",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "你正在為 @{screenName} 發佈推文。",
     "profileSetting-profileInitialTab-likes": "喜歡的內容",
     "profileSetting-profileInitialTab-media": "媒體",
     "profileSetting-profileInitialTab-reply": "回覆",

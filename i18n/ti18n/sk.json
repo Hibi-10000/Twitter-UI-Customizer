@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Preskúmať",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Notifikácie",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Súkromné správy",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Uverejňujete pre používateľa @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Tweetujete pre používateľa @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Páči sa",
     "profileSetting-profileInitialTab-media": "Médiá",
     "profileSetting-profileInitialTab-reply": "Odpovede",

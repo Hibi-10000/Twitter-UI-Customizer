@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "[[179973]] Explore",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "[[213248]] Notifications",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "[[142309]] Direct Messages",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "[[281800]] You’re posting for @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "[[271037]] You’re Tweeting for @{screenName}.",
     "profileSetting-profileInitialTab-likes": "[[150228]] Likes",
     "profileSetting-profileInitialTab-media": "[[150230]] Media",
     "profileSetting-profileInitialTab-reply": "[[214005]] Replies",

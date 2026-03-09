@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Обзор",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Уведомления",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Личные сообщения",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Вы публикуете пост от имени @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Вы твитите от имени @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Нравится",
     "profileSetting-profileInitialTab-media": "Медиа",
     "profileSetting-profileInitialTab-reply": "Ответы",
