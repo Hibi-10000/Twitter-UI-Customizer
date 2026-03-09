@@ -144,6 +144,8 @@ export const TUICI18ns = {
     "XtoTwitter-PostToTweet-pwaManifest-explore": "fcf3e54c",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "eb75875e",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "d4986f86",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "aacfbe55",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "ed9f214f",
     "profileSetting-profileInitialTab-likes": "d7b8ebaa",
     "profileSetting-profileInitialTab-media": "i5450bec",
     "profileSetting-profileInitialTab-reply": "jdceda60",

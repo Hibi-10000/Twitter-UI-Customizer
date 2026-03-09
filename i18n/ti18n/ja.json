@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "話題を検索",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "通知",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "ダイレクトメッセージ",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "@{screenName}さんとしてポストします。",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "@{screenName}さんとしてツイートします。",
     "profileSetting-profileInitialTab-likes": "いいね",
     "profileSetting-profileInitialTab-media": "メディア",
     "profileSetting-profileInitialTab-reply": "返信",

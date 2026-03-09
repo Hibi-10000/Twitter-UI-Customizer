@@ -359,6 +359,18 @@ export function replacePost() {
             }
         }
 
+        // 委任アカウントのツイート画面の「{user}さんとしてツイートします。」
+        for (const elem of getNotReplacedElements(`[data-testid="primaryColumn"] [role="progressbar"]+div > div > [role="status"] > div > div > div > span`)) {
+            if (elem.textContent === "") continue;
+            const origText = elem.textContent;
+            const splitText = translate("XtoTwitter-PostToTweet-delegate-tweet-as-latest").split("@{screenName}");
+            const isDelegateMessage = origText.includes(splitText[0]) && origText.includes(splitText[1]);
+            if (isDelegateMessage) {
+                const screenName = origText.substring(origText.indexOf(splitText[0]) + splitText[0].length, origText.lastIndexOf(splitText[1]));
+                elem.textContent = translate("XtoTwitter-PostToTweet-delegate-tweet-as-old").replace("@{screenName}", screenName);
+            }
+        }
+
         // TODO: ポスト系には関係ないが、おすすめクリエイターを削除したい。固有プロパティが見つからないので、[data-testid$="-subscribe"]が含まれる[data-testid="cellInnerDiv"]を削除し、その塊の一つ前のやつを消せばよさそう（難しそう）
 
         // TODO: aria-label が設定されているものは変更したほうがいいかもしれない
