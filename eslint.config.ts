@@ -1,33 +1,113 @@
-import eslint from "@eslint/js";
-//import { defineConfig, type Config } from "eslint/config";
+import antfu from "@antfu/eslint-config";
 import globals from "globals";
 
-import stylistic from "@stylistic/eslint-plugin";
-import unusedimports from "eslint-plugin-unused-imports";
 import importx from "eslint-plugin-import-x";
 
-import tseslint/*, { type FlatConfig }*/ from "typescript-eslint";
-import solideslint from "eslint-plugin-solid";
-import vueeslint from "eslint-plugin-vue";
-import unocsseslint from "@unocss/eslint-plugin";
-
-//const defineLangOpt = (options: FlatConfig.LanguageOptions): Config["languageOptions"] => options as Config["languageOptions"];
-
-// safeguard: https://github.com/typescript-eslint/typescript-eslint/issues/11543
-//export default defineConfig(
-export default tseslint.config(
+export default antfu(
     {
         ignores: ["dist/**", "node_modules/**", "third-party/**"],
+        lessOpinionated: true,
+        test: false,
+        toml: false,
+        markdown: false,
+        stylistic: {
+            indent: 4,
+            quotes: "double",
+            semi: true,
+            //braceStyle: "1tbs",
+            //quoteProps: "as-needed",
+            //severity: "warn",
+            overrides: {
+                "style/quotes": ["error", "double", { avoidEscape: true, allowTemplateLiterals: "always" }],
+                "style/brace-style": ["error", "1tbs"],
+                "style/quote-props": ["error", "as-needed"],
+                "style/arrow-parens": ["error", "always"],
+                "style/jsx-closing-tag-location": 0,
+
+                "style/spaced-comment": 0,
+                "style/lines-between-class-members": 0,
+                "style/eol-last": 0, //
+            },
+        },
+        typescript: {
+            //tsconfigPath: "tsconfig.json",
+            overrides: {
+                "ts/no-use-before-define": 0,
+
+                "ts/consistent-type-imports": 0, //["error", { fixStyle: "inline-type-imports" }],
+            },
+        },
+        vue: {
+            overrides: {
+                "vue/html-comment-content-spacing": 0,
+                "vue/attribute-hyphenation": 0,
+                "vue/html-self-closing": ["warn", {
+                    html: {
+                        void: "always",
+                        normal: "never",
+                    },
+                }],
+                "vue/block-order": 0,
+                "vue/attributes-order": 0,
+
+                "vue/prefer-separate-static-class": 0,
+                "vue/dot-notation": 0,
+                "vue/no-required-prop-with-default": 0,
+                "vue/eqeqeq": 0,
+            },
+        },
+        solid: {
+            overrides: {
+                "solid/self-closing-comp": ["warn", { html: "void" }],
+            },
+        },
+        unocss: {
+            strict: true,
+        },
+        jsonc: {
+            overrides: {
+            },
+        },
+        yaml: {
+            overrides: {
+                "pnpm/yaml-enforce-settings": 0,
+
+                "yaml/indent": 0, //["error", 2],
+                "yaml/plain-scalar": 0,
+                "yaml/quotes": 0,
+                "yaml/spaced-comment": 0,
+            },
+        },
+        rules: {
+            "no-cond-assign": ["error", "except-parens"],
+            "no-alert": 0,
+            "unicorn/prefer-module": "error",
+            "node/prefer-global/buffer": 0,
+            "unocss/order": 0,
+            "perfectionist/sort-imports": 0,
+            "perfectionist/sort-named-imports": 0,
+            "perfectionist/sort-named-exports": 0,
+            "jsonc/sort-keys": 0,
+
+            "no-console": 0,
+            "prefer-template": 0,
+            "dot-notation": 0,
+            "object-shorthand": 0,
+            curly: 0,
+            eqeqeq: 0,
+            "no-useless-return": 0,
+            "no-unneeded-ternary": 0,
+            "antfu/consistent-list-newline": 0,
+            "unicorn/escape-case": 0,
+            "unicorn/prefer-number-properties": 0,
+            "unused-imports/no-unused-vars": 0,
+            "import/consistent-type-specifier-style": 0,
+            "jsdoc/check-param-names": 0,
+            "node/prefer-global/process": ["error", "always"],
+            "regexp/prefer-d": 0,
+            "regexp/no-useless-flag": 0,
+        },
     },
-    stylistic.configs.customize({
-        pluginName: "style",
-        indent: 4,
-        quotes: "double",
-        semi: true,
-        braceStyle: "1tbs",
-        quoteProps: "as-needed",
-        severity: "warn",
-    }),
     {
         files: ["**/*.{js,ts,tsx,vue}"],
         languageOptions: {
@@ -35,72 +115,37 @@ export default tseslint.config(
             sourceType: "module",
         },
         extends: [
-            eslint.configs.recommended,
-            unocsseslint.configs.flat,
-            importx.flatConfigs.recommended,
+            // @ts-expect-error https://github.com/typescript-eslint/typescript-eslint/issues/11543
             importx.flatConfigs.typescript,
         ],
-        plugins: {
-            "unused-imports": unusedimports,
-        },
         rules: {
-            "no-unused-vars": 0,
-            //eqeqeq: ["error", "smart"],
-            "no-sequences": ["error", { allowInParentheses: false }],
-            "unused-imports/no-unused-imports": "error",
-            "import-x/first": "error",
-            "import-x/no-named-default": "error",
+            "import-x/export": "error",
+            "import-x/default": "error",
+            "import-x/namespace": "error",
             "import-x/no-self-import": "error",
-            "import-x/newline-after-import": "error",
             "import-x/no-cycle": "error",
             "import-x/no-unresolved": ["error", { ignore: ["^virtual:"] }],
-            "import-x/no-named-as-default-member": 0,
-            "unocss/order": 0,
-            "style/spaced-comment": 0,
-            "style/lines-between-class-members": 0,
-            "style/jsx-closing-tag-location": 0,
-            "style/arrow-parens": ["error", "always"],
-            "style/switch-colon-spacing": ["error", { after: true, before: false }],
-            "style/quotes": ["error", "double", { avoidEscape: true, allowTemplateLiterals: "always" }],
         },
     },
     {
-        files: ["**/*.{ts,tsx,vue}"],
-        languageOptions: {
-            parserOptions: {
-                parser: tseslint.parser,
-                //projectService: true,
-                //extraFileExtensions: [".vue"],
-            },
-        },
-        extends: [
-            ...tseslint.configs.recommended,
-            //...tseslint.configs.strict,
-            ...tseslint.configs.stylistic, //TypeChecked
-            solideslint.configs["flat/typescript"],
-            ...vueeslint.configs["flat/recommended"],
-        ],
+        files: [".vscode/*.json", "tsconfig*.json"],
         rules: {
-            "no-redeclare": 0,
-            "@typescript-eslint/no-redeclare": ["error", { ignoreDeclarationMerge: false }],
-            "@typescript-eslint/no-unused-vars": 0,
-            "solid/self-closing-comp": ["warn", { html: "void" }],
-            "vue/html-indent": ["warn", 4],
-            "vue/html-self-closing": ["warn", {
-                html: {
-                    void: "always",
-                    normal: "never",
-                },
-            }],
-            "vue/block-tag-newline": "error",
-            "vue/define-macros-order": "error",
-            "vue/padding-line-between-blocks": "error",
-            "vue/v-for-delimiter-style": "error",
-            "vue/max-attributes-per-line": 0,
-            "vue/attribute-hyphenation": 0,
-            "vue/attributes-order": 0,
-            "vue/require-default-prop": 0,
-            "vue/no-required-prop-with-default": 0,
+            "jsonc/comma-dangle": ["error", "always-multiline"],
+        },
+    },
+    {
+        files: ["public/pwa-manifests/*.json"],
+        rules: {
+            "jsonc/indent": ["error", 2],
+        },
+    },
+    {
+        files: ["{_locales,i18n,public/pwa-manifests}/**/*.json"],
+        rules: {
+            "no-irregular-whitespace": 0,
+            "style/no-multiple-empty-lines": 0,
+
+            "jsonc/key-spacing": 0,
         },
     },
     {
@@ -116,7 +161,7 @@ export default tseslint.config(
         languageOptions: {
             globals: {
                 ...globals.browser,
-                chrome: "readonly",
+                ...globals.webextensions,
             },
         },
     },
