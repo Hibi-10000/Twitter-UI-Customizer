@@ -5,7 +5,8 @@ import importx from "eslint-plugin-import-x";
 
 export default antfu(
     {
-        ignores: ["dist/**", "node_modules/**", "third-party/**"],
+        gitignore: true,
+        ignores: ["third-party"],
         lessOpinionated: true,
         test: false,
         toml: false,
@@ -63,10 +64,7 @@ export default antfu(
         unocss: {
             strict: true,
         },
-        jsonc: {
-            overrides: {
-            },
-        },
+        jsonc: true,
         yaml: {
             overrides: {
                 "yaml/indent": ["error", 2],
@@ -127,6 +125,7 @@ export default antfu(
     },
     {
         files: [".vscode/*.json", "tsconfig*.json"],
+        language: "jsonc/jsonc",
         rules: {
             "jsonc/comma-dangle": ["error", "always-multiline"],
         },
