@@ -32,8 +32,8 @@ jobs:
           version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
       - uses: actions/setup-node@v6
         with:
-          node-version-file: "package.json"
-          cache: "pnpm"
+          node-version-file: package.json
+          cache: pnpm
       - name: Archive
         run: |
           pnpm install
@@ -62,8 +62,8 @@ jobs:
           version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
       - uses: actions/setup-node@v6
         with:
-          node-version-file: "package.json"
-          cache: "pnpm"
+          node-version-file: package.json
+          cache: pnpm
       - name: Archive
         run: |
           pnpm install
@@ -86,8 +86,8 @@ jobs:
           version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
       - uses: actions/setup-node@v6
         with:
-          node-version-file: "package.json"
-          cache: "pnpm"
+          node-version-file: package.json
+          cache: pnpm
       - name: Archive
         run: |
           pnpm install

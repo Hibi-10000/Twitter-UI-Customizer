@@ -26,7 +26,6 @@ export default antfu(
 
                 "style/spaced-comment": 0,
                 "style/lines-between-class-members": 0,
-                "style/eol-last": 0, //
             },
         },
         typescript: {
@@ -70,10 +69,9 @@ export default antfu(
         },
         yaml: {
             overrides: {
+                "yaml/indent": ["error", 2],
                 "pnpm/yaml-enforce-settings": 0,
 
-                "yaml/indent": 0, //["error", 2],
-                "yaml/plain-scalar": 0,
                 "yaml/quotes": 0,
                 "yaml/spaced-comment": 0,
             },
@@ -146,6 +144,7 @@ export default antfu(
             "style/no-multiple-empty-lines": 0,
 
             "jsonc/key-spacing": 0,
+            "style/eol-last": 0,
         },
     },
     {

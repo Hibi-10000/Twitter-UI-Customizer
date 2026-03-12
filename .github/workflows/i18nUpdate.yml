@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths:
-      - "i18n/_langList.ts"
-      - "i18n/_officialTwitterI18n.ts"
-      - "i18n/_officialTwitterI18nConfig.ts"
-      - "scripts/update-i18n.ts"
+      - i18n/_langList.ts
+      - i18n/_officialTwitterI18n.ts
+      - i18n/_officialTwitterI18nConfig.ts
+      - scripts/update-i18n.ts
   workflow_dispatch:
 
 permissions:
@@ -35,8 +35,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version-file: "package.json"
-          cache: "pnpm"
+          node-version-file: package.json
+          cache: pnpm
 
       - name: Update
         run: |
