@@ -154,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} 전",
     "timeline-pinningTab-foryou": "추천",
     "timeline-pinningTab-following": "팔로우 중",
+    "backgroundTheme-dim": "어둡게",
     "invisibleItems-editImage": "이미지 수정하기"
 }
