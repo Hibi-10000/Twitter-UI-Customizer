@@ -65,6 +65,13 @@ export class TUICObserver {
             // Twitterのアイコンに関する設定
             changeIcon();
 
+            // ダークブルー背景テーマ設定
+            if (getPref("uncategorizedSettings.dimBackgroundTheme") && document.documentElement.dataset.theme !== "dim") {
+                document.documentElement.dataset.theme = "dim";
+                document.body.style.backgroundColor = "rgb(21, 32, 43)";
+                document.body.style.scrollbarColor = "rgb(92, 111, 127) rgb(31, 40, 51)";
+            }
+
             // サイドバーに関する設定
             sidebarButtons();
 

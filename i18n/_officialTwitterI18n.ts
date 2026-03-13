@@ -162,6 +162,7 @@ export const TUICI18ns = {
     "dateAndTime.options.absolutelyTime.ago": "f0e84609",
     "timeline-pinningTab-foryou": "d1e0a75f",
     "timeline-pinningTab-following": "dafd69e9",
+    "backgroundTheme-dim": "i76f67ee",
     "invisibleItems-editImage": "fd45fe70",
 } as const;
 

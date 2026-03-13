@@ -204,3 +204,15 @@
 :root[data-tuic-settings*="|tweetDisplaySetting.option.likeToFavo|"] [data-testid="like"] > div:is(:hover, :focus-visible) path {
     fill: rgb(255 212 0) !important;
 }
+
+:root[data-tuic-settings*="|uncategorizedSettings.dimBackgroundTheme|"] {
+    .r-kemksi {
+        background-color: rgb(21 32 43 / 100%);
+    }
+    .r-5zmot {
+        background-color: rgb(21 32 43 / 65%);
+    }
+    .r-g2wdr4 {
+        background-color: rgb(31 40 51);
+    }
+}

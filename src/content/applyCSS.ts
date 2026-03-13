@@ -124,6 +124,7 @@ export function injectSettingsStyle() {
         "profileSetting.invisible.profileArticles",
         "profileSetting.invisible.profileSummary",
         "profileSetting.invisible.profilePagePremium",
+        "uncategorizedSettings.dimBackgroundTheme",
     ];
     let settingsOutput = "|";
     for (const elem of settingsArr) {
