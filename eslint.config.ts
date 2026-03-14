@@ -6,7 +6,11 @@ import importx from "eslint-plugin-import-x";
 export default antfu(
     {
         gitignore: true,
-        ignores: ["third-party"],
+        ignores: [
+            "i18n/ti18n",
+            "public/pwa-manifests",
+            "third-party",
+        ],
         lessOpinionated: true,
         test: false,
         toml: false,
@@ -131,19 +135,12 @@ export default antfu(
         },
     },
     {
-        files: ["public/pwa-manifests/*.json"],
-        rules: {
-            "jsonc/indent": ["error", 2],
-        },
-    },
-    {
-        files: ["{_locales,i18n,public/pwa-manifests}/**/*.json"],
+        files: ["{_locales/**,i18n}/*.json"],
         rules: {
             "no-irregular-whitespace": 0,
             "style/no-multiple-empty-lines": 0,
 
             "jsonc/key-spacing": 0,
-            "style/eol-last": 0,
         },
     },
     {
