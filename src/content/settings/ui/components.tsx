@@ -21,7 +21,7 @@ const changeCheckedDark = (bgThemeOption: HTMLElement, checked: boolean) => {
             childDiv.style.backgroundColor = "rgb(29, 155, 240)";
             childDiv.style.borderColor = "rgb(29, 155, 240)";
             (button.lastElementChild as HTMLInputElement).setAttribute("checked", "");
-            button.querySelector("svg").dataset.tuicHide = undefined;
+            delete button.querySelector("svg").dataset.tuicHide;
             break;
     }
 };
