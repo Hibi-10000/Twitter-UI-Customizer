@@ -13,6 +13,6 @@ export const generatePWAManifest = async (locale: Locale, ti18n: Record<TUICI18n
             ti18n["XtoTwitter-PostToTweet-pwaManifest-explore"],
             ti18n["XtoTwitter-PostToTweet-pwaManifest-notifications"],
             ti18n["XtoTwitter-PostToTweet-pwaManifest-directMessages"],
-        ), null, 2),
+        ), null, 2) + "\n",
     );
 };

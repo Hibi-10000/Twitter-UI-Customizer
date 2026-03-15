@@ -118,7 +118,7 @@ import { generatePWAManifest } from "./pwa-manifest/generate-manifest.ts";
                         console.warn(`${process.env.CI === "true" ? "::warning::" : "Warning: "}Translation not found for key "${tuicKey}" (ID: ${translateID}) in locale "${locale}"`);
                     }
                 }
-                await fs.writeFile(`./i18n/ti18n/${locale}.json`, JSON.stringify(returnObj, undefined, 4));
+                await fs.writeFile(`./i18n/ti18n/${locale}.json`, JSON.stringify(returnObj, undefined, 4) + "\n");
                 await generatePWAManifest(locale, returnObj);
             }),
         );
