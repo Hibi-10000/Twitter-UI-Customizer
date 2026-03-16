@@ -363,11 +363,11 @@ export function replacePost() {
         for (const elem of getNotReplacedElements(`[data-testid="primaryColumn"] [role="progressbar"]+div > div > [role="status"] > div > div > div > span`)) {
             if (elem.textContent === "") continue;
             const origText = elem.textContent;
-            const splitText = translate("XtoTwitter-PostToTweet-delegate-tweet-as-latest").split("@{screenName}");
+            const splitText = translate("XtoTwitter-PostToTweet-delegate-tweet-as-latest").split("{screenName}");
             const isDelegateMessage = origText.includes(splitText[0]) && origText.includes(splitText[1]);
             if (isDelegateMessage) {
                 const screenName = origText.substring(origText.indexOf(splitText[0]) + splitText[0].length, origText.lastIndexOf(splitText[1]));
-                elem.textContent = translate("XtoTwitter-PostToTweet-delegate-tweet-as-old").replace("@{screenName}", screenName);
+                elem.textContent = translate("XtoTwitter-PostToTweet-delegate-tweet-as-old").replace("{screenName}", screenName);
             }
         }
 
