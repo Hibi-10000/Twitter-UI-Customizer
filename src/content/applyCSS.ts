@@ -86,8 +86,6 @@ export function injectSettingsIconStyle() {
 
 /** 設定項目の CSS を head 要素に注入します。 */
 export function injectSettingsStyle() {
-    if (isSafemode) return;
-
     const backgroundColor = backgroundColorCheck();
 
     const settingsArr = [
