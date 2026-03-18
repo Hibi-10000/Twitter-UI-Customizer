@@ -31,7 +31,7 @@ const getPointerFromKey = (object: object, key: string) => {
  * @param {object} source 使用するPrefのObject。
  * @return {unknown} 取得した値(identifierが空文字ならTUICのPref全体)
  */
-export function getPref(identifier: string, source = settings) {
+export function getPref<T = any>(identifier: string, source = settings): T {
     const { object, key } = getPointerFromKey(source, identifier);
     return object[key];
 }
