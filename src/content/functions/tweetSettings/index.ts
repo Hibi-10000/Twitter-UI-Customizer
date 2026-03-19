@@ -3,7 +3,7 @@ import { getPref, getSettingIDs } from "@content/settings";
 import { tweetTopButtons } from "./tweetTopButtons";
 import { placeEngagementsLink } from "./placeEngagementsLink";
 import { showLinkCardInfo } from "./showLinkCardInfo";
-import { render } from "solid-js/web";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { EmptyButtonHTML, TweetUnderButtonsHTML, tweetButtonData, willClickRT } from "./buttonHTML";
 import { ButtonUnderTweetSelectors, TweetUnderButtonsData } from "./_data";
 import { ProcessedClass } from "@shared/sharedData";
@@ -179,7 +179,7 @@ export function tweetSettings() {
                                     processingButton.classList.add("TUIC_UnderTweetButton");
                                     showElement(processingButton);
                                 } else if (i in tweetButtonData) {
-                                    render(TweetUnderButtonsHTML(i, articleInfo), buttonBarBase);
+                                    renderSolid(TweetUnderButtonsHTML(i, articleInfo), buttonBarBase);
                                     processingButton = Array.from(buttonBarBase.children).at(-1) as HTMLElement;
                                 }
                                 // Twitterのボタンと同化させるためにClassとかごにょごにょしてる
@@ -191,7 +191,7 @@ export function tweetSettings() {
                                         && processingButton.querySelector(`[data-testid="app-text-transition-container"]`) == null
                                     ) {
                                         if (visibleButtons.at(-1) !== i) {
-                                            render(EmptyButtonHTML, processingButton.querySelector("svg").closest(`:is([role="button"],[role="link"]) > div`));
+                                            renderSolid(EmptyButtonHTML, processingButton.querySelector("svg").closest(`:is([role="button"],[role="link"]) > div`));
                                         } else {
                                             // 最後のボタンだけ特殊処理
                                             processingButton.classList.add(fontSizeClass("r-12zb1j4", "r-1kb76zh", "r-1kb76zh", "r-19einr3", "r-zso239"));

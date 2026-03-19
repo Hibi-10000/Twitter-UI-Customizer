@@ -1,5 +1,5 @@
 import type { JSX } from "solid-js";
-import { render } from "solid-js/web";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { hideElement } from "@content/utils/element";
 import { fontSizeClass } from "@content/utils/fontSize";
 import { getPref } from "@content/settings";
@@ -93,7 +93,7 @@ export function showLinkCardInfo(articleInfo: ArticleInfomation) {
                 const title = card.querySelector('[data-testid="card.layoutLarge.media"] a').getAttribute("aria-label").replace(/^.*? /, "");
                 const description = "";
                 const oldDisplay = showLinkCardInfoElement(link, domain, title, description);
-                render(oldDisplay, card);
+                renderSolid(oldDisplay, card);
             }
         }
     } else {

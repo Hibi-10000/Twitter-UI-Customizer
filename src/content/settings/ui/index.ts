@@ -1,10 +1,9 @@
 import { waitForElement } from "@content/utils/element";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { createApp } from "vue";
 import SettingsMain from "@shared/settings/SettingMain.vue";
 import { createPinia } from "pinia";
 import { isSafemode } from "./safemode";
-import { createRoot } from "solid-js";
-import { insert } from "solid-js/web";
 import { dimBackgroundThemeButton } from "./components";
 import vueStyleUrl from "virtual:vue.css?url";
 
@@ -152,8 +151,6 @@ function addDimBackgroundTheme() {
     (async () => {
         const bgThemeOption = (await waitForElement<HTMLElement>(`div[role="radiogroup"]`))[1];
         if (bgThemeOption.children.length === 3) return;
-        createRoot(() => {
-            insert(bgThemeOption, dimBackgroundThemeButton(bgThemeOption), bgThemeOption.lastElementChild);
-        });
+        renderSolid(dimBackgroundThemeButton(bgThemeOption), bgThemeOption, bgThemeOption.lastElementChild);
     })();
 }

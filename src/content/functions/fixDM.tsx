@@ -1,4 +1,4 @@
-import { render } from "solid-js/web";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { getPref } from "@content/settings";
 import { fontSizeClass } from "@content/utils/fontSize";
 import type { JSX } from "solid-js";
@@ -83,7 +83,7 @@ export function dmPage() {
                 elem.querySelector("div > div+div+div.TUICDMIconBox")?.remove();
 
                 const elemParent = elem.parentElement.querySelector(`[data-testid="messageEntry"] > div`);
-                render(IconElement, elemParent);
+                renderSolid(IconElement, elemParent);
             }
         }
     } else {

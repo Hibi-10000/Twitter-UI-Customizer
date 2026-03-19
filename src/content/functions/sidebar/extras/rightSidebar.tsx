@@ -3,7 +3,7 @@ import { fontSizeClass } from "@content/utils/fontSize";
 import { backgroundColorClass } from "@content/utils/color";
 import { translate } from "@content/i18n";
 import { JSX } from "solid-js";
-import { render } from "solid-js/web";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { Dialog } from "@shared/tlui/components/Dialog";
 import { ButtonComponent } from "@shared/tlui/components/ButtonComponent";
 import { DivBoxComponent } from "@shared/tlui/components/DivBox";
@@ -68,7 +68,7 @@ export function placeDisplayButton() {
     if (!document.querySelector("#TUICDisplayRightSidebar")) {
         const moreMenuButton = document.querySelector(`[data-testid="sidebarColumn"] nav > [role="button"]`);
         if (moreMenuButton) {
-            render(elem, moreMenuButton.parentElement);
+            renderSolid(elem, moreMenuButton.parentElement);
         }
     }
 }

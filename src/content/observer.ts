@@ -3,6 +3,7 @@ import { showErrorDialog } from "./utils/error";
 import { placeDisplayButton } from "@content/functions/sidebar/extras/rightSidebar";
 import { getPref } from "@content/settings/index";
 import { hideElement } from "@content/utils/element";
+import { checkConnected } from "@content/utils/renderLifecycle";
 
 let causedErrorCount = 0;
 
@@ -62,6 +63,8 @@ export class TUICObserver {
         this.unbind();
 
         try {
+            checkConnected();
+
             // Twitterのアイコンに関する設定
             changeIcon();
 
