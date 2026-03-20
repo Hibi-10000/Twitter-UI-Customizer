@@ -1,8 +1,6 @@
 import { waitForElement } from "@content/utils/element";
-import { renderSolid } from "@content/utils/renderLifecycle";
-import { createApp } from "vue";
+import { renderSolid, renderVue } from "@content/utils/renderLifecycle";
 import SettingsMain from "@shared/settings/SettingMain.vue";
-import { createPinia } from "pinia";
 import { isSafemode } from "./safemode";
 import { dimBackgroundThemeButton } from "./components";
 import vueStyleUrl from "virtual:vue.css?url";
@@ -42,9 +40,7 @@ function placeSettingComponent(rootElement: HTMLElement) {
         div.id = "TUICSettingsContainer";
         rootElement.appendChild(div);
     }
-    const app = createApp(SettingsMain);
-    app.use(createPinia());
-    app.mount("#TUICSettingsContainer");
+    renderVue(SettingsMain, "#TUICSettingsContainer");
 }
 
 function placeSettingPage() {

@@ -1,5 +1,7 @@
+import { createPinia } from "pinia";
 import { createRoot, type JSX } from "solid-js";
 import { insert, type MountableElement } from "solid-js/web";
+import { Component, createApp } from "vue";
 
 const renderedElements = new Map<Node, () => void>();
 
@@ -31,4 +33,13 @@ export function renderSolid(code: () => JSX.Element, parent: MountableElement, c
 
     checkConnected();
     renderedElements.set(element, dispose);
+}
+
+export function renderVue(rootComponent: Component, rootContainer: string | MountableElement) {
+    const app = createApp(rootComponent);
+    app.use(createPinia());
+    const element = app.mount(rootContainer as string | Element);
+    //console.log("Mounted Vue app on:", element.$el);
+
+    renderedElements.set(element.$el, app.unmount);
 }

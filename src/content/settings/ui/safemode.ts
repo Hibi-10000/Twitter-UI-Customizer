@@ -1,6 +1,5 @@
-import { createApp } from "vue";
+import { renderVue } from "@content/utils/renderLifecycle";
 import safemodeVue from "./SafeMode.vue";
-import { createPinia } from "pinia";
 import { translate } from "@content/i18n";
 import vueStyleUrl from "virtual:vue.css?url";
 
@@ -29,9 +28,7 @@ export function runSafemode() {
     style.href = chrome.runtime.getURL(vueStyleUrl);
     document.head.appendChild(style);
 
-    const app = createApp(safemodeVue);
-    app.use(createPinia());
-    app.mount("#TUICOptionSafemodeEntry");
+    renderVue(safemodeVue, "#TUICOptionSafemodeEntry");
 }
 
 // TUICI18N.fetch().then(() => {
