@@ -49,7 +49,8 @@ export async function parseErrorStringCH({ stack }: Error): Promise<NRStack> {
     const firstStack = stack.split("\n")[1];
     const ch_ext_index = firstStack.indexOf("chrome-extension://");
     //const funcName = firstStack.slice(0, ch_ext_index).replace("    at ", "").replace(" (", "");
-    const urlLineCol = firstStack.slice(ch_ext_index, firstStack.indexOf(")") ?? -1);
+    // NOTE: indexOfは")"が無かったら-1を返すため、")"があれば")"の前まで、なければ最後までになる
+    const urlLineCol = firstStack.slice(ch_ext_index, firstStack.indexOf(")"));
 
     const [ch_ext, url, line, col] = urlLineCol.split(":");
 
