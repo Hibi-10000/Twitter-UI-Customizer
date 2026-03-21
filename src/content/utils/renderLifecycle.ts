@@ -20,7 +20,7 @@ export function checkConnected() {
 export function renderSolid(code: () => JSX.Element, parent: MountableElement, child?: Node) {
     const { element, dispose } = createRoot((dispose) => {
         const element = code();
-        insert(parent, element, child ?? parent.firstChild ? null : undefined);
+        insert(parent, element, child ?? (parent.firstChild ? null : undefined));
         //console.log("Rendered element:", element);
         return { element, dispose };
     });
