@@ -145,7 +145,7 @@ function rewriteSampleTweet() {
 
 function addDimBackgroundTheme() {
     (async () => {
-        const bgThemeOption = (await waitForElement<HTMLElement>(`div[role="radiogroup"]`))[1];
+        const bgThemeOption = (await waitForElement<HTMLElement>(`div[role="radiogroup"]:has(input[name="background-picker"])`))[0];
         if (bgThemeOption.children.length === 3) return;
         renderSolid(dimBackgroundThemeButton(bgThemeOption), bgThemeOption, bgThemeOption.lastElementChild);
     })();
