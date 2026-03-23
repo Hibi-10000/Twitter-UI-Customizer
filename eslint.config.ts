@@ -115,7 +115,6 @@ export default antfu(
             sourceType: "module",
         },
         extends: [
-            // @ts-expect-error https://github.com/typescript-eslint/typescript-eslint/issues/11543
             importx.flatConfigs.typescript,
         ],
         rules: {
