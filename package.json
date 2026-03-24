@@ -36,7 +36,7 @@
         "@unocss/postcss": "^66.6.6",
         "@vitejs/plugin-vue": "^6.0.5",
         "crx": "^5.0.1",
-        "eslint": "^9.39.4",
+        "eslint": "^10.0.3",
         "eslint-import-resolver-typescript": "^4.4.4",
         "eslint-plugin-import-x": "^4.16.2",
         "eslint-plugin-solid": "^0.14.5",
