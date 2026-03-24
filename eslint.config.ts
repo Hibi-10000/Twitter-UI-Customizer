@@ -106,6 +106,7 @@ export default antfu(
             "node/prefer-global/process": ["error", "always"],
             "regexp/prefer-d": 0,
             "regexp/no-useless-flag": 0,
+            "e18e/prefer-static-regex": 0,
         },
     },
     {
