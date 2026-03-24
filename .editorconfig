@@ -17,7 +17,7 @@ indent_size = 2
 [*.md]
 trim_trailing_whitespace = false
 
-[**/node_modules/**]
+[{dist,**/node_modules}/**]
 indent_style = unset
 indent_size = unset
 insert_final_newline = unset
