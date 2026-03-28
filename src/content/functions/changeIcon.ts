@@ -85,7 +85,7 @@ function changeIconProcess(elem: HTMLElement, base: HTMLElement) {
 
 //* setup icon observer
 export function changeIcon() {
-    const notProcessed = `:not([tuic-icon-type])`;
+    const notProcessed = `:not([data-tuic-icon-type])`;
     {
         const elem = document.querySelector<HTMLElement>(`header h1 a > div > svg${notProcessed}`);
         if (elem) {
