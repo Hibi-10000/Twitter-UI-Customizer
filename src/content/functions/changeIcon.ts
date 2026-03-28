@@ -125,17 +125,9 @@ export function changeIcon() {
     }
 }
 
-// 起動時のアイコン
-let initIconObserver: MutationObserver | null = null;
-
-export const initIconObserverFunction = () => {
-    if (initIconObserver) initIconObserver.disconnect();
-    else initIconObserver = new MutationObserver(initIconObserverFunction);
-
-    changeIconProcess(document.querySelector(`#placeholder > svg:not([data-tuic-icon-type])`), document.querySelector(`#placeholder`));
-
-    initIconObserver.observe(document.querySelector(`#placeholder > svg`), {
-        attributes: true,
-        attributeFilter: ["class"],
-    });
-};
+/** 起動中に表示されるロゴを変更します。 */
+export function changeLoadingLogo() {
+    const element = document.querySelector<HTMLElement>("#placeholder > svg");
+    if (!element) return;
+    changeIconProcess(element, element.parentElement);
+}
