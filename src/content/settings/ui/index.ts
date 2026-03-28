@@ -1,8 +1,8 @@
 import { waitForElement } from "@content/utils/element";
-import { createApp } from "vue";
+import { renderSolid, renderVue } from "@content/utils/renderLifecycle";
 import SettingsMain from "@shared/settings/SettingMain.vue";
-import { createPinia } from "pinia";
 import { isSafemode } from "./safemode";
+import { dimBackgroundThemeButton } from "./components";
 import vueStyleUrl from "virtual:vue.css?url";
 
 let DisplaySettingObserver: MutationObserver = null;
@@ -40,9 +40,7 @@ function placeSettingComponent(rootElement: HTMLElement) {
         div.id = "TUICSettingsContainer";
         rootElement.appendChild(div);
     }
-    const app = createApp(SettingsMain);
-    app.use(createPinia());
-    app.mount("#TUICSettingsContainer");
+    renderVue(SettingsMain, "#TUICSettingsContainer");
 }
 
 function placeSettingPage() {
@@ -62,6 +60,7 @@ function placeSettingPage() {
                 placeSettingComponent(_large ? _large : _small);
             });
             rewriteSampleTweet();
+            addDimBackgroundTheme();
             break;
         }
         case "/i/display": {
@@ -74,6 +73,7 @@ function placeSettingPage() {
                 placeSettingComponent(_dialog ? _dialog : _fullscreen);
             });
             rewriteSampleTweet();
+            addDimBackgroundTheme();
         }
     }
 }
@@ -141,4 +141,12 @@ function rewriteSampleTweet() {
             }
         })();
     }
+}
+
+function addDimBackgroundTheme() {
+    (async () => {
+        const bgThemeOption = (await waitForElement<HTMLElement>(`div[role="radiogroup"]:has(input[name="background-picker"])`))[0];
+        if (bgThemeOption.children.length === 3) return;
+        renderSolid(dimBackgroundThemeButton(bgThemeOption), bgThemeOption, bgThemeOption.lastElementChild);
+    })();
 }

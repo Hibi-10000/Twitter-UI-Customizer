@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Esplora",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Notifiche",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Messaggi Diretti",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Stai postando per conto di @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Stai twittando per conto di @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Mi piace",
     "profileSetting-profileInitialTab-media": "Contenuti",
     "profileSetting-profileInitialTab-reply": "Risposte",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} fa",
     "timeline-pinningTab-foryou": "Per te",
     "timeline-pinningTab-following": "Seguiti",
+    "backgroundTheme-dim": "Luci soffuse",
     "invisibleItems-editImage": "Modifica immagine"
 }

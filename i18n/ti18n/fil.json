@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Mag-explore",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Mga Abiso",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Mga Direktang Mensahe",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Nagpo-post ka para kay @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Nagtu-tweet ka para kay @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Mga Gusto",
     "profileSetting-profileInitialTab-media": "Media",
     "profileSetting-profileInitialTab-reply": "Mga Sagot",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} ang nakalipas",
     "timeline-pinningTab-foryou": "Para sa iyo",
     "timeline-pinningTab-following": "Sinusundan",
+    "backgroundTheme-dim": "Madilim",
     "invisibleItems-editImage": "I-edit ang larawan"
 }

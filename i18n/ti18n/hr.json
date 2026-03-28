@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Istraži",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Obavijesti",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Privatne poruke",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Objavljujete za korisnika/cu @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Objavljujete Tweet za korisnika/cu @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Oznake „sviđa mi se”",
     "profileSetting-profileInitialTab-media": "Medijski sadržaj",
     "profileSetting-profileInitialTab-reply": "Odgovori",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "prije ",
     "timeline-pinningTab-foryou": "Za vas",
     "timeline-pinningTab-following": "Pratim",
+    "backgroundTheme-dim": "Zatamnjeno",
     "invisibleItems-editImage": "Uredi sliku"
 }

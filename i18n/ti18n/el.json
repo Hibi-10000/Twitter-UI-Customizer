@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Εξερευνήστε",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Ειδοποιήσεις",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Προσωπικά μηνύματα",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Δημοσιεύετε για @.{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Δημοσιεύετε ένα Tweet για το όνομα @{screenName}.",
     "profileSetting-profileInitialTab-likes": "\"Μου αρέσει\"",
     "profileSetting-profileInitialTab-media": "Πολυμέσα",
     "profileSetting-profileInitialTab-reply": "Απαντήσεις",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "Πριν από ",
     "timeline-pinningTab-foryou": "Για εσάς",
     "timeline-pinningTab-following": "Ακολουθείτε",
+    "backgroundTheme-dim": "Χαμ. φώτα",
     "invisibleItems-editImage": "Επεξεργασία εικόνας"
 }

@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "탐색하기",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "알림",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "쪽지",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "@{screenName} 님에 관해 게시 중입니다",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "@{screenName} 님을 대신해 트윗 중입니다.",
     "profileSetting-profileInitialTab-likes": "마음에 들어요",
     "profileSetting-profileInitialTab-media": "미디어",
     "profileSetting-profileInitialTab-reply": "답글",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} 전",
     "timeline-pinningTab-foryou": "추천",
     "timeline-pinningTab-following": "팔로우 중",
+    "backgroundTheme-dim": "어둡게",
     "invisibleItems-editImage": "이미지 수정하기"
 }

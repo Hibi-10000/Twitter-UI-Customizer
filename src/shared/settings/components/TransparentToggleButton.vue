@@ -47,11 +47,11 @@ function setCheckedValue(value: boolean) {
 .TUICButtonColorCheck_innersvg__container {
     width: 30px;
     height: 30px;
-}
 
-.TUICButtonColorCheck_innersvg__container > svg {
-    width: 100%;
-    height: 100%;
+    > svg {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .TUICButtonColorCheck[data-checked="true"] {

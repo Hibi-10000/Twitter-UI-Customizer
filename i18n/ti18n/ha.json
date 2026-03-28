@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Bincike",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Sanarwa",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Saƙonnin Kai-tsaye",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "You’re posting for @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Kana yin Tweet don @{screenName}.",
     "profileSetting-profileInitialTab-likes": "So-so",
     "profileSetting-profileInitialTab-media": "Midiya",
     "profileSetting-profileInitialTab-reply": "Amsoshi",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} da ya wuce",
     "timeline-pinningTab-foryou": "Don kai",
     "timeline-pinningTab-following": "Ana bin",
+    "backgroundTheme-dim": "Duhu",
     "invisibleItems-editImage": "Edit image"
 }

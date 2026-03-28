@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Изследване",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Известия",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Лични съобщения",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Ти публикуваш за @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Туитваш за @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Харесвания",
     "profileSetting-profileInitialTab-media": "Мултимедийно съдържание",
     "profileSetting-profileInitialTab-reply": "Отговори",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "преди ",
     "timeline-pinningTab-foryou": "За теб",
     "timeline-pinningTab-following": "Следван(а)",
+    "backgroundTheme-dim": "Затъмняване",
     "invisibleItems-editImage": "Редактиране на изображение"
 }

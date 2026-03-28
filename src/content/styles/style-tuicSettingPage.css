@@ -27,28 +27,28 @@
     border: none;
     border-radius: 9999px;
     transition: 0.3s;
-}
 
-.TUIC_icon_button_con > svg * {
-    stroke: var(--twitter-TUIC-color);
-    transition: 0.2s;
-}
+    > svg {
+        * {
+            stroke: var(--twitter-TUIC-color);
+            transition: 0.2s;
+        }
 
-.TUIC_icon_button_con > svg {
-    width: 22px;
-    height: 22px;
-    pointer-events: none;
-    stroke-width: 0.5px;
-}
+        width: 22px;
+        height: 22px;
+        pointer-events: none;
+        stroke-width: 0.5px;
+    }
 
-.TUIC_icon_button_con:is(:hover, :focus-visible) {
-    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 10%);
-    transition: none;
-}
+    &:is(:hover, :focus-visible) {
+        background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 10%);
+        transition: none;
+    }
 
-.TUIC_icon_button_con:active {
-    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 40%);
-    transition: none;
+    &:active {
+        background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 40%);
+        transition: none;
+    }
 }
 
 .TUIC_setting_button {
@@ -61,10 +61,10 @@
     border-color: #71767b !important;
     border-radius: 9999px;
     transition: none;
-}
 
-.TUIC_setting_button:is(:hover, :focus-visible) {
-    /* background: var(--TUIC-container-background); */
+    &:is(:hover, :focus-visible) {
+        /* background: var(--TUIC-container-background); */
+    }
 }
 
 .TUIC_setting_button_width {
@@ -96,10 +96,10 @@ div[tuicudbox] > .UpDownButtons {
     background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 90%);
     border: none;
     border-radius: 9999px;
-}
 
-.TUIC_resetOnly_colorSettings:active {
-    background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 30%);
+    &:active {
+        background: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 30%);
+    }
 }
 
 .TUICSettingSubTitle {
@@ -112,21 +112,21 @@ div[tuicudbox] > .UpDownButtons {
     letter-spacing: 1px;
 }
 
-.TUICCheckBoxParent:not(:last-of-type) {
-    padding-bottom: 10px;
-}
-
 .TUICCheckBoxParent {
+    &:not(:last-of-type) {
+        padding-bottom: 10px;
+    }
+
     display: flex;
     gap: 15px;
     padding-top: 10px;
-}
 
-.TUICCheckBoxParent > div {
-    display: inline-block;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 0.25em;
+    > div {
+        display: inline-block;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 0.25em;
+    }
 }
 
 #TUICSettings :is(label, span, button, h2) {
@@ -147,12 +147,12 @@ div[tuicudbox] > .UpDownButtons {
     margin: 35px 0;
 }
 
-.TUIC_setting_IconRadioButton > svg {
-    width: 24px;
-    height: 24px;
-}
-
 .TUIC_setting_IconRadioButton {
+    > svg {
+        width: 24px;
+        height: 24px;
+    }
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,20 +162,20 @@ div[tuicudbox] > .UpDownButtons {
     border-radius: 9999px;
 }
 
-.TUICIconRadioButton input[type="radio"]:checked ~ div > label {
-    background-color: #1da1f2;
-
-    --twitter-TUIC-color: white;
-}
-
-.TUICIconRadioButton input[type="radio"]:not(:checked):is(:hover, :focus-visible) ~ div > label {
-    background-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 5%);
-}
-
-.TUICIconRadioButton input[type="radio"] ~ div > label {
-    transition: 0.2s;
-}
-
 .TUICIconRadioButton input[type="radio"] {
+    &:checked ~ div > label {
+        background-color: #1da1f2;
+
+        --twitter-TUIC-color: white;
+    }
+
+    &:not(:checked):is(:hover, :focus-visible) ~ div > label {
+        background-color: color-mix(in srgb, var(--TUIC-container-background), var(--twitter-TUIC-color) 5%);
+    }
+
+    ~ div > label {
+        transition: 0.2s;
+    }
+
     display: none;
 }

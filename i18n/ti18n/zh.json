@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "探索",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "通知",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "私信",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "你正在发布关于 @{screenName} 的帖子",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "你正在为 @{screenName} 发推。",
     "profileSetting-profileInitialTab-likes": "喜欢",
     "profileSetting-profileInitialTab-media": "媒体",
     "profileSetting-profileInitialTab-reply": "回复",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} 前",
     "timeline-pinningTab-foryou": "为你推荐",
     "timeline-pinningTab-following": "正在关注",
+    "backgroundTheme-dim": "暗淡",
     "invisibleItems-editImage": "编辑图片"
 }

@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "ஆராய்க",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "அறிவிப்புகள்",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "நேரடிச் செய்திகள்",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "@{screenName}-க்காக இடுகையிடுகிறீர்கள்.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "@{screenName} -க்காக ட்விட் செய்கிறீர்கள்.",
     "profileSetting-profileInitialTab-likes": "விருப்பங்கள்",
     "profileSetting-profileInitialTab-media": "ஊடகம்",
     "profileSetting-profileInitialTab-reply": "பதில்கள்",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} -க்கு முன்பு",
     "timeline-pinningTab-foryou": "உங்களுக்கானவை",
     "timeline-pinningTab-following": "பின்தொடர்கிறீர்கள்",
+    "backgroundTheme-dim": "மங்கல்",
     "invisibleItems-editImage": "படத்தைத் திருத்து"
 }

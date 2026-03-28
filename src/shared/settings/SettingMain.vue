@@ -66,7 +66,7 @@
             <IconButton i18n="addonInfo-github" :icon="ICON_GITHUB" @click="openGithub" />
         </div>
         <a class="TUIC_setting_bottom_copyright" href="https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer/blob/main/LICENSE">
-            <span style=" font-size: 15px;color: rgb(113 118 124); text-align: center">&copy; 2022-2026 kaonasi-biwa</span>
+            <span style="font-size: 15px; color: rgb(113 118 124); text-align: center">&copy; 2022-2026 kaonasi-biwa</span>
         </a>
     </div>
 </template>
@@ -146,7 +146,7 @@ function rescuePref() {
     const dialog = new Dialog(translate("rescuePref-ButtonLabel"));
     dialog
         .addComponents([
-            ...translate("rescuePref-dialog").split("\r"),
+            ...translate("rescuePref-dialog").split("\n"),
             "",
             /*            new TextboxComponent("", { readonly: false, rows: 5 }),
             new ButtonComponent(translate("common-copy-and-close"), () => {
@@ -186,21 +186,21 @@ function rescuePref() {
 }
 #TUICSettings {
     padding: 0;
-}
 
-#TUICSettings * {
-    font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        Helvetica,
-        Roboto,
-        "Segoe UI",
-        "Noto Sans",
-        "Noto Sans JP",
-        Meiryo,
-        system-ui,
-        sans-serif;
+    * {
+        font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            Helvetica,
+            Roboto,
+            "Segoe UI",
+            "Noto Sans",
+            "Noto Sans JP",
+            Meiryo,
+            system-ui,
+            sans-serif;
+    }
 }
 
 .TUIC_setting_easysetting_container {
@@ -211,17 +211,17 @@ function rescuePref() {
     margin: 35px 0;
     text-decoration-line: none;
     text-decoration-color: rgb(113 118 124) !important;
-}
-.TUIC_setting_bottom_copyright:is(:hover, :focus-visible) {
-    text-decoration: underline;
-}
-.TUIC_setting_bottom_copyright:active {
-    text-decoration: none;
-}
-.TUIC_setting_bottom_copyright span {
-    display: block;
-    width: 100%;
-    height: 100%;
+    &:is(:hover, :focus-visible) {
+        text-decoration: underline;
+    }
+    &:active {
+        text-decoration: none;
+    }
+    span {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 }
 </style>
 

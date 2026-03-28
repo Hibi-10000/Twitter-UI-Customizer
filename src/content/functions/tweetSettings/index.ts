@@ -3,7 +3,7 @@ import { getPref, getSettingIDs } from "@content/settings";
 import { tweetTopButtons } from "./tweetTopButtons";
 import { placeEngagementsLink } from "./placeEngagementsLink";
 import { showLinkCardInfo } from "./showLinkCardInfo";
-import { render } from "solid-js/web";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { EmptyButtonHTML, TweetUnderButtonsHTML, tweetButtonData, willClickRT } from "./buttonHTML";
 import { ButtonUnderTweetSelectors, TweetUnderButtonsData } from "./_data";
 import { ProcessedClass } from "@shared/sharedData";
@@ -91,7 +91,11 @@ export function tweetSettings() {
         if (articles.length != 0) {
             for (const articleBase of articles) {
                 (async () => {
-                    if (articleBase.querySelector(_data.selectors["reply-button"]) && articleBase.querySelector(_data.selectors["like-button"])) {
+                    if (
+                        articleBase.querySelector(_data.selectors["reply-button"])
+                        && articleBase.querySelector(_data.selectors["like-button"])
+                        && articleBase.querySelector(_data.selectors["boolkmark"])
+                    ) {
                         //要素の探索
 
                         // 名前の判断に使う要素(画面左下...だったはず)
@@ -167,34 +171,38 @@ export function tweetSettings() {
                         // ツイート下ボタンの並び替え
                         if (articleInfo.option.isBigArticle || !getPref("tweetDisplaySetting.option.hideOnTimeline")) {
                             let lastButton: HTMLElement | null = null;
-                            for (const i of getPref("visibleButtons")) {
+                            const visibleButtons = getPref<string[]>("visibleButtons");
+                            for (const i of visibleButtons) {
                                 let processingButton: HTMLElement | null = null;
                                 if (i in underTweetButtons) {
                                     processingButton = underTweetButtons[i];
                                     processingButton.classList.add("TUIC_UnderTweetButton");
                                     showElement(processingButton);
                                 } else if (i in tweetButtonData) {
-                                    render(TweetUnderButtonsHTML(i, articleInfo), buttonBarBase);
+                                    renderSolid(TweetUnderButtonsHTML(i, articleInfo), buttonBarBase);
                                     processingButton = Array.from(buttonBarBase.children).at(-1) as HTMLElement;
                                 }
                                 // Twitterのボタンと同化させるためにClassとかごにょごにょしてる
                                 if (processingButton) {
-                                    if (underTweetButtons["reply-button"].querySelector(`[data-testid="app-text-transition-container"]`) && processingButton.querySelector(`[data-testid="app-text-transition-container"]`) == null) {
-                                        render(EmptyButtonHTML, processingButton.querySelector("svg").closest(`:is([role="button"],[role="link"]) > div`));
-                                    }
                                     processingButton.classList.remove("r-1rq6c10", "r-1b7u577", "r-1wron08", "r-ogg1b9", "r-uzdrn4", "r-1l8l4mf");
                                     processingButton.classList.add(fontSizeClass("r-12zb1j4", "r-1kb76zh", "r-1kb76zh", "r-19einr3", "r-zso239"));
+                                    if (
+                                        underTweetButtons["reply-button"].querySelector(`[data-testid="app-text-transition-container"]`)
+                                        && processingButton.querySelector(`[data-testid="app-text-transition-container"]`) == null
+                                    ) {
+                                        if (visibleButtons.at(-1) !== i) {
+                                            renderSolid(EmptyButtonHTML, processingButton.querySelector("svg").closest(`:is([role="button"],[role="link"]) > div`));
+                                        } else {
+                                            // 最後のボタンだけ特殊処理
+                                            processingButton.classList.add(fontSizeClass("r-12zb1j4", "r-1kb76zh", "r-1kb76zh", "r-19einr3", "r-zso239"));
+                                        }
+                                    }
                                     lastButton = processingButton;
                                     buttonBarBase.appendChild(processingButton);
                                 }
                             }
                             // 最後のボタンだけ特殊処理
                             if (lastButton) {
-                                const lastButtonSpace = lastButton.querySelector(".TUIC_UnderTweetButtonSpace");
-                                if (lastButtonSpace != null && lastButtonSpace.children[0].children[0].childElementCount == 0) {
-                                    lastButtonSpace.remove();
-                                    lastButton.classList.add(fontSizeClass("r-12zb1j4", "r-1kb76zh", "r-1kb76zh", "r-19einr3", "r-zso239"));
-                                }
                                 lastButton.classList.add("r-1rq6c10", "r-1b7u577");
                                 buttonBarBase.style.minHeight = "";
                                 buttonBarBase.style.height = "";

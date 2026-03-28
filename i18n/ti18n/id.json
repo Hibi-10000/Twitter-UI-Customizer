@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Jelajahi",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Notifikasi",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Direct Message",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Anda memposting untuk @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Anda menge-tweet untuk @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Suka",
     "profileSetting-profileInitialTab-media": "Media",
     "profileSetting-profileInitialTab-reply": "Balasan",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} yang lalu",
     "timeline-pinningTab-foryou": "Untuk Anda",
     "timeline-pinningTab-following": "Mengikuti",
+    "backgroundTheme-dim": "Temaram",
     "invisibleItems-editImage": "Edit gambar"
 }

@@ -1,7 +1,7 @@
 import { hideElement, showElement, processElement } from "@content/utils/element";
 import { getPref } from "@content/settings";
 import { ProcessedClass } from "@shared/sharedData";
-import { render } from "solid-js/web";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { followersListButton } from "./buttons";
 import { data } from "./data";
 
@@ -28,7 +28,7 @@ export function followersList() {
                                 }
                             }
                         } else if (id in data) {
-                            render(followersListButton(id, baseElement), baseElement);
+                            renderSolid(followersListButton(id, baseElement), baseElement);
                             elementCounter++;
                         }
                     }

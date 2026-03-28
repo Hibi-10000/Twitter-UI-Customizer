@@ -270,7 +270,7 @@
     "addonInfo-TUICOfficialTwitter": "公式アカウント(@TUIC_Official)",
     "addonInfo-github": "GitHub",
 
-    "observerError-message": "Twitter UI Customizer内で3回以上エラーが発生したため、動作を停止しました。\r以下のエラーメッセージをコピーして開発者(@kaonasi_biwa)までご連絡ください 。",
+    "observerError-message": "Twitter UI Customizer内で3回以上エラーが発生したため、動作を停止しました。\n以下のエラーメッセージをコピーして開発者(@kaonasi_biwa)までご連絡ください 。",
 
     "common-yes": "はい",
     "common-no": "いいえ",
@@ -288,7 +288,7 @@
     "common-go-and-openNewTab": "進む (外部ページを開きます)",
 
     "rescuePref-ButtonLabel": "twitter.comのTUICの設定を救出する",
-    "rescuePref-dialog": "まだ利用できるtwitter.comのホームページを利用して救出します。\rtwitter.comが開くので、TUICの表示設定に進み、下の方にある「エクスポート/インポート」から設定をエクスポートしてください。\rボタンを押すと外部ページを新しいタブで開きます。\rこのタブに戻ると設定のインポート画面が表示されます",
+    "rescuePref-dialog": "まだ利用できるtwitter.comのホームページを利用して救出します。\ntwitter.comが開くので、TUICの表示設定に進み、下の方にある「エクスポート/インポート」から設定をエクスポートしてください。\nボタンを押すと外部ページを新しいタブで開きます。\nこのタブに戻ると設定のインポート画面が表示されます",
     "rescuePref-detail": "エクスポートされた設定、CSSの順で表示されます。それぞれコピーしてx.comでインポート/保存してください。",
     "rescuePref-complete": "これで救出完了です。それぞれx.comのTUICで読み込んでください。カスタムアイコンに関しては、申し訳ございませんが対応しておりません。",
 

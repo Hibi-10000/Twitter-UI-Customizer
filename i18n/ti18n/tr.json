@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Keşfet",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Bildirimler",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Direkt Mesajlar",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "@{screenName} adına gönderi yayınlıyorsun.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "@{screenName} için Tweetliyorsun.",
     "profileSetting-profileInitialTab-likes": "Beğeni",
     "profileSetting-profileInitialTab-media": "Medya",
     "profileSetting-profileInitialTab-reply": "Yanıtlar",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} önce",
     "timeline-pinningTab-foryou": "Sana özel",
     "timeline-pinningTab-following": "Takip edilenler",
+    "backgroundTheme-dim": "Loş",
     "invisibleItems-editImage": "Resmi düzenle"
 }

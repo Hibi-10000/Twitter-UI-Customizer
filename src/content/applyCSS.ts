@@ -86,8 +86,6 @@ export function injectSettingsIconStyle() {
 
 /** 設定項目の CSS を head 要素に注入します。 */
 export function injectSettingsStyle() {
-    if (isSafemode) return;
-
     const backgroundColor = backgroundColorCheck();
 
     const settingsArr = [
@@ -124,6 +122,7 @@ export function injectSettingsStyle() {
         "profileSetting.invisible.profileArticles",
         "profileSetting.invisible.profileSummary",
         "profileSetting.invisible.profilePagePremium",
+        "uncategorizedSettings.dimBackgroundTheme",
     ];
     let settingsOutput = "|";
     for (const elem of settingsArr) {

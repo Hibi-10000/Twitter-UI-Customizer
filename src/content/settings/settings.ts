@@ -431,7 +431,14 @@ export const DEFAULT_SETTINGS = {
     dmPage: { type: "boolean", values: [{ id: "showIcon", i18n: "dmPage-showIcon", default: false }] },
 
     // その他の設定
-    uncategorizedSettings: { type: "boolean", values: [{ id: "disableBackdropFilter", i18n: "uncategorizedSettings-disableBackdropFilter", default: false }] },
+    uncategorizedSettings: {
+        type: "boolean",
+        values: [
+            { id: "disableBackdropFilter", i18n: "uncategorizedSettings-disableBackdropFilter", default: false },
+            //通常の方法では設定に表示しないが、存在する設定
+            //{ id: "dimBackgroundTheme", i18n: "backgroundTheme-dim", default: false },
+        ],
+    },
 
     // その他の設定
     performanceSettings: { type: "boolean", values: [{ id: "removeDeletedTweets", i18n: "performanceSettings-removeDeletedTweets", default: true }] },

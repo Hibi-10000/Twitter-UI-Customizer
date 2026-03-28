@@ -1,5 +1,5 @@
 import type { JSX } from "solid-js";
-import { render } from "solid-js/web";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { waitForElement, hideElement, showElement, processElement } from "@content/utils/element";
 import { getPref, getSettingIDs } from "@content/settings";
 import { tweetMoreMenuContent } from "./tweetMoreMenuContent";
@@ -273,7 +273,7 @@ function placeTweetTopButtons(articleInfo: ArticleInfomation) {
             tweetTopParent.appendChild(div);
         } else if (i in _data.buttonElement) {
             const newdiv = _data.buttonElement[i](articleBase.querySelector(_data.selector.moreMenu), articleInfo);
-            render(newdiv, tweetTopParent);
+            renderSolid(newdiv, tweetTopParent);
             div = tweetTopParent.querySelector<HTMLDivElement>(`[data-tuic-tweet-top-button]`);
             tweetTopButtons[i] = div;
         }

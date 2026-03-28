@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Utforsk",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Varsler",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Direktemeldinger",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Du publiserer på vegne av @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Du tweeter for @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Liker",
     "profileSetting-profileInitialTab-media": "Medier",
     "profileSetting-profileInitialTab-reply": "Svar",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "For {0} siden",
     "timeline-pinningTab-foryou": "For deg",
     "timeline-pinningTab-following": "Følger",
+    "backgroundTheme-dim": "Dempet",
     "invisibleItems-editImage": "Bilderedigering"
 }

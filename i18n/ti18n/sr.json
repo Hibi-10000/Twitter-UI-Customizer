@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Истражи",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Обавештења",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Директне поруке",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Објављујеш за налог @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Твитујеш у име налога @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Свиђања",
     "profileSetting-profileInitialTab-media": "Медији",
     "profileSetting-profileInitialTab-reply": "Одговори",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "пре ",
     "timeline-pinningTab-foryou": "За тебе",
     "timeline-pinningTab-following": "Пратиш",
+    "backgroundTheme-dim": "Пригушено",
     "invisibleItems-editImage": "Уреди слику"
 }

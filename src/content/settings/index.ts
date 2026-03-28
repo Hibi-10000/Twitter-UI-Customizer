@@ -31,7 +31,7 @@ const getPointerFromKey = (object: object, key: string) => {
  * @param {object} source 使用するPrefのObject。
  * @return {unknown} 取得した値(identifierが空文字ならTUICのPref全体)
  */
-export function getPref(identifier: string, source = settings) {
+export function getPref<T = any>(identifier: string, source = settings): T {
     const { object, key } = getPointerFromKey(source, identifier);
     return object[key];
 }
@@ -186,14 +186,14 @@ export async function updatePref(source = settings) {
                 });
             }
 
-            if (typeof getPref("visibleButtons", source) == "object" && ~getPref("visibleButtons", source).indexOf("downvote-button")) {
+            if (typeof getPref("visibleButtons", source) == "object" && getPref("visibleButtons", source).includes("downvote-button")) {
                 setPref(
                     "visibleButtons",
                     getPref("visibleButtons", source).filter((elem: string) => elem != "downvote-button"),
                     source,
                 );
             }
-            if (typeof getPref("sidebarButtons", source) == "object" && (~getPref("sidebarButtons", source).indexOf("verified-orgs-signup") || ~getPref("sidebarButtons", source).indexOf("twiter-blue") || ~getPref("sidebarButtons", source).indexOf("circles"))) {
+            if (typeof getPref("sidebarButtons", source) == "object" && (getPref("sidebarButtons", source).includes("verified-orgs-signup") || getPref("sidebarButtons", source).includes("twiter-blue") || getPref("sidebarButtons", source).includes("circles"))) {
                 setPref(
                     "sidebarButtons",
                     getPref("sidebarButtons", source).filter((elem: string) => elem != "sidebarButtons-circles" && elem != "twiter-blue" && elem != "verified-orgs-signup" && elem != "circles"),

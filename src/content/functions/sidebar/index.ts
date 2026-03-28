@@ -1,4 +1,4 @@
-import { render } from "solid-js/web";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { hideElement } from "@content/utils/element";
 import { getPref } from "@content/settings";
 import { processDropdown } from "./extras/dropdown";
@@ -102,7 +102,7 @@ function placeSidebarButtons(rootElement: HTMLElement) {
         } else if (i in sidebarButtonsData) {
             // NOTE: ボタンが存在しない場合、新たに作成して追加する
 
-            render(sidebarButtonsData[i](), rootElement);
+            renderSolid(sidebarButtonsData[i](), rootElement);
             element = rootElement.querySelector<HTMLAnchorElement>(`#TUICSidebar_${i}`);
             sidebarButtonsCount += 1;
         }

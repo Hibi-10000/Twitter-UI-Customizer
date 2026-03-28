@@ -10,6 +10,8 @@ export default async (root: string, sourceDir: string, artifactsDir: string, mod
     let watch = false;
     const firefox_executable = process.env["TUIC_WEBEXT_FIREFOX_EXECUTABLE"];
     const firefox_profile = process.env["TUIC_WEBEXT_FIREFOX_PROFILE"] ?? "development";
+    const adb_device_id = process.env["TUIC_WEBEXT_ADB_DEVICE_ID"];
+    const firefox_android_apk = process.env["TUIC_WEBEXT_FIREFOX_ANDROID_APP_ID"];
     const chromium_executable = process.env["TUIC_WEBEXT_CHROMIUM_EXECUTABLE"];
     const chromium_profile = process.env["TUIC_WEBEXT_CHROMIUM_PROFILE"];
 
@@ -25,6 +27,12 @@ export default async (root: string, sourceDir: string, artifactsDir: string, mod
                 console.log("firefox_executable          ", firefox_executable);
                 console.log("firefox_profile             ", firefox_profile);
                 console.log("firefox_keep_profile_changes", firefox_keep_profile_changes);
+                break;
+            case "firefox-android":
+                console.log("adb_device_id               ", adb_device_id);
+                console.log("firefox_apk                 ", firefox_android_apk);
+                //console.log("firefox_profile             ", firefox_profile);
+                //console.log("firefox_keep_profile_changes", firefox_keep_profile_changes);
                 break;
             case "chromium":
                 console.log("chromium_executable          ", chromium_executable);
@@ -43,6 +51,7 @@ export default async (root: string, sourceDir: string, artifactsDir: string, mod
 
             switch (mode) {
                 case "firefox":
+                case "firefox-android":
                 case "chromium":
                 case "disable-web-ext":
                     break;
@@ -62,6 +71,7 @@ export default async (root: string, sourceDir: string, artifactsDir: string, mod
                 sourceDir,
                 artifactsDir,
                 firefox: { executable: firefox_executable, profile: firefox_profile, keep_profile_changes: firefox_keep_profile_changes },
+                firefox_android: { apk: firefox_android_apk, adb_device: adb_device_id },
                 chromium: { executable: chromium_executable, profile: chromium_profile, keep_profile_changes: chromium_keep_profile_changes },
             };
             //TODO: この変数再利用＆Reload

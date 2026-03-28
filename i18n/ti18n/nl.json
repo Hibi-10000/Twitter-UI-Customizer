@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Verkennen",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Meldingen",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Privéberichten",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Je plaatst een post voor @{screenName}",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Je Tweet voor @{screenName}.",
     "profileSetting-profileInitialTab-likes": "Vind-ik-leuks",
     "profileSetting-profileInitialTab-media": "Media",
     "profileSetting-profileInitialTab-reply": "Antwoorden",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} geleden",
     "timeline-pinningTab-foryou": "Voor jou",
     "timeline-pinningTab-following": "Volgend",
+    "backgroundTheme-dim": "Dimmen",
     "invisibleItems-editImage": "Afbeelding bewerken"
 }

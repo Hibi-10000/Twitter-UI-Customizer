@@ -1,5 +1,5 @@
 import { JSX } from "solid-js";
-import { render } from "solid-js/web";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { translate } from "@content/i18n";
 import { waitForElement } from "@content/utils/element";
 
@@ -42,7 +42,7 @@ const elem = (): JSX.Element => {
             <div
                 onClick={async () => {
                     const base = document.querySelector(".u01b__page-padding+div");
-                    render(elem2, base);
+                    renderSolid(elem2, base);
                     document.querySelector("body > div").insertBefore(document.querySelector("#rescurePrefElem"), document.querySelector("main"));
                 }}
             >
@@ -59,5 +59,5 @@ const elem = (): JSX.Element => {
 
 export async function placePrintPrefButton() {
     const baseELement = (await waitForElement(".u01b-01__desktop-primary-links"))[0];
-    render(elem, baseELement);
+    renderSolid(elem, baseELement);
 }

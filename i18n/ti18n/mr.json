@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "एक्सप्लोर करा",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "सूचनापत्रे",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "थेट संदेश",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "आपण @{screenName} च्यासाठी पोस्ट करत आहात.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "आपण @{screenName} यांच्यासाठी ट्विट करत आहात.",
     "profileSetting-profileInitialTab-likes": "पसंती",
     "profileSetting-profileInitialTab-media": "मीडिया",
     "profileSetting-profileInitialTab-reply": "प्रत्युत्तरे",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} पूर्वी",
     "timeline-pinningTab-foryou": "आपल्यासाठी ",
     "timeline-pinningTab-following": "फॉलो करत आहेत",
+    "backgroundTheme-dim": "गडद निळा",
     "invisibleItems-editImage": "प्रतिमा संपादित करा"
 }

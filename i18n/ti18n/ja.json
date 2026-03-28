@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "話題を検索",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "通知",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "ダイレクトメッセージ",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "@{screenName}さんとしてポストします。",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "@{screenName}さんとしてツイートします。",
     "profileSetting-profileInitialTab-likes": "いいね",
     "profileSetting-profileInitialTab-media": "メディア",
     "profileSetting-profileInitialTab-reply": "返信",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0}前",
     "timeline-pinningTab-foryou": "おすすめ",
     "timeline-pinningTab-following": "フォロー中",
+    "backgroundTheme-dim": "ダークブルー",
     "invisibleItems-editImage": "画像を編集"
 }

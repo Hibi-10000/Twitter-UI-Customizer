@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "এক্সপ্লোর করুন",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "বিজ্ঞপ্তি",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "সরাসরি বার্তা",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "আপনি @{screenName}-এর জন্য পোস্ট করছেন।",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "আপনি @{screenName}-এর হয়ে টুইট করছেন।",
     "profileSetting-profileInitialTab-likes": "পছন্দ",
     "profileSetting-profileInitialTab-media": "মিডিয়া",
     "profileSetting-profileInitialTab-reply": "উত্তরগুলি",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} আগে",
     "timeline-pinningTab-foryou": "আপনার জন্য ",
     "timeline-pinningTab-following": " করছেন",
+    "backgroundTheme-dim": "মৃদু",
     "invisibleItems-editImage": "ছবি এডিট করুন"
 }

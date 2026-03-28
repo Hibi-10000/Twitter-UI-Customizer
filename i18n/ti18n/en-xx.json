@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "[Explöøréê]",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "[Nöøtïífïícåätïíöøns]",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "[Dïíréêct Méêssåägéês]",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "[Yöøü’réê pöøstïíng föør @{screenName}.]",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "[Yöøü’réê Twéêéêtïíng föør @{screenName}.]",
     "profileSetting-profileInitialTab-likes": "[Lïíkéês]",
     "profileSetting-profileInitialTab-media": "[Méêdïíåä]",
     "profileSetting-profileInitialTab-reply": "[Réêplïíéês]",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "[{0} åägöø]",
     "timeline-pinningTab-foryou": "[Föør yöøü]",
     "timeline-pinningTab-following": "[Föøllöøwïíng]",
+    "backgroundTheme-dim": "[Dïím]",
     "invisibleItems-editImage": "[Edïít ïímåägéê]"
 }

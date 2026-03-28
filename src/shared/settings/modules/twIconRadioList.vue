@@ -12,7 +12,7 @@
             </div>
             <!-- アイコンが利用不可なものがあるならdetailsboxメニューに追いやる -->
             <details v-if="presetsRadioButtonsText.length !== 0">
-                <summary style=" height: fit-content; margin-top: 6px; list-style: revert;list-style-type: revert">
+                <summary style="height: fit-content; margin-top: 6px; list-style: revert; list-style-type: revert">
                     {{ translate("twitterIcon-other") }}
                 </summary>
                 <RadioButton v-for="i in presetsRadioButtonsText" :key="i.radioName" id="twitterIcon.icon" :valueName="i.radioName" :name="getSettingI18n('twitterIcon.icon', i.radioName)" />

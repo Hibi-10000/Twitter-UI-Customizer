@@ -1,4 +1,4 @@
-import { render } from "solid-js/web";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { JSX } from "solid-js";
 import { fontSizeClass } from "@content/utils/fontSize";
 
@@ -38,7 +38,7 @@ const toastMessage = (message: string): (() => JSX.Element) => {
 export const placeToastMessage = (message: string, duration = 3000) => {
     const baseElem = document.querySelector(`#layers`);
     if (baseElem) {
-        render(toastMessage(message), baseElem);
+        renderSolid(toastMessage(message), baseElem);
         window.setTimeout(() => {
             document.querySelector(`.TUICToastMessage`).remove();
         }, duration);

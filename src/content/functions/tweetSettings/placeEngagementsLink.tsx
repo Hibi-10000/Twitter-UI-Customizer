@@ -1,6 +1,6 @@
 import type { JSX } from "solid-js";
 import { For } from "solid-js";
-import { render } from "solid-js/web";
+import { renderSolid } from "@content/utils/renderLifecycle";
 import { translate } from "@content/i18n";
 import { waitForElement, hasClosest } from "@content/utils/element";
 import { getPref } from "@content/settings";
@@ -87,7 +87,7 @@ export function placeEngagementsLink(articleInfo: ArticleInfomation) {
             const engagementsBoxBase = document.createElement("div");
             engagementsBoxBase.className = "css-175oi2r TUICEngagementsBoxBase";
             hasClosest(buttonBarBase, `:scope > .TUICTweetButtomBarBase`).insertBefore(engagementsBoxBase, buttonBarBase.closest(`.TUICTweetButtomBarBase`));
-            render(engagementsBox, engagementsBoxBase);
+            renderSolid(engagementsBox, engagementsBoxBase);
         }
     }
 }

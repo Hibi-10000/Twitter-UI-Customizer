@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "Selaa",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "Ilmoitukset",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "Yksityisviestit",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "Julkaiset tilin @{screenName} nimissä.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "Twiittaat tilin @{screenName} nimissä.",
     "profileSetting-profileInitialTab-likes": "Tykkäykset",
     "profileSetting-profileInitialTab-media": "Media",
     "profileSetting-profileInitialTab-reply": "Vastaukset",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "{0} sitten",
     "timeline-pinningTab-foryou": "Sinulle",
     "timeline-pinningTab-following": "Seurataan",
+    "backgroundTheme-dim": "Hämärä",
     "invisibleItems-editImage": "Muokkaa kuvaa"
 }

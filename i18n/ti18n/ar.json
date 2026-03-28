@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "استكشف",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "التنبيهات",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "الرسائل الخاصّة",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "أنت تنشر لـ @{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "أنت تغرّد لـ @{screenName}.",
     "profileSetting-profileInitialTab-likes": "الإعجابات",
     "profileSetting-profileInitialTab-media": "الوسائط",
     "profileSetting-profileInitialTab-reply": "الردود",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "منذ ",
     "timeline-pinningTab-foryou": "لك",
     "timeline-pinningTab-following": "متابَعون",
+    "backgroundTheme-dim": "تعتيم",
     "invisibleItems-editImage": "تعديل الصورة"
 }

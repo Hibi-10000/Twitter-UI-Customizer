@@ -136,6 +136,8 @@
     "XtoTwitter-PostToTweet-pwaManifest-explore": "גילוי",
     "XtoTwitter-PostToTweet-pwaManifest-notifications": "הודעות",
     "XtoTwitter-PostToTweet-pwaManifest-directMessages": "מסרים ישירים",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-latest": "אתה מפרסם עבור ‎@{screenName}.",
+    "XtoTwitter-PostToTweet-delegate-tweet-as-old": "אתה מצייץ עבור @{screenName}.",
     "profileSetting-profileInitialTab-likes": "הערות \"אהבתי\"",
     "profileSetting-profileInitialTab-media": "מדיה",
     "profileSetting-profileInitialTab-reply": "תשובות",
@@ -152,5 +154,6 @@
     "dateAndTime.options.absolutelyTime.ago": "לפני ",
     "timeline-pinningTab-foryou": "עבורך",
     "timeline-pinningTab-following": "עוקב",
+    "backgroundTheme-dim": "אור עמום",
     "invisibleItems-editImage": "עריכת תמונה"
 }
