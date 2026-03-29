@@ -69,7 +69,7 @@ export class TUICObserver {
             changeIcon();
 
             // ダークブルー背景テーマ設定
-            if (getPref("uncategorizedSettings.dimBackgroundTheme") && document.documentElement.dataset.theme !== "dim") {
+            if (getPref("uncategorizedSettings.dimBackgroundTheme") && document.body.style.backgroundColor !== "rgb(21, 32, 43)") {
                 document.documentElement.dataset.theme = "dim";
                 document.body.style.backgroundColor = "rgb(21, 32, 43)";
                 document.body.style.scrollbarColor = "rgb(92, 111, 127) rgb(31, 40, 51)";
