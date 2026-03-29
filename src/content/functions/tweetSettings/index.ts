@@ -50,7 +50,7 @@ const _data = {
         },
     },
     buttonElement: {
-        _handleEvent: function (elem: Element, eventFunc: () => void) {
+        _handleEvent: function (elem: HTMLElement, eventFunc: () => void) {
             elem.addEventListener("keydown", (e: KeyboardEvent) => {
                 if (e.key === "Enter") {
                     eventFunc();
