@@ -12,7 +12,6 @@
         "strict": true,
         "strictNullChecks": false,
         "noImplicitAny": false,
-        "useUnknownInCatchVariables": false,
         "skipLibCheck": true,
         "noEmit": true,
         "types": ["@types/chrome", "vite/client", "vite-svg-loader"],
