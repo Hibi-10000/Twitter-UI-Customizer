@@ -202,7 +202,7 @@ export const DEFAULT_SETTINGS = {
     },
     "postingDialog.toolbar": {
         type: "order",
-        default: ["fileInput", "gitSearchButton", "grokImgGen", "createPollButton", "addEmoji", "scheduleOption", "geoButton"],
+        default: ["fileInput", "gitSearchButton", "grokImgGen", "createPollButton", "addEmoji", "scheduleOption", "geoButton", "contentDisclosureButton"],
         values: [
             { id: "fileInput", i18n: "postingDialog-toolbar-items-fileInput" },
             { id: "gitSearchButton", i18n: "postingDialog-toolbar-items-gitSearchButton" },
