@@ -6,7 +6,7 @@
 import { getSettingData, SettingKeys } from "@content/settings";
 import RadioButton from "./RadioButton.vue";
 
-defineProps<{ id: SettingKeys }>();
+defineProps<{ id: SettingKeys<"select"> }>();
 </script>
 
 <style scoped></style>

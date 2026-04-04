@@ -8,7 +8,7 @@ import IconRadioButton from "./IconRadioButton.vue";
 import { getSettingData, SettingKeys } from "@content/settings";
 
 const props = defineProps<{
-    id: SettingKeys;
+    id: SettingKeys<"select">;
     iconsList: Component[];
 }>();
 </script>
