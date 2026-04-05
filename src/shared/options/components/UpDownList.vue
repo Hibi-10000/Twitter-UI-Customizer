@@ -116,7 +116,7 @@ const toDown = () => {
 
 const toDefault = () => {
     const settingId = props.id;
-    list.value = structuredClone(getDefaultPref(settingId).data);
+    list.value = structuredClone(getDefaultPref(settingId));
     selectedElem.value = "";
     apply2Settings();
 };

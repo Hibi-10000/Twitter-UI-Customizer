@@ -1,5 +1,5 @@
 import { DEFAULT_SETTINGS } from "./settings";
-import type { Settings, SettingKeys, SettingKeyType, SettingGroupKeys } from "./settings";
+import type { Settings, SettingKeys, SettingKeyType, SettingGroupKeys, SettingKeyDefault } from "./settings";
 
 // TODO: 暫定的対応
 export type { SettingGroupKeys, SettingKeys };
@@ -256,67 +256,42 @@ export async function updatePref(source: Settings = settings) {
     }
 }
 
-let defaultData: Settings = null;
-
-export function mergeDefaultPref(source: Partial<Settings>): Settings {
-    if (defaultData == null) {
-        defaultData = {
-            buttonColor: {},
-            buttonColorLight: {},
-            buttonColorDark: {},
-        } as Settings;
-        for (const elem in DEFAULT_SETTINGS) {
-            if ((elem as SettingGroupKeys) === "buttonColor") continue;
-            else {
-                const defaultReturn = getDefaultPref(elem as SettingGroupKeys);
-                switch (defaultReturn.type) {
-                    case "boolean": {
-                        for (const data in defaultReturn.data) {
-                            setPref(`${elem}.${data}`, defaultReturn.data[data], defaultData);
-                        }
-                        break;
-                    }
-                    case "select": {
-                        setPref(elem, defaultReturn.data, defaultData);
-                        break;
-                    }
-                    case "order": {
-                        setPref(elem, structuredClone(defaultReturn.data), defaultData);
-                        break;
-                    }
+export const defaultPref = generateDefaultPref();
+function generateDefaultPref() {
+    const defaultData = {
+        buttonColor: {},
+        buttonColorLight: {},
+        buttonColorDark: {},
+    } as Settings;
+    for (const elem in DEFAULT_SETTINGS) {
+        if (elem === "buttonColor") continue;
+        const prefData = DEFAULT_SETTINGS[elem as SettingGroupKeys];
+        switch (prefData.type) {
+            case "boolean": {
+                for (const data of prefData.values) {
+                    setPref(`${elem}.${data.id}`, data.default ?? false, defaultData);
                 }
+                break;
+            }
+            case "order": {
+                setPref(elem, structuredClone(prefData.default), defaultData);
+                break;
+            }
+            case "select": {
+                setPref(elem, prefData.default, defaultData);
+                break;
             }
         }
     }
-    return mergePref(structuredClone(defaultData), structuredClone(source));
+    return defaultData;
 }
 
-export function getDefaultPref<T extends SettingGroupKeys<"boolean">>(id: T): { data: Record<(typeof DEFAULT_SETTINGS)[T]["values"][number]["id"], boolean>; type: "boolean" };
-export function getDefaultPref<T extends SettingGroupKeys<"order">>(id: T): { data: (typeof DEFAULT_SETTINGS)[T]["default"]; type: "order" };
-export function getDefaultPref<T extends SettingGroupKeys<"select">>(id: T): { data: (typeof DEFAULT_SETTINGS)[T]["default"]; type: "select" };
-export function getDefaultPref<T extends SettingGroupKeys>(id: T): {
-    data: Record<(typeof DEFAULT_SETTINGS)[T]["values"][number]["id"], boolean>; type: "boolean";
-} | {
-    data: (typeof DEFAULT_SETTINGS)[T] extends { default: infer D } ? D : never; type: "order" | "select";
-};
-export function getDefaultPref<T extends SettingGroupKeys>(id: T) {
-    const prefData = DEFAULT_SETTINGS[id];
-    switch (prefData.type) {
-        case "boolean": {
-            const returnObject = Object.fromEntries(
-                prefData.values.map((elem: (typeof prefData.values)[number]) =>
-                    [elem.id, elem.default ?? false] as const,
-                ),
-            ) as Record<(typeof prefData.values)[number]["id"], boolean>;
-            return { data: returnObject, type: prefData.type };
-        }
-        case "order": {
-            return { data: structuredClone(prefData.default), type: prefData.type };
-        }
-        case "select": {
-            return { data: prefData.default, type: prefData.type };
-        }
-    }
+export function mergeDefaultPref(source: Partial<Settings>): Settings {
+    return mergePref(structuredClone(defaultPref), structuredClone(source));
+}
+
+export function getDefaultPref<T extends SettingKeys<"boolean" | "order" | "select">>(id: T) {
+    return getPref<SettingKeyDefault<T>>(id, defaultPref);
 }
 
 const prefVersion = 5;
@@ -354,4 +329,4 @@ export function getSettingI18n<T extends SettingGroupKeys>(id: T, itemValue: (ty
     return DEFAULT_SETTINGS[id].values.filter((elem) => elem.id == itemValue)[0]?.i18n ?? undefined;
 }
 
-settings = JSON.parse(localStorage.getItem("TUIC") ?? JSON.stringify(mergeDefaultPref({})));
+settings = JSON.parse(localStorage.getItem("TUIC") ?? JSON.stringify(defaultPref));

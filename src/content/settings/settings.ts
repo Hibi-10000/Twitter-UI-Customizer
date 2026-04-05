@@ -71,6 +71,17 @@ type SettingsType = {
         pinningTab: (typeof DEFAULT_SETTINGS["timeline.pinningTab"]["values"][number]["id"]);
     };
 };
+
+/** 設定のデフォルト値の型 */
+export type SettingKeyDefault<T extends SettingKeys<"boolean" | "order" | "select">> =
+    T extends SettingKeys<"order" | "select"> ? (typeof DEFAULT_SETTINGS)[T]["default"]
+    : T extends SettingKeys<"boolean">
+        ?   {
+                [K in SettingGroupKeys<"boolean">]: T extends `${K}.${infer C}`
+                    ? Extract<(typeof DEFAULT_SETTINGS)[K]["values"][number], { id: C }>["default"]
+                    : never;
+            }[SettingGroupKeys<"boolean">]
+        : never;
 /* eslint-enable style/indent, style/indent-binary-ops, style/no-multi-spaces, style/operator-linebreak */
 
 /** 全設定の ID; DEFAULT_SETTINGSのキー, typeで絞り込み可能 */
