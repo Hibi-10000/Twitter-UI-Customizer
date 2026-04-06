@@ -215,4 +215,10 @@
     .r-g2wdr4 {
         background-color: rgb(31 40 51);
     }
+    .TUICTweetButtomBarBase svg {
+        color: #8b98a5; /* var(--color-gray-700) */
+    }
+    [style="color: rgb(113, 118, 123);"] {
+        color: #8b98a5 !important; /* var(--color-gray-700) */
+    }
 }
