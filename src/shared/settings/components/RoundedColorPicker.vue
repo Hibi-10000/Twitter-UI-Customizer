@@ -13,7 +13,7 @@ defineProps<{
     inputId: string;
     inputColorValue: string;
 }>();
-const emit = defineEmits<(e: "valueChanged", value: unknown) => void>();
+const emit = defineEmits<(e: "valueChanged", value: string) => void>();
 defineExpose({ setInputValue });
 
 const colorPicker = ref(null);

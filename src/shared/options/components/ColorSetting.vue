@@ -42,10 +42,10 @@ const rColorPicker = ref(null);
 
 const store = useStore();
 
-function colorChanged(value) {
+function colorChanged(value: string) {
     changeColor(props.id, props.type, store.editingColorType, value);
 }
-function TransparentToggleButtonClicked(value) {
+function TransparentToggleButtonClicked(value: boolean) {
     changeColorCheck(props.id, props.type, store.editingColorType, value);
 }
 function resetBtnClicked() {
@@ -63,10 +63,10 @@ const TUIC_color = computed(() => {
 });
 // TUIC_colorで取得した色をhex形式に変換して返す
 const TUICColor1 = computed(() => {
-    return rgb2hex(TUIC_color.value.slice(0, 3).map((elem) => Number(elem)));
+    return rgb2hex(TUIC_color.value.slice(0, 3).map((elem) => Number(elem)) as [number, number, number]);
 });
 
-function defaultColor(colorAttr, colorType, colorKind) {
+function defaultColor(colorAttr: string, colorType: string, colorKind: typeof store.editingColorType) {
     if (getPref(`${colorKind}.${colorAttr}`) && getPref(`${colorKind}.${colorAttr}.${colorType}`)) deletePref(`${colorKind}.${colorAttr}.${colorType}`);
 
     const TUIC_color = getColorFromPref(colorAttr, colorType, colorKind).replace("rgba(", "").replace(")", "").replaceAll(" ", "").split(",");
@@ -74,7 +74,7 @@ function defaultColor(colorAttr, colorType, colorKind) {
 
     // 各子コンポーネントの関数を呼び出し、デフォルトに設定した色を反映します
     rColorPicker.value.setInputValue(TUICColor1);
-    transparentButton.value.setCheckedValue(TUIC_color[3] == 0);
+    transparentButton.value.setCheckedValue(TUIC_color[3] === "0");
     colorRoot.value.classList.add("TUIC_ISNOTDEFAULT");
 
     savePref();
@@ -82,7 +82,7 @@ function defaultColor(colorAttr, colorType, colorKind) {
     injectSettingsStyle();
 }
 
-function changeColor(colorAttr, colorType, colorKind, colorPickerVal) {
+function changeColor(colorAttr: string, colorType: string, colorKind: typeof store.editingColorType, colorPickerVal: string) {
     const colorValue = hex2rgb(colorPickerVal);
     const isChecked = transparentButton.value.checked;
 
@@ -96,7 +96,7 @@ function changeColor(colorAttr, colorType, colorKind, colorPickerVal) {
     injectSettingsStyle();
 }
 
-function changeColorCheck(colorAttr, colorType, colorKind, isChecked) {
+function changeColorCheck(colorAttr: string, colorType: string, colorKind: typeof store.editingColorType, isChecked: boolean) {
     const colorValue = getColorFromPref(props.id, props.type, store.editingColorType).replace("rgba(", "").replace(")", "").replaceAll(" ", "").split(",");
 
     setPref(`${colorKind}.${colorAttr}.${colorType}`, `rgba(${colorValue[0]}, ${colorValue[1]}, ${colorValue[2]}, ${isChecked ? 0 : 1})`);
