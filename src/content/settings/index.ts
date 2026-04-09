@@ -312,7 +312,7 @@ export function getSettingIDs<T extends SettingGroupKeys>(id: T): (typeof DEFAUL
  * @param {string} id 設定カテゴリーID
  * @return {{id:string,i18n:string}[]} 取得したデータ
  */
-export function getSettingData<T extends SettingGroupKeys>(id: T) {
+export function getSettingData<T extends SettingGroupKeys>(id: T): typeof DEFAULT_SETTINGS[T]["values"] {
     return DEFAULT_SETTINGS[id].values;
 }
 

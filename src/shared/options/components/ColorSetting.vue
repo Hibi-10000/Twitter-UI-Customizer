@@ -4,7 +4,7 @@
             {{ translate(text) }}
         </h4>
         <div class="TUIC_setting_input_container">
-            <template v-if="ColorData.defaultTUICColor.colors[id]?.ldColor && store.editingColorType == 'buttonColor'">
+            <template v-if="(ColorData.defaultTUICColor.colors[props.id] as { ldColor?: true })?.ldColor && store.editingColorType == 'buttonColor'">
                 <label class="text-white font-tw wrap-break-word min-w-[0px] twcss-text-explicit TUIC_setting_text" style="font-size: 10px"> {{ translate("settingColors-pleaseLD") }} </label><br />
             </template>
             <template v-else>
@@ -31,8 +31,8 @@ import { ColorData } from "@shared/sharedData";
 import { getColorFromPref, hex2rgb, rgb2hex } from "@content/utils/color";
 
 const props = defineProps<{
-    id: string;
-    type: string;
+    id: keyof typeof ColorData.defaultTUICColor.colors;
+    type: "color" | "background" | "border";
     text: string;
 }>();
 
@@ -66,7 +66,7 @@ const TUICColor1 = computed(() => {
     return rgb2hex(TUIC_color.value.slice(0, 3).map((elem) => Number(elem)) as [number, number, number]);
 });
 
-function defaultColor(colorAttr: string, colorType: string, colorKind: typeof store.editingColorType) {
+function defaultColor(colorAttr: typeof props.id, colorType: typeof props.type, colorKind: typeof store.editingColorType) {
     if (getPref(`${colorKind}.${colorAttr}`) && getPref(`${colorKind}.${colorAttr}.${colorType}`)) deletePref(`${colorKind}.${colorAttr}.${colorType}`);
 
     const TUIC_color = getColorFromPref(colorAttr, colorType, colorKind).replace("rgba(", "").replace(")", "").replaceAll(" ", "").split(",");
@@ -82,7 +82,7 @@ function defaultColor(colorAttr: string, colorType: string, colorKind: typeof st
     injectSettingsStyle();
 }
 
-function changeColor(colorAttr: string, colorType: string, colorKind: typeof store.editingColorType, colorPickerVal: string) {
+function changeColor(colorAttr: typeof props.id, colorType: typeof props.type, colorKind: typeof store.editingColorType, colorPickerVal: string) {
     const colorValue = hex2rgb(colorPickerVal);
     const isChecked = transparentButton.value.checked;
 
@@ -96,7 +96,7 @@ function changeColor(colorAttr: string, colorType: string, colorKind: typeof sto
     injectSettingsStyle();
 }
 
-function changeColorCheck(colorAttr: string, colorType: string, colorKind: typeof store.editingColorType, isChecked: boolean) {
+function changeColorCheck(colorAttr: typeof props.id, colorType: typeof props.type, colorKind: typeof store.editingColorType, isChecked: boolean) {
     const colorValue = getColorFromPref(props.id, props.type, store.editingColorType).replace("rgba(", "").replace(")", "").replaceAll(" ", "").split(",");
 
     setPref(`${colorKind}.${colorAttr}.${colorType}`, `rgba(${colorValue[0]}, ${colorValue[1]}, ${colorValue[2]}, ${isChecked ? 0 : 1})`);

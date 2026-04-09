@@ -141,7 +141,7 @@ export function injectSettingsStyle() {
     const rule = sheet.cssRules[0] as CSSStyleRule;
 
     for (const elem of getSettingIDs("buttonColor")) {
-        for (const el of ["background", "border", "color"]) {
+        for (const el of ["background", "border", "color"] as const) {
             if (ColorData.defaultTUICColor.colors[elem][el]) {
                 rule.style.setProperty(`--twitter-${elem}-${el}`, getColorFromPref(elem, el, null));
             }

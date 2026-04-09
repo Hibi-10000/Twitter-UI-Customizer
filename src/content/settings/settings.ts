@@ -43,7 +43,7 @@ export type SettingKeys<T extends "color" | "order" | "select" | "boolean" = "co
 export interface Settings extends SettingsType {}
 type SettingObject<K extends keyof typeof DEFAULT_SETTINGS> =
     (typeof DEFAULT_SETTINGS)[K]["type"] extends "color"
-        ? Record<(typeof DEFAULT_SETTINGS)[K]["values"][number]["id"], { buttonColor?: string; buttonColorLight?: string; buttonColorDark?: string }>
+        ? Record<(typeof DEFAULT_SETTINGS)[K]["values"][number]["id"], { background?: string; border?: string; color?: string }>
     : (typeof DEFAULT_SETTINGS)[K]["type"] extends "order" ? (typeof DEFAULT_SETTINGS)[K]["values"][number]["id"][]
     : (typeof DEFAULT_SETTINGS)[K]["type"] extends "select" ? (typeof DEFAULT_SETTINGS)[K]["values"][number]["id"]
     : (typeof DEFAULT_SETTINGS)[K]["type"] extends "boolean" ? Record<(typeof DEFAULT_SETTINGS)[K]["values"][number]["id"], boolean>
@@ -56,10 +56,10 @@ type SettingsType = {
         : SettingObject<K>;
 } & {
     buttonColorLight: Record<(typeof DEFAULT_SETTINGS)["buttonColor"]["values"][number]["id"], {
-        buttonColor?: string; buttonColorLight?: string; buttonColorDark?: string;
+        background?: string; border?: string; color?: string;
     }>;
     buttonColorDark: Record<(typeof DEFAULT_SETTINGS)["buttonColor"]["values"][number]["id"], {
-        buttonColor?: string; buttonColorLight?: string; buttonColorDark?: string;
+        background?: string; border?: string; color?: string;
     }>;
     uncategorizedSettings: {
         dimBackgroundTheme: boolean;

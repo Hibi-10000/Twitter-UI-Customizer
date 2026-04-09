@@ -153,4 +153,17 @@ export const ColorData = {
             },
         },
     },
+} as const satisfies {
+    defaultXColors: Record<
+        "buttonColorLight" | "buttonColorDark",
+        Record<string, { background: string; border: string; color: string }>
+    >;
+    TUICFixedColor: Record<
+        "light" | "blue" | "dark",
+        Record<"textColor" | "containerBackground" | "containerBackground2" | "colorHover" | "detailBorder", string>
+    >;
+    defaultTUICColor: Record<
+        "colors-buttonColorLight" | "colors-buttonColorDark" | "colors",
+        Record<string, { background?: string; border?: string; color: string; typeColor?: "imageColor"; ldColor?: true }>
+    >;
 };
