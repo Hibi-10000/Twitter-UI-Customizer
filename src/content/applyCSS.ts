@@ -67,7 +67,7 @@ export function injectSystemIconStyle() {
             --TUIC-twitter-icon:url('${chrome.runtime.getURL(X)}') !important;
         }
         [data-tuic-icon-type="x-daruma"] {
-            background-image: url('data:image/svg+xml,${encodeURIComponent(XDaruma.replace("var(--TUIC-favicon-color)", getColorFromPref("twitterIcon", "color", null)))}') !important;
+            background-image: url('data:image/svg+xml,${encodeURIComponent(XDaruma.replace("var(--TUIC-favicon-color)", getColorFromPref("twitterIcon", "color")))}') !important;
         }
     `);
 }
@@ -143,7 +143,7 @@ export function injectSettingsStyle() {
     for (const elem of getSettingIDs("buttonColor")) {
         for (const el of ["background", "border", "color"] as const) {
             if (ColorData.defaultTUICColor.colors[elem][el]) {
-                rule.style.setProperty(`--twitter-${elem}-${el}`, getColorFromPref(elem, el, null));
+                rule.style.setProperty(`--twitter-${elem}-${el}`, getColorFromPref(elem, el));
             }
         }
     }
