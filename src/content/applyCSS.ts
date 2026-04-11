@@ -152,7 +152,7 @@ export function injectSettingsStyle() {
     rule.style.setProperty("--TUIC-container-background2", ColorData.TUICFixedColor[backgroundColor].containerBackground2);
     rule.style.setProperty("--TUIC-color-hover-efect", ColorData.TUICFixedColor[backgroundColor].colorHover);
 
-    rule.style.setProperty("--TUIC-sidebar-hover-color", backgroundColorCheck() == "light" ? "rgba(15,20,25,0.1)" : "rgba(247,249,249,0.1)");
+    rule.style.setProperty("--TUIC-sidebar-hover-color", `rgba(${backgroundColorClass("231,233,234", "247,249,249", "15,20,25")},0.1)`);
     rule.style.setProperty("--TUIC-sidebar-active-color", backgroundColorCheck() == "light" ? "rgba(15,20,25,0.2)" : "rgba(247,249,249,0.2)");
     rule.style.setProperty("--TUIC-sidebar-focus-color", backgroundColorCheck() == "light" ? "rgb(135,138,140)" : "rgb(251,252,252)");
 

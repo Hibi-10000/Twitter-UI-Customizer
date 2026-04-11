@@ -41,6 +41,9 @@ header nav > a > div {
 */
 
 /* Twitterから削除されたダークブルー背景テーマ用のCSS */
+.r-1kfrmmb {
+    border-color: #38444d;
+}
 :root[data-theme="dim"] {
     /* app */
     --color-background: 210 34% 13%;
