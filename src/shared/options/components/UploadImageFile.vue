@@ -15,7 +15,7 @@ import { injectSettingsIconStyle, injectSettingsStyle } from "@content/applyCSS"
 import { translate } from "@content/i18n";
 import { ref } from "vue";
 
-const twitterIcon = ref(null);
+const twitterIcon = ref<HTMLInputElement>(null);
 
 async function changeCustomCSS() {
     if (twitterIcon.value.files.length >= 1) {

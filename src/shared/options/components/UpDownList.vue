@@ -65,7 +65,7 @@ const props = defineProps<{ id: SettingKeys<"order"> }>();
 
 const list = ref<string[]>([]);
 list.value = getPref(props.id);
-const selectedElem = ref("");
+const selectedElem = ref<string>("");
 
 const clickEv = (selectItem: string) => {
     selectedElem.value = selectItem;

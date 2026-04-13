@@ -36,9 +36,9 @@ const props = defineProps<{
     text: string;
 }>();
 
-const transparentButton = ref(null);
-const colorRoot = ref(null);
-const rColorPicker = ref(null);
+const transparentButton = ref<InstanceType<typeof TransparentToggleButton>>(null);
+const colorRoot = ref<HTMLDivElement>(null);
+const rColorPicker = ref<InstanceType<typeof RoundedColorPicker>>(null);
 
 const store = useStore();
 
@@ -84,7 +84,7 @@ function defaultColor(colorAttr: typeof props.id, colorType: typeof props.type, 
 
 function changeColor(colorAttr: typeof props.id, colorType: typeof props.type, colorKind: typeof store.editingColorType, colorPickerVal: string) {
     const colorValue = hex2rgb(colorPickerVal);
-    const isChecked = transparentButton.value.checked;
+    const isChecked = transparentButton.value.isChecked;
 
     setPref(`${colorKind}.${colorAttr}.${colorType}`, `rgba(${colorValue[0]}, ${colorValue[1]}, ${colorValue[2]}, ${isChecked ? 0 : 1})`);
 

@@ -16,7 +16,7 @@ defineProps<{
 const emit = defineEmits<(e: "valueChanged", value: string) => void>();
 defineExpose({ setInputValue });
 
-const colorPicker = ref(null);
+const colorPicker = ref<HTMLInputElement>(null);
 
 const onValueChanged = ($event: Event) => {
     console.log("called onValueChanged");
