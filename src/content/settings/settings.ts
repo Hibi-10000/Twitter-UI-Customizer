@@ -29,15 +29,25 @@ export type SettingKeyType<T extends SettingKeys> = T extends `${infer Parent ex
             : never;
 
 /** 実際の設定のID */
-export type SettingKeys<T extends "color" | "order" | "select" | "boolean" = "color" | "order" | "select" | "boolean"> = {
+export type SettingKeys<T extends "color" | "order" | "select" | "boolean" | "prefVersion" = "color" | "order" | "select" | "boolean" | "prefVersion"> = {
     [K in keyof typeof DEFAULT_SETTINGS]: (typeof DEFAULT_SETTINGS)[K]["type"] extends T
         ? (typeof DEFAULT_SETTINGS)[K]["type"] extends "color" | "boolean"
             ? (typeof DEFAULT_SETTINGS)[K]["type"] extends "color"
-                ? `${K}.${(typeof DEFAULT_SETTINGS)[K]["values"][number]["id"]}.${"buttonColor" | "buttonColorLight" | "buttonColorDark"}`
+                ? `${K}.${(typeof DEFAULT_SETTINGS)[K]["values"][number]["id"]}.${"background" | "border" | "color"}`
                 : `${K}.${(typeof DEFAULT_SETTINGS)[K]["values"][number]["id"]}`
             : K
         : never;
-}[keyof typeof DEFAULT_SETTINGS];
+}[keyof typeof DEFAULT_SETTINGS] | (
+    T extends "color"
+        ? `${"buttonColorLight" | "buttonColorDark"}.${(typeof DEFAULT_SETTINGS)["buttonColor"]["values"][number]["id"]}.${"background" | "border" | "color"}`
+        : never
+    | T extends "boolean"
+        ? "uncategorizedSettings.dimBackgroundTheme"
+        : never
+    | T extends "prefVersion"
+        ? "prefVersion"
+        : never
+);
 
 /** 実際の設定の型 */
 export interface Settings extends SettingsType {}
