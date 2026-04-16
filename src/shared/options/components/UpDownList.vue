@@ -57,11 +57,11 @@ import RESET from "@shared/icons/common/reset.svg?component";
 // import { ARROW_LEFT, ARROW_UP, ARROW_DOWN, ARROW_RIGHT, RESET } from "@content/data/icons";
 
 import { translate } from "@content/i18n";
-import { getPref, setPref, savePref, getSettingI18n, getSettingIDs, getDefaultPref, SettingKeys } from "@content/settings";
+import { getPref, setPref, savePref, getSettingI18n, getSettingIDs, getDefaultPref, SettingFullKeys } from "@content/settings";
 
 import { cleanModifiedElements } from "@content/applyCSS";
 
-const props = defineProps<{ id: SettingKeys<"order"> }>();
+const props = defineProps<{ id: SettingFullKeys<"order"> }>();
 
 const list = ref<string[]>([]);
 list.value = getPref(props.id);

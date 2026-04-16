@@ -1,8 +1,8 @@
 import { DEFAULT_SETTINGS } from "./settings";
-import type { Settings, SettingKeys, SettingKeyType, SettingGroupKeys, SettingKeyDefault } from "./settings";
+import type { Settings, SettingKeys, SettingFullKeys, SettingKeyType, SettingGroupKeys, SettingKeyDefault } from "./settings";
 
 // TODO: 暫定的対応
-export type { SettingGroupKeys, SettingKeys };
+export type { SettingGroupKeys, SettingFullKeys };
 
 let settings: Settings = null;
 
@@ -32,10 +32,9 @@ const getPointerFromKey = (object: object, key: string) => {
  * @param {object} source 使用するPrefのObject。
  * @return {unknown} 取得した値(identifierが空文字ならTUICのPref全体)
  */
-export function getPref(identifier: "", source?: Settings): Settings;
 export function getPref<T extends SettingKeys>(identifier: T, source?: Settings): SettingKeyType<T>;
 export function getPref<T>(identifier: string, source?: Settings): T;
-export function getPref<T extends SettingKeys>(identifier: T | "", source: Settings = settings) {
+export function getPref<T extends SettingKeys>(identifier: T, source: Settings = settings) {
     const { object, key } = getPointerFromKey(source, identifier);
     return object[key];
 }
@@ -48,8 +47,7 @@ export function getPref<T extends SettingKeys>(identifier: T | "", source: Setti
  * @param {string} value 設定する値
  * @param {object} source 使用するPrefのObject。
  */
-export function setPref(identifier: "", value: Settings, source?: Settings): void;
-export function setPref<T extends SettingKeys>(identifier: T, value: SettingKeyType<T>, source?: Settings): void;
+export function setPref<T extends SettingFullKeys | "">(identifier: T, value: SettingKeyType<T>, source?: Settings): void;
 export function setPref<T>(identifier: string, value: T, source?: Settings): void;
 export function setPref(identifier: string, value: unknown, source: Settings = settings) {
     if (identifier == "") {
@@ -66,7 +64,7 @@ export function setPref(identifier: string, value: unknown, source: Settings = s
  * @param {string} identifier 取得するPrefへのパス(ピリオド区切り)。
  * @param {object} source 使用するPrefのObject。
  */
-export function deletePref<T extends SettingKeys>(identifier: T, source?: Settings): void;
+export function deletePref<T extends SettingFullKeys>(identifier: T, source?: Settings): void;
 export function deletePref(identifier: string, source?: Settings): void;
 export function deletePref(identifier: string, source: Settings = settings) {
     const { object, key } = getPointerFromKey(source, identifier);
@@ -290,7 +288,7 @@ export function mergeDefaultPref(source: Partial<Settings>): Settings {
     return mergePref(structuredClone(defaultPref), structuredClone(source));
 }
 
-export function getDefaultPref<T extends SettingKeys<"boolean" | "order" | "select">>(id: T) {
+export function getDefaultPref<T extends SettingFullKeys<"boolean" | "order" | "select">>(id: T) {
     return getPref<SettingKeyDefault<T>>(id, defaultPref);
 }
 

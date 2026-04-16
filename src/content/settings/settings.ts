@@ -10,26 +10,30 @@ type TUICDefaultSettingsType =
     |   { type: "boolean"; values: { id: string; i18n: string; default: boolean }[] }; //チェックボックスなどの一つ一つがboolean型の設定になるもの
 
 /** 設定キーから型を取得します */
-export type SettingKeyType<T extends SettingKeys> = T extends `${infer Parent extends string}.${infer Child extends string}.${infer Grandchild extends string}`
-    ? Parent extends keyof Settings
-        ? Child extends keyof Settings[Parent]
-            ? Grandchild extends keyof Settings[Parent][Child]
-                ? Settings[Parent][Child][Grandchild]
-                : never
-            : never
-        : never
-    : T extends `${infer Parent extends string}.${infer Child extends string}`
+export type SettingKeyType<T extends SettingKeys> = T extends "" ? Settings
+    : T extends `${infer Parent extends string}.${infer Child extends string}.${infer Grandchild extends string}`
         ? Parent extends keyof Settings
             ? Child extends keyof Settings[Parent]
-                ? Settings[Parent][Child]
+                ? Grandchild extends keyof Settings[Parent][Child]
+                    ? Settings[Parent][Child][Grandchild]
+                    : never
                 : never
             : never
-        : T extends keyof Settings
-            ? Settings[T]
-            : never;
+        : T extends `${infer Parent extends string}.${infer Child extends string}`
+            ? Parent extends keyof Settings
+                ? Child extends keyof Settings[Parent]
+                    ? Settings[Parent][Child]
+                    : never
+                : never
+            : T extends keyof Settings
+                ? Settings[T]
+                : never;
+
+export type SettingKeys = "" | SettingFullKeys | keyof typeof DEFAULT_SETTINGS | keyof Settings
+    | (SettingFullKeys<"color"> extends `${infer GP}.${infer P}.${string}` ? `${GP}.${P}` : never);
 
 /** 実際の設定のID */
-export type SettingKeys<T extends "color" | "order" | "select" | "boolean" | "prefVersion" = "color" | "order" | "select" | "boolean" | "prefVersion"> = {
+export type SettingFullKeys<T extends "color" | "order" | "select" | "boolean" | "prefVersion" = "color" | "order" | "select" | "boolean" | "prefVersion"> = {
     [K in keyof typeof DEFAULT_SETTINGS]: (typeof DEFAULT_SETTINGS)[K]["type"] extends T
         ? (typeof DEFAULT_SETTINGS)[K]["type"] extends "color" | "boolean"
             ? (typeof DEFAULT_SETTINGS)[K]["type"] extends "color"
@@ -83,9 +87,9 @@ type SettingsType = {
 };
 
 /** 設定のデフォルト値の型 */
-export type SettingKeyDefault<T extends SettingKeys<"boolean" | "order" | "select">> =
-    T extends SettingKeys<"order" | "select"> ? (typeof DEFAULT_SETTINGS)[T]["default"]
-    : T extends SettingKeys<"boolean">
+export type SettingKeyDefault<T extends SettingFullKeys<"boolean" | "order" | "select">> =
+    T extends SettingFullKeys<"order" | "select"> ? (typeof DEFAULT_SETTINGS)[T]["default"]
+    : T extends SettingFullKeys<"boolean">
         ?   {
                 [K in SettingGroupKeys<"boolean">]: T extends `${K}.${infer C}`
                     ? Extract<(typeof DEFAULT_SETTINGS)[K]["values"][number], { id: C }>["default"]
