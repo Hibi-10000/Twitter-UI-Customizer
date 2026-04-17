@@ -6,9 +6,9 @@ export type { SettingGroupKeys, SettingFullKeys };
 
 let settings: Settings = null;
 
-const getPointerFromKey = (object: object, key: string) => {
+const getPointerFromKey = (object: Record<string, unknown>, key: string) => {
     const keys = ["o", ...key.split(".").filter((k) => k !== "")];
-    let pointer: object = { o: object };
+    let pointer: Record<string, unknown> = { o: object };
     for (let i = 0; i < keys.length; i++) {
         const k = keys[i];
         if (i === keys.length - 1) {
@@ -20,7 +20,7 @@ const getPointerFromKey = (object: object, key: string) => {
             if (!(k in pointer)) {
                 pointer[k] = {};
             }
-            pointer = pointer[k];
+            pointer = pointer[k] as Record<string, unknown>;
         }
     }
 };
