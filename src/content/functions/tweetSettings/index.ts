@@ -171,7 +171,7 @@ export function tweetSettings() {
                         // ツイート下ボタンの並び替え
                         if (articleInfo.option.isBigArticle || !getPref("tweetDisplaySetting.option.hideOnTimeline")) {
                             let lastButton: HTMLElement | null = null;
-                            const visibleButtons = getPref<string[]>("visibleButtons");
+                            const visibleButtons = getPref("visibleButtons");
                             for (const i of visibleButtons) {
                                 let processingButton: HTMLElement | null = null;
                                 if (i in underTweetButtons) {
