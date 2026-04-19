@@ -103,6 +103,8 @@ export type SettingGroupKeys<T extends "color" | "order" | "select" | "boolean" 
     [K in keyof typeof DEFAULT_SETTINGS]: (typeof DEFAULT_SETTINGS)[K]["type"] extends T ? K : never;
 }[keyof typeof DEFAULT_SETTINGS];
 
+export type SettingGroupChildIds<T extends SettingGroupKeys> = (typeof DEFAULT_SETTINGS)[T]["values"][number]["id"];
+
 /** 全設定のデフォルト値とメタデータ */
 export const DEFAULT_SETTINGS = {
     // 色の設定

@@ -1,8 +1,8 @@
 import { DEFAULT_SETTINGS } from "./settings";
-import type { Settings, SettingKeys, SettingFullKeys, SettingKeyType, SettingGroupKeys, SettingKeyDefault } from "./settings";
+import type { Settings, SettingKeys, SettingFullKeys, SettingKeyType, SettingGroupKeys, SettingKeyDefault, SettingGroupChildIds } from "./settings";
 
 // TODO: 暫定的対応
-export type { SettingGroupKeys, SettingFullKeys };
+export type { SettingGroupKeys, SettingFullKeys, SettingGroupChildIds } from "./settings";
 
 let settings: Settings = null;
 
@@ -300,7 +300,7 @@ const prefVersion = 5;
  * @param {string} id 設定カテゴリーID
  * @return {string[]} 取得した値一覧
  */
-export function getSettingIDs<T extends SettingGroupKeys>(id: T): (typeof DEFAULT_SETTINGS)[T]["values"][number]["id"][] {
+export function getSettingIDs<T extends SettingGroupKeys>(id: T): SettingGroupChildIds<T>[] {
     return DEFAULT_SETTINGS[id].values.map((elem: (typeof DEFAULT_SETTINGS)[T]["values"][number]) => elem.id);
 }
 
@@ -321,9 +321,9 @@ export function getSettingData<T extends SettingGroupKeys>(id: T): typeof DEFAUL
  * @param {string} id 設定自体のID(設定カテゴリーIDを除く)
  * @return {string} i18nのID
  */
-export function getSettingI18n<T extends SettingGroupKeys>(id: T, itemValue: (typeof DEFAULT_SETTINGS)[T]["values"][number]["id"]): (typeof DEFAULT_SETTINGS)[T]["values"][number]["i18n"];
+export function getSettingI18n<T extends SettingGroupKeys>(id: T, itemValue: SettingGroupChildIds<T>): (typeof DEFAULT_SETTINGS)[T]["values"][number]["i18n"];
 export function getSettingI18n<T>(id: string, itemValue: string): T;
-export function getSettingI18n<T extends SettingGroupKeys>(id: T, itemValue: (typeof DEFAULT_SETTINGS)[T]["values"][number]["id"]): (typeof DEFAULT_SETTINGS)[T]["values"][number]["i18n"] {
+export function getSettingI18n<T extends SettingGroupKeys>(id: T, itemValue: SettingGroupChildIds<T>): (typeof DEFAULT_SETTINGS)[T]["values"][number]["i18n"] {
     return DEFAULT_SETTINGS[id].values.filter((elem) => elem.id == itemValue)[0]?.i18n ?? undefined;
 }
 

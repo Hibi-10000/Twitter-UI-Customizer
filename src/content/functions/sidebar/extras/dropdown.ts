@@ -1,21 +1,25 @@
 import { hideElement, waitForElement } from "@content/utils/element";
 import { fontSizeClass } from "@content/utils/fontSize";
-import { getPref, getSettingIDs } from "@content/settings";
+import { getPref, getSettingIDs, SettingGroupChildIds } from "@content/settings";
 
-const _data = {
+const _data: {
+    all: SettingGroupChildIds<"sidebarSetting.moreMenuItems">[];
+    selectors: Partial<Record<SettingGroupChildIds<"sidebarSetting.moreMenuItems">, string>>;
+    type: Partial<Record<SettingGroupChildIds<"sidebarSetting.moreMenuItems">, "menu" | "menuitem" | "separator">>;
+} = {
     all: getSettingIDs("sidebarSetting.moreMenuItems"),
     selectors: {
         lists: `[data-testid="Dropdown"] [href$="/lists"]`,
         bookmarks: `[data-testid="Dropdown"] [href="/i/bookmarks"]`,
         monetization: `[data-testid="Dropdown"] :is([href="/settings/monetization"],[href="/i/monetization"])`,
-        separator: `[data-testid="Dropdown"] [role="separator"]`,
+        //separator: `[data-testid="Dropdown"] [role="separator"]`,
         creatorStudio: `[data-testid="Dropdown"] :is([aria-controls$="_0_content"], [href="/i/jf/creators/studio"])`,
-        professionalTool: `[data-testid="Dropdown"] [aria-controls$="_1_content"]`,
-        settingsAndSupport: `[data-testid="Dropdown"] [aria-controls$="_2_content"][data-testid="settingsAndSupport"]`,
+        //professionalTool: `[data-testid="Dropdown"] [aria-controls$="_1_content"]`,
+        //settingsAndSupport: `[data-testid="Dropdown"] [aria-controls$="_2_content"][data-testid="settingsAndSupport"]`,
         communities: `[data-testid="Dropdown"] [href$="/communities"]`,
         communitynotes: `[data-testid="Dropdown"] [href="/i/communitynotes"]`,
         settings: `[data-testid="Dropdown"] [href="/settings"]`,
-        pro: `[data-testid="Dropdown"] [href="https://tweetdeck.twitter.com"]`,
+        //pro: `[data-testid="Dropdown"] [href="https://tweetdeck.twitter.com"]`,
         ads: `[data-testid="Dropdown"] :is([href*="ads.twitter.com"],[href*="ads.x.com"])`,
         premium: `[data-testid="Dropdown"] :is([href="/i/verified-choose"],[href="/i/premium_sign_up"])`,
         jobs: `[data-testid="Dropdown"] [href="/jobs"]`,
@@ -27,13 +31,13 @@ const _data = {
     type: {
         bookmarks: "menuitem",
         monetization: "menuitem",
-        separator: "separator",
+        //separator: "separator",
         creatorStudio: "menuitem",
-        professionalTool: "menu",
-        settingsAndSupport: "menu",
+        //professionalTool: "menu",
+        //settingsAndSupport: "menu",
         communities: "menuitem",
         settings: "menuitem",
-        pro: "menuitem",
+        //pro: "menuitem",
         ads: "menuitem",
         premium: "menuitem",
         jobs: "menuitem",
