@@ -37,7 +37,10 @@ export function hex2rgb(hex: string): [number, number, number] {
  */
 export function getColorFromPref(name: keyof typeof ColorData.defaultTUICColor.colors, type: "color" | "background" | "border", mode?: "buttonColor" | "buttonColorLight" | "buttonColorDark"): string {
     const _mode = mode ? mode : backgroundColorCheck() === "light" ? "buttonColorLight" : "buttonColorDark";
-    return getPref(`${_mode}.${name}.${type}`) ?? ColorData.defaultTUICColor[`colors-${_mode}`]?.[name]?.[type] ?? getPref(`buttonColor.${name}.${type}`) ?? ColorData.defaultTUICColor.colors[name][type];
+    return getPref(`${_mode}.${name}.${type}`)
+        ?? (_mode !== "buttonColor" ? ColorData.defaultTUICColor[`colors-${_mode}`]?.[name]?.[type] : undefined)
+        ?? getPref(`buttonColor.${name}.${type}`)
+        ?? ColorData.defaultTUICColor.colors[name][type];
 }
 
 /**

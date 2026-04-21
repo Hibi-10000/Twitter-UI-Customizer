@@ -4,7 +4,7 @@
             {{ translate(text) }}
         </h4>
         <div class="TUIC_setting_input_container">
-            <template v-if="(ColorData.defaultTUICColor.colors[props.id] as { ldColor?: true })?.ldColor && store.editingColorType == 'buttonColor'">
+            <template v-if="ColorData.defaultTUICColor.colors[props.id]?.ldColor && store.editingColorType == 'buttonColor'">
                 <label class="text-white font-tw wrap-break-word min-w-[0px] twcss-text-explicit TUIC_setting_text" style="font-size: 10px"> {{ translate("settingColors-pleaseLD") }} </label><br />
             </template>
             <template v-else>

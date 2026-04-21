@@ -1,3 +1,5 @@
+import type { SettingGroupChildIds } from "@content/settings";
+
 export const ProcessedClass = "TUICProcessed";
 
 export const ClassList = [
@@ -27,7 +29,26 @@ export const AttrList = [
     "tuic-zooming-tweet",
 ];
 
-export const ColorData = {
+export const ColorData: {
+    defaultXColors: Record<
+        "buttonColorLight" | "buttonColorDark",
+        Partial<Record<SettingGroupChildIds<"buttonColor">, { background: string; border: string; color: string }>>
+    >;
+    TUICFixedColor: Record<
+        "light" | "blue" | "dark",
+        Record<"textColor" | "containerBackground" | "containerBackground2" | "colorHover" | "detailBorder", string>
+    >;
+    defaultTUICColor: Record<
+        "colors-buttonColorLight" | "colors-buttonColorDark" | "colors",
+        Partial<Record<SettingGroupChildIds<"buttonColor">, {
+            background?: string;
+            border?: string;
+            color: string;
+            typeColor?: "imageColor";
+            ldColor?: true;
+        }>>
+    >;
+} = {
     defaultXColors: {
         buttonColorLight: {
             "not-following": { background: "rgba(15,20,25,1)", border: "rgba(15,20,25,1)", color: "rgba(255,255,255,1)" },
@@ -153,17 +174,4 @@ export const ColorData = {
             },
         },
     },
-} as const satisfies {
-    defaultXColors: Record<
-        "buttonColorLight" | "buttonColorDark",
-        Record<string, { background: string; border: string; color: string }>
-    >;
-    TUICFixedColor: Record<
-        "light" | "blue" | "dark",
-        Record<"textColor" | "containerBackground" | "containerBackground2" | "colorHover" | "detailBorder", string>
-    >;
-    defaultTUICColor: Record<
-        "colors-buttonColorLight" | "colors-buttonColorDark" | "colors",
-        Record<string, { background?: string; border?: string; color: string; typeColor?: "imageColor"; ldColor?: true }>
-    >;
 };
