@@ -13,9 +13,11 @@ import { jobs } from "./jobs";
 import { spaces } from "./spaces";
 // import { chat } from "./chat";
 
+import type { SettingGroupChildIds } from "@content/settings";
+
 // TODO: スクリーンネームの取得処理が分散しているので、共通化する
 
-export const sidebarButtonsData: Record<string, SidebarButtonDefinition> = {
+export const sidebarButtonsData: Partial<Record<SettingGroupChildIds<"sidebarButtons">, SidebarButtonDefinition>> = {
     topics,
     lists,
     communities,
