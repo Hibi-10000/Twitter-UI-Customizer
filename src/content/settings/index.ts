@@ -162,8 +162,8 @@ export async function updatePref(source: Settings = settings) {
                 "otherBoolSetting.faviconSet": "twitterIcon.options.faviconSet",
                 "otherBoolSetting.roundIcon": "twitterIcon.options.roundIcon",
             };
-            for (const oldKey in boolKeys) {
-                changeBooleanKey(oldKey, boolKeys[oldKey], source);
+            for (const [oldKey, newKey] of Object.entries(boolKeys)) {
+                changeBooleanKey(oldKey, newKey, source);
             }
 
             changeBooleanKey("invisibleItems.discoverMore", "timeline-discoverMore", source, "discoverMore_invisible");
@@ -223,8 +223,8 @@ export async function updatePref(source: Settings = settings) {
                 "otherBoolSetting.placeEngagementsLinkShort": "engagementsLink.option.placeEngagementsLinkShort",
                 "otherBoolSetting.showLinkCardInfo": "showLinkCardInfo.showLinkCardInfo",
             };
-            for (const oldKey in boolKeys) {
-                changeBooleanKey(oldKey, boolKeys[oldKey], source);
+            for (const [oldKey, newKey] of Object.entries(boolKeys)) {
+                changeBooleanKey(oldKey, newKey, source);
             }
             // falls through
         }
@@ -234,8 +234,8 @@ export async function updatePref(source: Settings = settings) {
                 "tweetDisplaySetting.option.noModalbottomTweetButtons": "tweetDisplaySetting.buttonsInvisible.noModalbottomTweetButtons",
                 "tweetDisplaySetting.option.noNumberBottomTweetButtons": "tweetDisplaySetting.buttonsInvisible.noNumberBottomTweetButtons",
             };
-            for (const oldKey in boolKeys) {
-                changeBooleanKey(oldKey, boolKeys[oldKey], source);
+            for (const [oldKey, newKey] of Object.entries(boolKeys)) {
+                changeBooleanKey(oldKey, newKey, source);
             }
             // falls through
         }
