@@ -37,7 +37,7 @@ export function createSidebarButton(options: CreateSidebarButtonOptions): () => 
             }}
         >
             <div
-                class={`css-175oi2r r-1awozwy r-sdzlij r-18u37iz r-1777fci r-dnmrzs r-o7ynqc r-6416eg ${fontSizeClass(
+                class={`css-175oi2r r-1awozwy r-sdzlij r-18u37iz r-1777fci r-dnmrzs r-bztko3 r-o7ynqc r-6416eg ${fontSizeClass(
                     "r-q81ovl",
                     "r-q81ovl",
                     "r-xyw6el",
@@ -49,7 +49,7 @@ export function createSidebarButton(options: CreateSidebarButtonOptions): () => 
                     <svg
                         viewBox="0 0 24 24"
                         aria-hidden="true"
-                        class={`r-4qtqp9 r-yyyyoo r-lwhw9o r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-cnnz9e ${
+                        class={`r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-lwhw9o r-cnnz9e ${
                             backgroundColorCheck() == "light" ? "r-18jsvk2" : "r-vlxjld r-1nao33i"
                         }`}
                     >
