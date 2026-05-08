@@ -67,5 +67,12 @@
             "version": ">=10.16",
             "onFail": "error"
         }
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "esbuild",
+            "spawn-sync",
+            "unrs-resolver"
+        ]
     }
 }
