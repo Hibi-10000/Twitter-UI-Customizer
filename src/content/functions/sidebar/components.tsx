@@ -58,7 +58,7 @@ export function createSidebarButton(options: CreateSidebarButtonOptions): () => 
                 </div>
                 <div
                     dir="ltr"
-                    class={`css-146c3p1 r-dnmrzs r-1udh08x r-3s2u2q r-bcqeeo r-1ttztb7 r-qvutc0 r-1tl8opc r-9p5ork ${fontSizeClass(
+                    class={`css-146c3p1 r-dnmrzs r-1udh08x r-3s2u2q r-bcqeeo r-1ttztb7 r-qvutc0 r-1tl8opc r-9p5ork r-uhwcr3 ${fontSizeClass(
                         "r-1i10wst r-hbpseb r-16dba41 r-b8s2zf r-1nbxd40 r-fv9tdh",
                         "r-1b6yd1w r-7ptqe7 r-16dba41 r-1b4jfhh r-egpt5t r-1tfrt9a",
                         "r-adyw6z r-135wba7 r-dlybji r-nazi8o",
