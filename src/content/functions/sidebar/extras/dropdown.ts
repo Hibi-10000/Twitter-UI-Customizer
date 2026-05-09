@@ -58,7 +58,7 @@ export async function processDropdown() {
 
     // NOTE: すべてのアイテムに対し、隠す処理を行う
     for (const pref of _data.all) {
-        if (!getPref(`sidebarSetting.moreMenuItems.${pref}`)) return;
+        if (!getPref(`sidebarSetting.moreMenuItems.${pref}`)) continue;
 
         const listItemElement = dropdownElement.querySelector(_data.selectors[pref])?.parentElement ?? null;
         if (listItemElement) {
