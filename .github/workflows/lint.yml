@@ -20,14 +20,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Get pnpm version from package.json
         id: pnpm-version
         run: echo "PNPM_VERSION=$(node -p 'require(`./package.json`).devEngines.packageManager.version')" >> $GITHUB_OUTPUT
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
 
