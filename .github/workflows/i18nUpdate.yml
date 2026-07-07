@@ -23,14 +23,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v7
 
-      - name: Get pnpm version from package.json
-        id: pnpm-version
-        run: echo "PNPM_VERSION=$(node -p 'require(`./package.json`).devEngines.packageManager.version')" >> $GITHUB_OUTPUT
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v6
-        with:
-          version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v6

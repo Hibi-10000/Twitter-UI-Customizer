@@ -13,11 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - id: pnpm-version
-        run: echo "PNPM_VERSION=$(node -p 'require(`./package.json`).devEngines.packageManager.version')" >> $GITHUB_OUTPUT
       - uses: pnpm/action-setup@v6
-        with:
-          version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
       - uses: actions/setup-node@v6
         with:
           node-version-file: package.json
@@ -43,11 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - id: pnpm-version
-        run: echo "PNPM_VERSION=$(node -p 'require(`./package.json`).devEngines.packageManager.version')" >> $GITHUB_OUTPUT
       - uses: pnpm/action-setup@v6
-        with:
-          version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
       - uses: actions/setup-node@v6
         with:
           node-version-file: package.json
@@ -67,11 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - id: pnpm-version
-        run: echo "PNPM_VERSION=$(node -p 'require(`./package.json`).devEngines.packageManager.version')" >> $GITHUB_OUTPUT
       - uses: pnpm/action-setup@v6
-        with:
-          version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
       - uses: actions/setup-node@v6
         with:
           node-version-file: package.json
